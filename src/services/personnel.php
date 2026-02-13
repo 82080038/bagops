@@ -34,6 +34,36 @@ function list_personnel(PDO $pdo, array $filters = []): array
     return $stmt->fetchAll();
 }
 
+function get_personnel(PDO $pdo, int $id): ?array
+{
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id LIMIT 1");
+    $stmt->execute([':id' => $id]);
+    $row = $stmt->fetch();
+    return $row ?: null;
+}
+
+function update_personnel(PDO $pdo, int $id, array $data): void
+{
+    $stmt = $pdo->prepare("UPDATE users SET urut = :urut, name = :name, rank = :rank, nrp = :nrp, position = :position, phone = :phone, ket = :ket, role = :role WHERE id = :id");
+    $stmt->execute([
+        ':urut' => $data['urut'] !== '' ? $data['urut'] : null,
+        ':name' => trim($data['name'] ?? ''),
+        ':rank' => trim($data['rank'] ?? ''),
+        ':nrp' => trim($data['nrp'] ?? ''),
+        ':position' => trim($data['position'] ?? ''),
+        ':phone' => trim($data['phone'] ?? ''),
+        ':ket' => trim($data['ket'] ?? ''),
+        ':role' => trim($data['role'] ?? 'user'),
+        ':id' => $id,
+    ]);
+}
+
+function delete_personnel(PDO $pdo, int $id): void
+{
+    $stmt = $pdo->prepare("DELETE FROM users WHERE id = :id");
+    $stmt->execute([':id' => $id]);
+}
+
 function import_personnel_csv(PDO $pdo, array $file): int
 {
     if (empty($file['tmp_name'])) return 0;

@@ -75,9 +75,26 @@ $routes = [
     'personnel' => function () {
         $pdo = db_connection();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            add_personnel($pdo, $_POST);
-            header('Location: /?r=personnel&msg=' . urlencode('Data personel tersimpan'));
-            exit;
+            $action = $_POST['action'] ?? 'create';
+            if ($action === 'update') {
+                $id = (int)($_POST['id'] ?? 0);
+                if ($id) {
+                    update_personnel($pdo, $id, $_POST);
+                    header('Location: /?r=personnel&msg=' . urlencode('Data personel diperbarui'));
+                    exit;
+                }
+            } elseif ($action === 'delete') {
+                $id = (int)($_POST['id'] ?? 0);
+                if ($id) {
+                    delete_personnel($pdo, $id);
+                    header('Location: /?r=personnel&msg=' . urlencode('Data personel dihapus'));
+                    exit;
+                }
+            } else {
+                add_personnel($pdo, $_POST);
+                header('Location: /?r=personnel&msg=' . urlencode('Data personel tersimpan'));
+                exit;
+            }
         }
         $filters = [
             'rank' => $_GET['rank'] ?? '',
@@ -110,9 +127,26 @@ $routes = [
     'events' => function () {
         $pdo = db_connection();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            add_event($pdo, $_POST);
-            header('Location: /?r=events&msg=' . urlencode('Event tersimpan'));
-            exit;
+            $action = $_POST['action'] ?? 'create';
+            if ($action === 'update') {
+                $id = (int)($_POST['id'] ?? 0);
+                if ($id) {
+                    update_event($pdo, $id, $_POST);
+                    header('Location: /?r=events&msg=' . urlencode('Event diperbarui'));
+                    exit;
+                }
+            } elseif ($action === 'delete') {
+                $id = (int)($_POST['id'] ?? 0);
+                if ($id) {
+                    delete_event($pdo, $id);
+                    header('Location: /?r=events&msg=' . urlencode('Event dihapus'));
+                    exit;
+                }
+            } else {
+                add_event($pdo, $_POST);
+                header('Location: /?r=events&msg=' . urlencode('Event tersimpan'));
+                exit;
+            }
         }
         $list = list_events($pdo);
         $msg = $_GET['msg'] ?? '';
@@ -121,9 +155,19 @@ $routes = [
     'assignments' => function () {
         $pdo = db_connection();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            add_assignment($pdo, $_POST);
-            header('Location: /?r=assignments&msg=' . urlencode('Penugasan tersimpan'));
-            exit;
+            $action = $_POST['action'] ?? 'create';
+            if ($action === 'delete') {
+                $id = (int)($_POST['id'] ?? 0);
+                if ($id) {
+                    delete_assignment($pdo, $id);
+                    header('Location: /?r=assignments&msg=' . urlencode('Penugasan dihapus'));
+                    exit;
+                }
+            } else {
+                add_assignment($pdo, $_POST);
+                header('Location: /?r=assignments&msg=' . urlencode('Penugasan tersimpan'));
+                exit;
+            }
         }
         $events = list_events($pdo);
         $users = list_personnel($pdo);
@@ -151,9 +195,24 @@ $routes = [
     'documents' => function () {
         $pdo = db_connection();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            add_document($pdo, $_POST, $_FILES['file'] ?? null);
-            header('Location: /?r=documents&msg=' . urlencode('Dokumen diunggah'));
-            exit;
+            $action = $_POST['action'] ?? 'create';
+            if ($action === 'delete') {
+                $id = (int)($_POST['id'] ?? 0);
+                if ($id) {
+                    delete_document($pdo, $id);
+                    header('Location: /?r=documents&msg=' . urlencode('Dokumen dihapus'));
+                    exit;
+                }
+            } else {
+                try {
+                    add_document($pdo, $_POST, $_FILES['file'] ?? null);
+                    header('Location: /?r=documents&msg=' . urlencode('Dokumen diunggah'));
+                    exit;
+                } catch (RuntimeException $e) {
+                    header('Location: /?r=documents&msg=' . urlencode($e->getMessage()));
+                    exit;
+                }
+            }
         }
         $events = list_events($pdo);
         $docs = list_documents($pdo);

@@ -1,7 +1,8 @@
 <?php
 function view(string $template, array $data = []): string
 {
-    $file = __DIR__ . '/../templates/' . $template . '.php';
+    // templates berada di root /templates, bukan di /src/templates
+    $file = __DIR__ . '/../../templates/' . $template . '.php';
     if (!file_exists($file)) {
         return 'Template not found';
     }

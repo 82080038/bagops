@@ -1,0 +1,13 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# If the requested file/directory exists, serve it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Serve favicon from public
+RewriteCond %{REQUEST_URI} ^/favicon\.ico$
+RewriteRule ^favicon\.ico$ public/favicon.ico [L]
+
+# Route all other requests to index.php
+RewriteRule ^(.*)$ index.php [L,QSA]

@@ -32,7 +32,7 @@
     <div class="table-responsive bg-white rounded shadow-sm p-3">
       <table class="table table-sm table-striped align-middle mb-0">
         <thead class="table-light">
-          <tr><th>Event</th><th>Personel</th><th>Pangkat</th><th>Jabatan</th><th>Peran</th><th>Jenis</th><th>Sektor</th></tr>
+          <tr><th>Event</th><th>Personel</th><th>Pangkat</th><th>Jabatan</th><th>Peran</th><th>Jenis</th><th>Sektor</th><th>Aksi</th></tr>
         </thead>
         <tbody>
         <?php foreach ($list as $a): ?>
@@ -44,6 +44,13 @@
             <td><?= htmlspecialchars($a['role']) ?></td>
             <td><?= htmlspecialchars($a['assignment_type']) ?></td>
             <td><?= htmlspecialchars($a['sector']) ?></td>
+            <td class="text-nowrap">
+              <form class="d-inline" method="post" action="/?r=assignments" onsubmit="return confirm('Hapus penugasan ini?')">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="id" value="<?= (int)$a['id'] ?>">
+                <button class="btn btn-sm btn-outline-danger" type="submit">Hapus</button>
+              </form>
+            </td>
           </tr>
         <?php endforeach; ?>
         </tbody>
@@ -128,22 +135,11 @@
       const fd = new FormData(form);
       fetch(form.action, { method: 'POST', body: fd })
         .then(() => {
-          const tbody = document.querySelector('table tbody');
-          const selEvent = form.event_id.selectedOptions[0]?.textContent || '';
-          const selUser = form.user_id.selectedOptions[0]?.textContent || '';
-          const tr = document.createElement('tr');
-          tr.innerHTML = `
-            <td>${selEvent}</td>
-            <td>${selUser.split('(')[0].trim()}</td>
-            <td></td><td></td>
-            <td>${form.role.value}</td>
-            <td>${form.assignment_type.value}</td>
-            <td>${form.sector.value}</td>`;
-          tbody.prepend(tr);
           form.reset();
           const modal = bootstrap.Modal.getInstance(document.getElementById('modalAdd'));
           modal.hide();
           showToast('Penugasan tersimpan', 'success');
+          window.location.reload();
         })
         .catch(() => {
           showToast('Gagal menyimpan', 'danger');

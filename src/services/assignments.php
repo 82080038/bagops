@@ -30,3 +30,9 @@ function list_assignments_by_event(PDO $pdo, int $eventId): array
     $stmt->execute([':event_id' => $eventId]);
     return $stmt->fetchAll();
 }
+
+function delete_assignment(PDO $pdo, int $id): void
+{
+    $stmt = $pdo->prepare("DELETE FROM assignments WHERE id = :id");
+    $stmt->execute([':id' => $id]);
+}

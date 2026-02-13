@@ -58,17 +58,35 @@
     <div class="table-responsive bg-white rounded shadow-sm p-3">
       <table class="table table-sm table-striped align-middle mb-0">
         <thead class="table-light">
-          <tr><th>Nama</th><th>Pangkat</th><th>NRP</th><th>Jabatan</th><th>Telepon</th><th>Role</th></tr>
+          <tr><th>Nama</th><th>Pangkat</th><th>NRP</th><th>Jabatan</th><th>Telepon</th><th>Role</th><th>Aksi</th></tr>
         </thead>
         <tbody>
         <?php foreach ($list as $p): ?>
-          <tr>
+          <tr data-id="<?= (int)$p['id'] ?>">
             <td><?= htmlspecialchars($p['name']) ?></td>
             <td><?= htmlspecialchars($p['rank']) ?></td>
             <td><?= htmlspecialchars($p['nrp']) ?></td>
             <td><?= htmlspecialchars($p['position']) ?></td>
             <td><?= htmlspecialchars($p['phone']) ?></td>
             <td><?= htmlspecialchars($p['role']) ?></td>
+            <td class="text-nowrap">
+              <button class="btn btn-sm btn-outline-primary btn-edit" data-bs-toggle="modal" data-bs-target="#modalAdd"
+                data-id="<?= (int)$p['id'] ?>"
+                data-name="<?= htmlspecialchars($p['name']) ?>"
+                data-rank="<?= htmlspecialchars($p['rank']) ?>"
+                data-nrp="<?= htmlspecialchars($p['nrp']) ?>"
+                data-position="<?= htmlspecialchars($p['position']) ?>"
+                data-phone="<?= htmlspecialchars($p['phone']) ?>"
+                data-role="<?= htmlspecialchars($p['role']) ?>"
+                data-urut="<?= htmlspecialchars($p['urut']) ?>"
+                data-ket="<?= htmlspecialchars($p['ket']) ?>"
+              >Edit</button>
+              <form class="d-inline" method="post" action="/?r=personnel" onsubmit="return confirm('Hapus data ini?')">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="id" value="<?= (int)$p['id'] ?>">
+                <button class="btn btn-sm btn-outline-danger" type="submit">Hapus</button>
+              </form>
+            </td>
           </tr>
         <?php endforeach; ?>
         </tbody>
@@ -85,6 +103,8 @@
         </div>
         <div class="modal-body">
           <form id="formPersonel" method="post" action="/?r=personnel">
+            <input type="hidden" name="action" value="create" id="actionField">
+            <input type="hidden" name="id" value="">
             <div class="mb-3">
               <label class="form-label">Nama</label>
               <input class="form-control" name="name" required>
@@ -108,6 +128,14 @@
             <div class="mb-3">
               <label class="form-label">Role</label>
               <input class="form-control" name="role" value="user">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Urut</label>
+              <input class="form-control" name="urut">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Keterangan</label>
+              <textarea class="form-control" name="ket" rows="2"></textarea>
             </div>
             <div class="d-flex justify-content-end gap-2">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -146,19 +174,33 @@
       const fd = new FormData(form);
       fetch(form.action, { method: 'POST', body: fd })
         .then(() => {
-          // Tambah row baru secara lokal
-          const tbody = document.querySelector('table tbody');
-          const tr = document.createElement('tr');
-          tr.innerHTML = `<td>${form.name.value}</td><td>${form.rank.value}</td><td>${form.nrp.value}</td><td>${form.position.value}</td><td>${form.phone.value}</td><td>${form.role.value}</td>`;
-          tbody.prepend(tr);
           form.reset();
+          document.getElementById('actionField').value = 'create';
+          form.id.value = '';
           const modal = bootstrap.Modal.getInstance(document.getElementById('modalAdd'));
           modal.hide();
           showToast('Data personel tersimpan', 'success');
+          window.location.reload();
         })
         .catch(() => {
           showToast('Gagal menyimpan', 'danger');
         });
+    });
+
+    // Prefill edit
+    document.querySelectorAll('.btn-edit').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('actionField').value = 'update';
+        form.id.value = btn.dataset.id;
+        form.name.value = btn.dataset.name;
+        form.rank.value = btn.dataset.rank;
+        form.nrp.value = btn.dataset.nrp;
+        form.position.value = btn.dataset.position;
+        form.phone.value = btn.dataset.phone;
+        form.role.value = btn.dataset.role;
+        form.urut.value = btn.dataset.urut;
+        form.ket.value = btn.dataset.ket;
+      });
     });
 
     const formImport = document.getElementById('formImport');

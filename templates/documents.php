@@ -42,7 +42,7 @@
     <div class="table-responsive bg-white rounded shadow-sm p-3">
       <table class="table table-sm table-striped align-middle mb-0">
         <thead class="table-light">
-          <tr><th>Event</th><th>Nama Asli</th><th>Tipe</th><th>File</th><th>Waktu</th></tr>
+          <tr><th>Event</th><th>Nama Asli</th><th>Tipe</th><th>File</th><th>Waktu</th><th>Aksi</th></tr>
         </thead>
         <tbody>
         <?php foreach ($docs as $d): ?>
@@ -52,6 +52,13 @@
             <td><?= htmlspecialchars($d['type']) ?></td>
             <td><a href="/<?= htmlspecialchars($d['path']) ?>" target="_blank">Unduh</a></td>
             <td><?= htmlspecialchars($d['uploaded_at']) ?></td>
+            <td class="text-nowrap">
+              <form class="d-inline" method="post" action="/?r=documents" onsubmit="return confirm('Hapus dokumen ini?')">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="id" value="<?= (int)$d['id'] ?>">
+                <button class="btn btn-sm btn-outline-danger" type="submit">Hapus</button>
+              </form>
+            </td>
           </tr>
         <?php endforeach; ?>
         </tbody>
@@ -67,7 +74,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form method="post" action="/?r=documents" enctype="multipart/form-data">
+          <form method="post" action="/?r=documents" enctype="multipart/form-data" id="formUpload">
             <div class="mb-3">
               <label class="form-label">Event</label>
               <select class="form-select" name="event_id" required>
@@ -84,6 +91,7 @@
             <div class="mb-3">
               <label class="form-label">File</label>
               <input class="form-control" type="file" name="file" required>
+              <div class="form-text">Maksimum 2MB. Tipe yang diizinkan: pdf, jpg, png, txt.</div>
             </div>
             <div class="d-flex justify-content-end gap-2">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -105,24 +113,19 @@
     const form = document.querySelector('#modalUpload form');
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      const file = form.file.files[0];
+      if (file && file.size > 2 * 1024 * 1024) {
+        showToast('File terlalu besar, maksimum 2MB', 'danger');
+        return;
+      }
       const fd = new FormData(form);
       fetch(form.action, { method: 'POST', body: fd })
         .then(() => {
-          const tbody = document.querySelector('table tbody');
-          const selEvent = form.event_id.selectedOptions[0]?.textContent || '';
-          const file = form.file.files[0];
-          const tr = document.createElement('tr');
-          tr.innerHTML = `
-            <td>${selEvent}</td>
-            <td>${file ? file.name : ''}</td>
-            <td>${form.type.value}</td>
-            <td>-</td>
-            <td>${new Date().toISOString()}</td>`;
-          tbody.prepend(tr);
           form.reset();
           const modal = bootstrap.Modal.getInstance(document.getElementById('modalUpload'));
           modal.hide();
           showToast('Dokumen diunggah', 'success');
+          window.location.reload();
         })
         .catch(() => {
           showToast('Gagal unggah', 'danger');

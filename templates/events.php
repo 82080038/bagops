@@ -40,7 +40,7 @@
     <div class="table-responsive bg-white rounded shadow-sm p-3">
       <table class="table table-sm table-striped align-middle mb-0">
         <thead class="table-light">
-          <tr><th>Judul</th><th>Jenis</th><th>Lokasi</th><th>Waktu</th><th>Risiko</th></tr>
+          <tr><th>Judul</th><th>Jenis</th><th>Lokasi</th><th>Waktu</th><th>Risiko</th><th>Aksi</th></tr>
         </thead>
         <tbody>
         <?php foreach ($list as $e): ?>
@@ -50,6 +50,25 @@
             <td><?= htmlspecialchars($e['location']) ?></td>
             <td><span class="dt" data-date="<?= htmlspecialchars($e['start_at']) ?>"></span> - <span class="dt" data-date="<?= htmlspecialchars($e['end_at']) ?>"></span></td>
             <td><?= htmlspecialchars($e['risk_level']) ?></td>
+            <td class="text-nowrap">
+              <button class="btn btn-sm btn-outline-primary btn-edit" data-bs-toggle="modal" data-bs-target="#modalAdd"
+                data-id="<?= (int)$e['id'] ?>"
+                data-title="<?= htmlspecialchars($e['title']) ?>"
+                data-type="<?= htmlspecialchars($e['type']) ?>"
+                data-location="<?= htmlspecialchars($e['location']) ?>"
+                data-latitude="<?= htmlspecialchars($e['latitude']) ?>"
+                data-longitude="<?= htmlspecialchars($e['longitude']) ?>"
+                data-start_at="<?= htmlspecialchars($e['start_at']) ?>"
+                data-end_at="<?= htmlspecialchars($e['end_at']) ?>"
+                data-risk_level="<?= htmlspecialchars($e['risk_level']) ?>"
+                data-notes="<?= htmlspecialchars($e['notes']) ?>"
+              >Edit</button>
+              <form class="d-inline" method="post" action="/?r=events" onsubmit="return confirm('Hapus event ini?')">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="id" value="<?= (int)$e['id'] ?>">
+                <button class="btn btn-sm btn-outline-danger" type="submit">Hapus</button>
+              </form>
+            </td>
           </tr>
         <?php endforeach; ?>
         </tbody>
@@ -66,6 +85,8 @@
         </div>
         <div class="modal-body">
           <form id="formEvent" method="post" action="/?r=events">
+            <input type="hidden" name="action" value="create" id="actionEvent">
+            <input type="hidden" name="id" value="">
             <div class="row g-3">
               <div class="col-md-6">
                 <label class="form-label">Judul</label>
@@ -138,25 +159,37 @@
       fetch(form.action, { method: 'POST', body: fd })
         .then(() => {
           const tbody = document.querySelector('table tbody');
-          const tr = document.createElement('tr');
-          tr.innerHTML = `
-            <td>${form.title.value}</td>
-            <td>${form.type.value}</td>
-            <td>${form.location.value}</td>
-            <td><span class="dt" data-date="${form.start_at.value}"></span> - <span class="dt" data-date="${form.end_at.value}"></span></td>
-            <td>${form.risk_level.value}</td>`;
-          tbody.prepend(tr);
+          // Reload untuk sinkron edit/delete
           form.reset();
+          document.getElementById('actionEvent').value = 'create';
+          form.id.value = '';
           const modal = bootstrap.Modal.getInstance(document.getElementById('modalAdd'));
           modal.hide();
           showToast('Event tersimpan', 'success');
-          applyDateFormatting();
+          window.location.reload();
         })
         .catch(() => {
           showToast('Gagal menyimpan', 'danger');
         });
     });
     applyDateFormatting();
+
+    // Prefill edit
+    document.querySelectorAll('.btn-edit').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('actionEvent').value = 'update';
+        form.id.value = btn.dataset.id;
+        form.title.value = btn.dataset.title;
+        form.type.value = btn.dataset.type;
+        form.location.value = btn.dataset.location;
+        form.latitude.value = btn.dataset.latitude;
+        form.longitude.value = btn.dataset.longitude;
+        form.start_at.value = btn.dataset.start_at;
+        form.end_at.value = btn.dataset.end_at;
+        form.risk_level.value = btn.dataset.risk_level;
+        form.notes.value = btn.dataset.notes;
+      });
+    });
   </script>
 </body>
 </html>
