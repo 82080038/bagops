@@ -1,0 +1,412 @@
+#!/usr/bin/env python3
+"""
+Python-based Kantor Page Renderer
+Alternative solution untuk rendering halaman kantor dengan data yang benar
+"""
+
+import mysql.connector
+import json
+from datetime import datetime
+from flask import Flask, render_template_string
+
+app = Flask(__name__)
+
+# Database configuration
+db_config = {
+    'host': 'localhost',
+    'user': 'root',
+    'password': 'rootpassword',
+    'database': 'bagops_db'
+}
+
+def get_kantor_data():
+    """Ambil data kantor dari database"""
+    try:
+        conn = mysql.connector.connect(**db_config)
+        cursor = conn.cursor(dictionary=True)
+        
+        cursor.execute("""
+            SELECT 
+                k.*,
+                COUNT(p.id) as jumlah_personel,
+                (
+                    SELECT p1.nama 
+                    FROM personel p1 
+                    WHERE p1.unit = k.nama_kantor 
+                    AND p1.is_active = 1
+                    AND (
+                        p1.pangkat = 'AKBP' OR 
+                        p1.pangkat LIKE 'KOMPOL%' OR 
+                        p1.pangkat LIKE 'AKP%'
+                    )
+                    ORDER BY 
+                        CASE 
+                            WHEN p1.pangkat = 'AKBP' THEN 1
+                            WHEN p1.pangkat LIKE 'KOMPOL%' THEN 2
+                            WHEN p1.pangkat LIKE 'AKP%' THEN 2
+                            ELSE 3
+                        END ASC
+                    LIMIT 1
+                ) as pimpinan_nama,
+                (
+                    SELECT p1.pangkat 
+                    FROM personel p1 
+                    WHERE p1.unit = k.nama_kantor 
+                    AND p1.is_active = 1
+                    AND (
+                        p1.pangkat = 'AKBP' OR 
+                        p1.pangkat LIKE 'KOMPOL%' OR 
+                        p1.pangkat LIKE 'AKP%'
+                    )
+                    ORDER BY 
+                        CASE 
+                            WHEN p1.pangkat = 'AKBP' THEN 1
+                            WHEN p1.pangkat LIKE 'KOMPOL%' THEN 2
+                            WHEN p1.pangkat LIKE 'AKP%' THEN 2
+                            ELSE 3
+                        END ASC
+                    LIMIT 1
+                ) as pimpinan_pangkat_asli,
+                (
+                    SELECT p1.nrp 
+                    FROM personel p1 
+                    WHERE p1.unit = k.nama_kantor 
+                    AND p1.is_active = 1
+                    AND (
+                        p1.pangkat = 'AKBP' OR 
+                        p1.pangkat LIKE 'KOMPOL%' OR 
+                        p1.pangkat LIKE 'AKP%'
+                    )
+                    ORDER BY 
+                        CASE 
+                            WHEN p1.pangkat = 'AKBP' THEN 1
+                            WHEN p1.pangkat LIKE 'KOMPOL%' THEN 2
+                            WHEN p1.pangkat LIKE 'AKP%' THEN 2
+                            ELSE 3
+                        END ASC
+                    LIMIT 1
+                ) as pimpinan_nrp
+            FROM kantor k
+            LEFT JOIN personel p ON k.nama_kantor = p.unit
+            WHERE k.status = 'aktif'
+            GROUP BY k.id
+            ORDER BY k.tipe_kantor_polisi DESC, k.nama_kantor ASC
+        """)
+        
+        kantor_data = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        
+        return kantor_data
+    except Exception as e:
+        print(f"Database error: {e}")
+        return []
+
+def generate_kantor_html():
+    """Generate HTML untuk halaman kantor"""
+    
+    # Ambil data
+    kantor_data = get_kantor_data()
+    
+    # Template HTML
+    html_template = """
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kantor - BAGOPS POLRES SAMOSIR</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .table-responsive {
+            margin-bottom: 15px !important;
+            width: 100% !important;
+        }
+        .table {
+            margin-bottom: 0 !important;
+        }
+        .table th, .table td {
+            padding: 0.5rem !important;
+        }
+        .badge {
+            font-size: 0.75em;
+        }
+        .btn-group-sm > .btn {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h2><i class="fas fa-building me-2"></i>Data Kantor</h2>
+                <p class="text-muted">Manajemen data kantor kepolisian POLRES SAMOSIR</p>
+                <small class="text-muted">Generated by Python: {{ timestamp }}</small>
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="row mb-4">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Kantor</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ total_kantor }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-building fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Personel</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ total_personel }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-users fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-info shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">POLRES</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ polres_count }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-shield-alt fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-warning shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">POLSEK</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ polsek_count }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-map-marker-alt fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kantor Table -->
+        <div class="card shadow">
+            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                <h6 class="m-0 font-weight-bold text-primary">Daftar Kantor ({{ total_kantor }} records)</h6>
+                <div>
+                    <button class="btn btn-primary btn-sm" onclick="showCreateKantorModal()">
+                        <i class="fas fa-plus me-2"></i>Tambah Kantor
+                    </button>
+                    <button class="btn btn-success btn-sm" onclick="refreshKantor()">
+                        <i class="fas fa-sync me-2"></i>Refresh
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-sm" id="kantorTable" width="100%" cellspacing="0" style="margin-bottom: 0;">
+                        <thead class="table-dark">
+                            <tr>
+                                <th class="py-2">ID</th>
+                                <th class="py-2">Nama Kantor</th>
+                                <th class="py-2">Pimpinan</th>
+                                <th class="py-2">Jumlah Personel</th>
+                                <th class="py-2">Status</th>
+                                <th class="py-2">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for kantor in kantor_list %}
+                            <tr class="align-middle">
+                                <td class="py-1">{{ kantor.id }}</td>
+                                <td class="py-1">
+                                    <div>
+                                        <strong>{{ kantor.nama_kantor }}</strong>
+                                        {% if kantor.email %}
+                                        <br><small class="text-muted">{{ kantor.email }}</small>
+                                        {% endif %}
+                                    </div>
+                                </td>
+                                <td class="py-1">
+                                    {% if kantor.pimpinan_nama %}
+                                        <div>
+                                            <strong>{{ kantor.pimpinan_pangkat_asli }}</strong>
+                                            <br><small class="text-muted">{{ kantor.pimpinan_nama }}</small>
+                                            {% if kantor.pimpinan_nrp %}
+                                            <br><small class="text-muted">{{ kantor.pimpinan_nrp }}</small>
+                                            {% endif %}
+                                        </div>
+                                    {% else %}
+                                        <span class="badge bg-danger">0</span>
+                                    {% endif %}
+                                </td>
+                                <td class="py-1">
+                                    <span class="badge bg-primary">{{ kantor.jumlah_personel or 0 }}</span>
+                                </td>
+                                <td class="py-1">
+                                    <span class="badge {{ 'bg-success' if kantor.status == 'aktif' else 'bg-danger' }}">
+                                        {{ kantor.status|title }}
+                                    </span>
+                                </td>
+                                <td class="py-1">
+                                    <div class="btn-group btn-group-sm">
+                                        <button class="btn btn-info" title="Detail" onclick="viewKantor({{ kantor.id }})">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-warning" title="Edit" onclick="editKantor({{ kantor.id }})">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-{{ 'secondary' if kantor.status == 'aktif' else 'success' }}" 
+                                                onclick="toggleStatus({{ kantor.id }})" 
+                                                title="{{ 'Non-aktifkan' if kantor.status == 'aktif' else 'Aktifkan' }}">
+                                            <i class="fas fa-{{ 'pause' if kantor.status == 'aktif' else 'play' }}"></i>
+                                        </button>
+                                        <button class="btn btn-danger" onclick="deleteKantor({{ kantor.id }})">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Placeholder functions
+        function showCreateKantorModal() {
+            alert('Tambah Kantor - Placeholder');
+        }
+        
+        function refreshKantor() {
+            location.reload();
+        }
+        
+        function viewKantor(id) {
+            alert('View Kantor ' + id + ' - Placeholder');
+        }
+        
+        function editKantor(id) {
+            alert('Edit Kantor ' + id + ' - Placeholder');
+        }
+        
+        function toggleStatus(id) {
+            alert('Toggle Status ' + id + ' - Placeholder');
+        }
+        
+        function deleteKantor(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus kantor ini?')) {
+                alert('Delete Kantor ' + id + ' - Placeholder');
+            }
+        }
+    </script>
+</body>
+</html>
+    """
+    
+    # Calculate statistics
+    total_kantor = len(kantor_data)
+    total_personel = sum(k['jumlah_personel'] or 0 for k in kantor_data)
+    polres_count = sum(1 for k in kantor_data if k['tipe_kantor_polisi'] == 'POLRES')
+    polsek_count = sum(1 for k in kantor_data if k['tipe_kantor_polisi'] == 'POLSEK')
+    
+    # Render template
+    from jinja2 import Template
+    
+    template = Template(html_template)
+    rendered_html = template.render(
+        kantor_list=kantor_data,
+        total_kantor=total_kantor,
+        total_personel=total_personel,
+        polres_count=polres_count,
+        polsek_count=polsek_count,
+        timestamp=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    )
+    
+    return rendered_html
+
+def save_html_file():
+    """Save HTML ke file"""
+    html_content = generate_kantor_html()
+    
+    with open('/home/petrick/Dokumen/code/bagops/kantor_python.html', 'w', encoding='utf-8') as f:
+        f.write(html_content)
+    
+    print("✅ HTML file saved: kantor_python.html")
+    return html_content
+
+def print_statistics():
+    """Print statistics"""
+    kantor_data = get_kantor_data()
+    
+    print("\n📊 Kantor Statistics:")
+    print("=" * 50)
+    
+    total_kantor = len(kantor_data)
+    total_personel = sum(k['jumlah_personel'] or 0 for k in kantor_data)
+    
+    print(f"Total Kantor: {total_kantor}")
+    print(f"Total Personel: {total_personel}")
+    
+    print("\n📍 Detail per Kantor:")
+    for kantor in kantor_data:
+        pimpinan = kantor['pimpinan_nama'] or "Tidak ada"
+        print(f"  🏢 {kantor['nama_kantor']}: {kantor['jumlah_personel']} personel, Pimpinan: {pimpinan}")
+
+@app.route('/')
+def kantor_page():
+    """Flask route untuk halaman kantor"""
+    return generate_kantor_html()
+
+if __name__ == "__main__":
+    print("🐍 Python Kantor Renderer")
+    print("=" * 50)
+    
+    # Print statistics
+    print_statistics()
+    
+    # Save HTML file
+    save_html_file()
+    
+    # Start Flask server
+    print("\n🚀 Starting Flask server on http://localhost:5000")
+    print("🌐 Access kantor page at: http://localhost:5000")
+    print("⚠️  This is an alternative solution for testing purposes")
+    
+    app.run(host='0.0.0.0', port=5000, debug=True)

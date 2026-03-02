@@ -43,15 +43,15 @@ WORKDIR /var/www/html/bagops
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html \
-    && chmod -R 777 /var/www/html/bagops/storage \
-    && chmod -R 777 /var/www/html/bagops/json
+    && mkdir -p /var/www/html/bagops/storage && chmod -R 777 /var/www/html/bagops/storage \
+    && mkdir -p /var/www/html/bagops/json && chmod -R 777 /var/www/html/bagops/json
 
 # Configure Apache for subdirectory
 RUN echo "<Directory /var/www/html/bagops>" >> /etc/apache2/sites-available/000-default.conf \
     && echo "    AllowOverride All" >> /etc/apache2/sites-available/000-default.conf \
     && echo "    Require all granted" >> /etc/apache2/sites-available/000-default.conf \
     && echo "</Directory>" >> /etc/apache2/sites-available/000-default.conf \
-    && sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/bagops|g' /etc/apache2/sites-available/000-default.conf
+    && sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html|g' /etc/apache2/sites-available/000-default.conf
 
 # Configure Apache
 RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf \

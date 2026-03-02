@@ -14,6 +14,7 @@ try {
     $stmt = $GLOBALS['db']->prepare("SELECT COUNT(*) as total_personel FROM personel WHERE is_active = 1");
     $stmt->execute();
     $personelCount = $stmt->fetch()['total_personel'];
+    $personelStats = ['active_personel' => $personelCount];
     
     // Use hardcoded settings instead of database table
     $settings = [
@@ -26,6 +27,7 @@ try {
     error_log("Settings Data Error: " . $e->getMessage());
     $usersCount = 0;
     $personelCount = 0;
+    $personelStats = ['active_personel' => 0];
     $settings = [];
 }
 ?>
@@ -55,7 +57,7 @@ try {
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Personel Aktif</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($personelStats['active_personel']); ?></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($personelStats['active_personel'] ?? 0); ?></div>
                         <small class="text-muted">Database Real-time</small>
                     </div>
                     <div class="col-auto">
@@ -231,6 +233,167 @@ try {
         </div>
     </div>
 </div>
+
+<!-- Pangkat & Jabatan Management -->
+<div class="row">
+    <div class="col-lg-6 mb-4">
+        <div class="card shadow">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Pengaturan Personel</h6>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <button class="btn btn-primary btn-sm" onclick="managePangkat()">
+                        <i class="fas fa-chevron-up me-2"></i>Kelola Pangkat
+                    </button>
+                    <button class="btn btn-success btn-sm" onclick="addPangkat()">
+                        <i class="fas fa-plus me-2"></i>Tambah Pangkat
+                    </button>
+                </div>
+                
+                <div class="table-responsive mt-3">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Jenis Pangkat</th>
+                                <th>Total</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pangkat Polri</td>
+                                <td><span class="badge bg-primary">22</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-info" onclick="viewPangkat('polri')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pangkat PNS</td>
+                                <td><span class="badge bg-secondary">0</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-info" onclick="viewPangkat('pns')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <hr>
+                
+                <div class="mb-3">
+                    <button class="btn btn-primary btn-sm" onclick="manageJabatan()">
+                        <i class="fas fa-user-tag me-2"></i>Kelola Jabatan
+                    </button>
+                    <button class="btn btn-success btn-sm" onclick="addJabatan()">
+                        <i class="fas fa-plus me-2"></i>Tambah Jabatan
+                    </button>
+                </div>
+                
+                <div class="table-responsive mt-3">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Jenis Jabatan</th>
+                                <th>Total</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jabatan Polri</td>
+                                <td><span class="badge bg-primary">279</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-info" onclick="viewJabatan('polri')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jabatan PNS</td>
+                                <td><span class="badge bg-secondary">0</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-info" onclick="viewJabatan('pns')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jabatan Dinamis</td>
+                                <td><span class="badge bg-success"><?php 
+                                    try {
+                                        $stmt = $GLOBALS['db']->prepare("SELECT COUNT(*) as total FROM dynamic_jabatan");
+                                        $stmt->execute();
+                                        echo $stmt->fetch()['total'];
+                                    } catch(Exception $e) {
+                                        echo '0';
+                                    }
+                                ?></span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-info" onclick="viewJabatan('dynamic')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card shadow">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Struktur Organisasi</h6>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <button class="btn btn-primary btn-sm" onclick="manageStruktur()">
+                        <i class="fas fa-sitemap me-2"></i>Kelola Struktur
+                    </button>
+                    <button class="btn btn-success btn-sm" onclick="addStruktur()">
+                        <i class="fas fa-plus me-2"></i>Tambah Unit
+                    </button>
+                </div>
+                
+                <div class="table-responsive mt-3">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Tipe Kantor</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Polda</td>
+                                <td><span class="badge bg-primary">1</span></td>
+                                <td><span class="badge bg-success">Aktif</span></td>
+                            </tr>
+                            <tr>
+                                <td>Polres</td>
+                                <td><span class="badge bg-info">1</span></td>
+                                <td><span class="badge bg-success">Aktif</span></td>
+                            </tr>
+                            <tr>
+                                <td>Polsek</td>
+                                <td><span class="badge bg-secondary">0</span></td>
+                                <td><span class="badge bg-warning">Belum</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="row">
     <div class="col-lg-6 mb-4">
@@ -412,6 +575,41 @@ function downloadLogs() {
     // TODO: Integration dengan log download
     alert("Fitur download logs akan segera tersedia");
 }
+
+
+// Pangkat & Jabatan Management Functions
+function managePangkat() {
+    alert("Fitur kelola pangkat akan segera tersedia");
+}
+
+function addPangkat() {
+    alert("Fitur tambah pangkat akan segera tersedia");
+}
+
+function viewPangkat(type) {
+    alert("View pangkat " + type + " akan segera tersedia");
+}
+
+function manageJabatan() {
+    alert("Fitur kelola jabatan akan segera tersedia");
+}
+
+function addJabatan() {
+    alert("Fitur tambah jabatan akan segera tersedia");
+}
+
+function viewJabatan(type) {
+    alert("View jabatan " + type + " akan segera tersedia");
+}
+
+function manageStruktur() {
+    alert("Fitur kelola struktur organisasi akan segera tersedia");
+}
+
+function addStruktur() {
+    alert("Fitur tambah unit organisasi akan segera tersedia");
+}
+
 
 function clearLogs() {
     if (confirm("Apakah Anda yakin ingin clear logs?")) {

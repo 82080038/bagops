@@ -7,7 +7,7 @@ ini_set('display_startup_errors', 1);
 require_once 'AuditLogger.php';
 
 class Auth {
-    private $db;
+    public $db;
     private $auditLogger;
 
     public function __construct($database) {

@@ -1,0 +1,8 @@
+ID,"Nama Kantor",Tipe,Klasifikasi,"Level Kompleksitas","Pimpinan Default",Alamat,Telepon,Email,Status,"Jumlah Personel"
+3,"POLSEK HARIAN BOHO",POLSEK,Kecamatan,Rendah,Kompol/AKP,"Jl. Harian Boho, Samosir, Sumatera Utara","(0633) 12347",polsek.harianboho@polri.go.id,aktif,0
+5,"POLSEK ONAN RUNGGU",POLSEK,Kecamatan,Rendah,Kompol/AKP,"Jl. Onan Runggu, Samosir, Sumatera Utara","(0633) 12349",polsek.onanrunggu@polri.go.id,aktif,5
+4,"POLSEK PALIPI",POLSEK,Kecamatan,Rendah,Kompol/AKP,"Jl. Palipi, Samosir, Sumatera Utara","(0633) 12348",polsek.palipi@polri.go.id,aktif,0
+6,"POLSEK PANGURURAN",POLSEK,Kecamatan,Rendah,Kompol/AKP,"Jl. Pangururan, Samosir, Sumatera Utara","(0633) 12350",polsek.pangururan@polri.go.id,aktif,0
+2,"POLSEK SIMANINDO",POLSEK,Kecamatan,Rendah,Kompol/AKP,"Jl. Lintas Samosir, Simanindo, Samosir, Sumatera Utara","(0633) 12346",polsek.simanindo@polri.go.id,aktif,0
+12,"POLSEK TEST",POLSEK,Kecamatan,Rendah,AKP,"Test Address",(0633)99999,test@polri.go.id,aktif,0
+1,"POLRES SAMOSIR",POLRES,Kabupaten/Kota,Menengah,AKBP,"Jl. Sisingamangaraja No. 1, Pangururan, Samosir, Sumatera Utara","(0633) 12345",polres.samosir@polri.go.id,aktif,0

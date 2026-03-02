@@ -2,7 +2,7 @@
 session_start();
 require_once '../config/database.php';
 require_once '../classes/Auth.php';
-require_once '../dashboard/services/dynamic_content_service.php';
+require_once '../services/dynamic_content_service.php';
 
 header('Content-Type: application/json');
 

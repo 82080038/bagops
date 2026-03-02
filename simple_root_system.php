@@ -60,7 +60,7 @@ class SimpleRootPageSystem {
     
     private function hasPageAccess() {
         // Allow pages that exist as templates
-        $allowedPages = ["dashboard", "profile", "help", "reports", "assignments", "operations", "settings", "personel", "personel_ultra", "jabatan_management"];
+        $allowedPages = ["dashboard", "profile", "help", "reports", "assignments", "operations", "settings", "personel", "personel_ultra", "jabatan_management", "kantor", "documents", "reports", "assignments", "settings", "profile", "help"];
         
         if (!in_array($this->currentPage, $allowedPages)) {
             return false;
@@ -68,10 +68,10 @@ class SimpleRootPageSystem {
         
         // For template-only pages, check role permissions directly
         $rolePermissions = [
-            'super_admin' => ["dashboard", "profile", "help", "reports", "assignments", "operations", "settings", "personel", "personel_ultra", "jabatan_management"],
-            'admin' => ['dashboard', 'profile', 'help', 'reports', 'assignments', 'personel', 'personel_ultra'],
-            'kabag_ops' => ['dashboard', 'profile', 'help', 'operations', 'personel', 'personel_ultra'],
-            'user' => ['dashboard', 'profile', 'help', 'personel', 'personel_ultra']
+            'super_admin' => ["dashboard", "kantor", "personel_ultra", "operations", "documents", "assignments", "reports", "settings", "profile", "help"],
+            'admin' => ["dashboard", "personel_ultra", "reports", "assignments", "documents", "profile", "help"],
+            'kabag_ops' => ["dashboard", "personel_ultra", "operations", "documents", "profile", "help"],
+            'user' => ["dashboard", "personel_ultra", "documents", "profile", "help"]
         ];
         
         return in_array($this->currentPage, $rolePermissions[$this->userRole] ?? []);
