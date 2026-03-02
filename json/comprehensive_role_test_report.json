@@ -1,0 +1,46 @@
+{
+    "timestamp": "2026-03-02 01:01:32",
+    "summary": {
+        "total_tests": 21,
+        "passed_tests": 13,
+        "failed_tests": 8,
+        "success_rate": 61.9
+    },
+    "role_results": {
+        "super_admin": {
+            "login": false,
+            "menu": true,
+            "crud": true,
+            "pages": true,
+            "overall": false
+        },
+        "admin": {
+            "login": false,
+            "menu": true,
+            "crud": true,
+            "pages": true,
+            "overall": false
+        },
+        "kabag_ops": {
+            "login": false,
+            "menu": false,
+            "crud": true,
+            "pages": true,
+            "overall": false
+        },
+        "kaur_ops": {
+            "login": false,
+            "menu": false,
+            "crud": true,
+            "pages": true,
+            "overall": false
+        },
+        "user": {
+            "login": false,
+            "menu": false,
+            "crud": true,
+            "pages": true,
+            "overall": false
+        }
+    }
+}

@@ -1,0 +1,6374 @@
+{
+  "metadata": {
+    "title": "Data Personel POLRES SAMOSIR",
+    "version": "1.0",
+    "created_date": "2026-03-02",
+    "description": "Data personel kepolisian yang dikonversi dari Excel",
+    "source_file": "DATA PERS JANUARI 2026 NEW 2.xlsx",
+    "total_records": 257,
+    "last_updated": "2026-03-02T10:18:08.386760",
+    "conversion_method": "Python Pandas Excel to JSON Converter",
+    "includes_structure": true,
+    "structure_added_date": "2026-03-02T10:27:00+07:00"
+  },
+  "data": [
+    {
+      "id": 1,
+      "nomor": 1,
+      "nama": "RINA SRY NIRWANA TARIGAN, S.I.K., M.H.",
+      "pangkat": "AKBP",
+      "nrp": "84031648",
+      "jabatan": "KAPOLRES SAMOSIR",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.337601",
+      "updated_at": "2026-03-02T10:18:08.337627"
+    },
+    {
+      "id": 2,
+      "nomor": 2,
+      "nama": "BRISTON AGUS MUNTECARLO, S.T., S.I.K.",
+      "pangkat": "KOMPOL",
+      "nrp": "83081648",
+      "jabatan": "WAKAPOLRES",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.338106",
+      "updated_at": "2026-03-02T10:18:08.338133"
+    },
+    {
+      "id": 3,
+      "nomor": 3,
+      "nama": "EDUAR, S.H.",
+      "pangkat": "KOMPOL",
+      "nrp": "68100259",
+      "unit": "BAG OPS",
+      "jabatan": "KABAG OPS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.338672",
+      "updated_at": "2026-03-02T10:18:08.338703"
+    },
+    {
+      "id": 4,
+      "nomor": 4,
+      "nama": "PATRI SIHALOHO",
+      "pangkat": "AIPDA",
+      "nrp": "82080038",
+      "unit": "BAG OPS",
+      "jabatan": "PS. PAUR SUBBAGBINOPS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.339184",
+      "updated_at": "2026-03-02T10:18:08.339202"
+    },
+    {
+      "id": 5,
+      "nomor": 5,
+      "nama": "AGUNG NUGRAHA NADAP-DAP",
+      "pangkat": "BRIPDA",
+      "nrp": "02120141",
+      "unit": "BAG OPS",
+      "jabatan": "BA MIN BAG OPS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.339484",
+      "updated_at": "2026-03-02T10:18:08.339493"
+    },
+    {
+      "id": 6,
+      "nomor": 6,
+      "nama": "ALDI PRANATA GINTING",
+      "pangkat": "BRIPDA",
+      "nrp": "03010386",
+      "unit": "BAG OPS",
+      "jabatan": "BA MIN BAG OPS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.339696",
+      "updated_at": "2026-03-02T10:18:08.339705"
+    },
+    {
+      "id": 7,
+      "nomor": 7,
+      "nama": "HENDRIKSON SILALAHI",
+      "pangkat": "BRIPDA",
+      "nrp": "02040489",
+      "unit": "BAG OPS",
+      "jabatan": "BA MIN BAG OPS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.339914",
+      "updated_at": "2026-03-02T10:18:08.339924"
+    },
+    {
+      "id": 8,
+      "nomor": 8,
+      "nama": "TOHONAN SITOHANG",
+      "pangkat": "BRIPDA",
+      "nrp": "02071119",
+      "unit": "BAG OPS",
+      "jabatan": "BA MIN BAG OPS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.340113",
+      "updated_at": "2026-03-02T10:18:08.340121"
+    },
+    {
+      "id": 9,
+      "nomor": 9,
+      "nama": "GILANG SUTOYO",
+      "pangkat": "BRIPDA",
+      "nrp": "03101364",
+      "unit": "BAG OPS",
+      "jabatan": "BA MIN BAG OPS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.340306",
+      "updated_at": "2026-03-02T10:18:08.340314"
+    },
+    {
+      "id": 10,
+      "nomor": 10,
+      "nama": "FERNANDO SILALAHI, A.Md.",
+      "pangkat": "Golongan VII",
+      "nrp": "198112262024211002",
+      "unit": "BAG OPS",
+      "jabatan": "ASN BAG OPS",
+      "kantor": "POLRES SAMOSIR",
+      "keterangan": "P3K/ BKO POLDA",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.340506",
+      "updated_at": "2026-03-02T10:18:08.340515"
+    },
+    {
+      "id": 11,
+      "nomor": 11,
+      "nama": "HENDRI SIAGIAN, S.H.",
+      "pangkat": "IPDA",
+      "nrp": "76030248",
+      "unit": "SPKT",
+      "jabatan": "KA SPKT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.340703",
+      "updated_at": "2026-03-02T10:18:08.340714"
+    },
+    {
+      "id": 12,
+      "nomor": 12,
+      "nama": "DENI MUSTIKA SUKMANA, S.E.",
+      "pangkat": "IPDA",
+      "nrp": "87070134",
+      "unit": "SPKT",
+      "jabatan": "PAMAPTA 1",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.340958",
+      "updated_at": "2026-03-02T10:18:08.340969"
+    },
+    {
+      "id": 13,
+      "nomor": 13,
+      "nama": "JAMIL MUNTHE, S.H., M.H.",
+      "pangkat": "IPDA",
+      "nrp": "85081770",
+      "unit": "SPKT",
+      "jabatan": "PAMAPTA 2",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.341179",
+      "updated_at": "2026-03-02T10:18:08.341191"
+    },
+    {
+      "id": 14,
+      "nomor": 14,
+      "nama": "BULET MARS SWANTO LBN. BATU, S.H.",
+      "pangkat": "IPDA",
+      "nrp": "87030020",
+      "unit": "SPKT",
+      "jabatan": "PAMAPTA 3",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.341412",
+      "updated_at": "2026-03-02T10:18:08.341420"
+    },
+    {
+      "id": 15,
+      "nomor": 15,
+      "nama": "RAMADHAN PUTRA, S.H.",
+      "pangkat": "BRIPTU",
+      "nrp": "96010872",
+      "unit": "SPKT",
+      "jabatan": "BAMIN PAMAPTA 2",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.341616",
+      "updated_at": "2026-03-02T10:18:08.341624"
+    },
+    {
+      "id": 16,
+      "nomor": 16,
+      "nama": "ABEDNEGO TARIGAN",
+      "pangkat": "BRIPTU",
+      "nrp": "98090415",
+      "unit": "SPKT",
+      "jabatan": "BAMIN PAMAPTA 3",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.341825",
+      "updated_at": "2026-03-02T10:18:08.341833"
+    },
+    {
+      "id": 17,
+      "nomor": 17,
+      "nama": "EDY SUSANTO PARDEDE",
+      "pangkat": "BRIPTU",
+      "nrp": "00010166",
+      "unit": "SPKT",
+      "jabatan": "BAMIN PAMAPTA 1",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.342015",
+      "updated_at": "2026-03-02T10:18:08.342023"
+    },
+    {
+      "id": 18,
+      "nomor": 18,
+      "nama": "BOBBY ANGGARA PUTRA SIREGAR",
+      "pangkat": "BRIPDA",
+      "nrp": "98010470",
+      "unit": "SPKT",
+      "jabatan": "BAMIN PAMAPTA 1",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.342192",
+      "updated_at": "2026-03-02T10:18:08.342199"
+    },
+    {
+      "id": 19,
+      "nomor": 19,
+      "nama": "GABRIEL PAULIMA NADEAK",
+      "pangkat": "BRIPDA",
+      "nrp": "01070820",
+      "unit": "SPKT",
+      "jabatan": "OP CALL CENTRE",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.342435",
+      "updated_at": "2026-03-02T10:18:08.342443"
+    },
+    {
+      "id": 20,
+      "nomor": 20,
+      "nama": "ANDRE OWEN PURBA",
+      "pangkat": "BRIPDA",
+      "nrp": "02091526",
+      "unit": "SPKT",
+      "jabatan": "OP CALL CENTRE",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.342639",
+      "updated_at": "2026-03-02T10:18:08.342648"
+    },
+    {
+      "id": 21,
+      "nomor": 21,
+      "nama": "EDWARD FERDINAND SIDABUTAR",
+      "pangkat": "BRIPDA",
+      "nrp": "04070159",
+      "unit": "SPKT",
+      "jabatan": "OP CALL CENTRE",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.342872",
+      "updated_at": "2026-03-02T10:18:08.342884"
+    },
+    {
+      "id": 22,
+      "nomor": 22,
+      "nama": "BIMA SANTO HUTAGAOL",
+      "pangkat": "BRIPDA",
+      "nrp": "03060873",
+      "unit": "SPKT",
+      "jabatan": "OP CALL CENTRE",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.343103",
+      "updated_at": "2026-03-02T10:18:08.343114"
+    },
+    {
+      "id": 23,
+      "nomor": 23,
+      "nama": "KRISTIAN M. H. NABABAN",
+      "pangkat": "BRIPDA",
+      "nrp": "03121291",
+      "unit": "SPKT",
+      "jabatan": "OP CALL CENTRE",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.343320",
+      "updated_at": "2026-03-02T10:18:08.343329"
+    },
+    {
+      "id": 24,
+      "nomor": 24,
+      "nama": "SURUNG SAGALA",
+      "pangkat": "IPDA",
+      "nrp": "72100484",
+      "unit": "BAG REN",
+      "jabatan": "PAURSUBBAGPROGAR",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.343543",
+      "updated_at": "2026-03-02T10:18:08.343553"
+    },
+    {
+      "id": 25,
+      "nomor": 25,
+      "nama": "ZAKHARIA S. I. SIMANJUNTAK, S.H.",
+      "pangkat": "BRIPTU",
+      "nrp": "96090857",
+      "unit": "BAG REN",
+      "jabatan": "BA MIN BAG REN",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.343772",
+      "updated_at": "2026-03-02T10:18:08.343789"
+    },
+    {
+      "id": 26,
+      "nomor": 26,
+      "nama": "GRENIEL WIARTO SIHITE",
+      "pangkat": "BRIPDA",
+      "nrp": "03080202",
+      "unit": "BAG REN",
+      "jabatan": "BA MIN BAG REN",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.344152",
+      "updated_at": "2026-03-02T10:18:08.344177"
+    },
+    {
+      "id": 27,
+      "nomor": 27,
+      "nama": "TARMIZI LUBIS, S.H.",
+      "pangkat": "AKP",
+      "nrp": "73010107",
+      "unit": "BAG SDM",
+      "jabatan": "PS. KABAG SDM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.344468",
+      "updated_at": "2026-03-02T10:18:08.344484"
+    },
+    {
+      "id": 28,
+      "nomor": 28,
+      "nama": "REYMESTA AMBARITA, S.Kom.",
+      "pangkat": "PENDA",
+      "nrp": "`198111252014122004",
+      "unit": "BAG SDM",
+      "jabatan": "PAURSUBBAGBINKAR",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.344773",
+      "updated_at": "2026-03-02T10:18:08.344789"
+    },
+    {
+      "id": 29,
+      "nomor": 29,
+      "nama": "LAMTIO SINAGA, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "97090248",
+      "unit": "BAG SDM",
+      "jabatan": "BA MIN BAG SDM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.345050",
+      "updated_at": "2026-03-02T10:18:08.345060"
+    },
+    {
+      "id": 30,
+      "nomor": 30,
+      "nama": "DODI KURNIADI",
+      "pangkat": "BRIPTU",
+      "nrp": "97120490",
+      "unit": "BAG SDM",
+      "jabatan": "BA MIN BAG SDM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.345308",
+      "updated_at": "2026-03-02T10:18:08.345328"
+    },
+    {
+      "id": 31,
+      "nomor": 31,
+      "nama": "EFRANTA SAPUTRA SITEPU",
+      "pangkat": "BRIPDA",
+      "nrp": "05070285",
+      "unit": "BAG SDM",
+      "jabatan": "BA MIN BAG SDM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.345666",
+      "updated_at": "2026-03-02T10:18:08.345682"
+    },
+    {
+      "id": 32,
+      "nomor": 32,
+      "nama": "RADOS. S. TOGATOROP,S.H.",
+      "pangkat": "AIPDA",
+      "nrp": "86070985",
+      "unit": "BAG SDM",
+      "jabatan": "BA POLRES SAMOSIR",
+      "kantor": "POLRES SAMOSIR",
+      "keterangan": "DIK SIP",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.345933",
+      "updated_at": "2026-03-02T10:18:08.345945"
+    },
+    {
+      "id": 33,
+      "nomor": 33,
+      "nama": "REYSON YOHANNES SIMBOLON",
+      "pangkat": "BRIPDA",
+      "nrp": "00080579",
+      "unit": "BAG SDM",
+      "jabatan": "ADC KAPOLRES",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.346173",
+      "updated_at": "2026-03-02T10:18:08.346182"
+    },
+    {
+      "id": 34,
+      "nomor": 34,
+      "nama": "YOLANDA NAULIVIA ARITONANG",
+      "pangkat": "BRIPDA",
+      "nrp": "03081525",
+      "unit": "BAG SDM",
+      "jabatan": "ADC KAPOLRES",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.346390",
+      "updated_at": "2026-03-02T10:18:08.346402"
+    },
+    {
+      "id": 35,
+      "nomor": 35,
+      "nama": "SYAUQI LUTFI LUBIS, S.H., M.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "95080918",
+      "unit": "BKO",
+      "jabatan": "BA POLRES SAMOSIR",
+      "kantor": "POLRES SAMOSIR",
+      "keterangan": "POLDA SUMUT",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.346612",
+      "updated_at": "2026-03-02T10:18:08.346622"
+    },
+    {
+      "id": 36,
+      "nomor": 36,
+      "nama": "DANIEL BRANDO SIDABUKKE",
+      "pangkat": "BRIGPOL",
+      "nrp": "97050575",
+      "unit": "BKO",
+      "jabatan": "BA POLRES SAMOSIR",
+      "kantor": "POLRES SAMOSIR",
+      "keterangan": "POLDA SUMUT",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.346857",
+      "updated_at": "2026-03-02T10:18:08.346867"
+    },
+    {
+      "id": 37,
+      "nomor": 37,
+      "nama": "SUTRISNO BUTAR-BUTAR, S.H.",
+      "pangkat": "BRIPTU",
+      "nrp": "98010119",
+      "unit": "BKO",
+      "jabatan": "BA POLRES SAMOSIR",
+      "kantor": "POLRES SAMOSIR",
+      "keterangan": "ADC BUPATI",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.347090",
+      "updated_at": "2026-03-02T10:18:08.347100"
+    },
+    {
+      "id": 38,
+      "nomor": 38,
+      "nama": "LEONARDO SINAGA",
+      "pangkat": "AIPDA",
+      "nrp": "81110363",
+      "unit": "PERS MUTASI",
+      "jabatan": "BA POLRES SAMOSIR",
+      "kantor": "POLRES SAMOSIR",
+      "keterangan": "BELUM MENGHADAP",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.347298",
+      "updated_at": "2026-03-02T10:18:08.347307"
+    },
+    {
+      "id": 39,
+      "nomor": 39,
+      "nama": "AWALUDDIN",
+      "pangkat": "IPDA",
+      "nrp": "76040221",
+      "unit": "BAG LOG",
+      "jabatan": "Plt. KASUBBAGBEKPAL",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.347490",
+      "updated_at": "2026-03-02T10:18:08.347499"
+    },
+    {
+      "id": 40,
+      "nomor": 40,
+      "nama": "EFRON SARWEDY SINAGA, S.H.",
+      "pangkat": "BRIPTU",
+      "nrp": "97050588",
+      "unit": "BAG LOG",
+      "jabatan": "BA MIN BAG LOG",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.347687",
+      "updated_at": "2026-03-02T10:18:08.347695"
+    },
+    {
+      "id": 41,
+      "nomor": 41,
+      "nama": "PRIADI MAROJAHAN HUTABARAT",
+      "pangkat": "BRIPTU",
+      "nrp": "00010095",
+      "unit": "BAG LOG",
+      "jabatan": "BA MIN BAG LOG",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.347920",
+      "updated_at": "2026-03-02T10:18:08.347930"
+    },
+    {
+      "id": 42,
+      "nomor": 42,
+      "nama": "CHRIST JERICHO SAPUTRA TAMPUBOLON",
+      "pangkat": "BRIPDA",
+      "nrp": "03070263",
+      "unit": "BAG LOG",
+      "jabatan": "BA MIN BAG LOG",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.348147",
+      "updated_at": "2026-03-02T10:18:08.348157"
+    },
+    {
+      "id": 43,
+      "nomor": 43,
+      "nama": "EFRI PANDI",
+      "pangkat": "AIPDA",
+      "nrp": "86100287",
+      "unit": "SIUM",
+      "jabatan": "PS. KASIUM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.348363",
+      "updated_at": "2026-03-02T10:18:08.348373"
+    },
+    {
+      "id": 44,
+      "nomor": 44,
+      "nama": "YOGI ADE PRATAMA SITOHANG",
+      "pangkat": "BRIPDA",
+      "nrp": "04010804",
+      "unit": "SIUM",
+      "jabatan": "BINTARA SIUM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.348574",
+      "updated_at": "2026-03-02T10:18:08.348584"
+    },
+    {
+      "id": 45,
+      "nomor": 45,
+      "nama": "PENGEJAPEN, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "93100676",
+      "unit": "SIKEU",
+      "jabatan": "PS. KASIKEU",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.348776",
+      "updated_at": "2026-03-02T10:18:08.348783"
+    },
+    {
+      "id": 46,
+      "nomor": 46,
+      "nama": "MUHARRAM SYAHRI, S.H.",
+      "pangkat": "BRIPTU",
+      "nrp": "97050876",
+      "unit": "SIKEU",
+      "jabatan": "BINTARA SIKEU",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.349047",
+      "updated_at": "2026-03-02T10:18:08.349057"
+    },
+    {
+      "id": 47,
+      "nomor": 47,
+      "nama": "M.FATHUR RAHMAN, S.H.",
+      "pangkat": "BRIPTU",
+      "nrp": "97100685",
+      "unit": "SIKEU",
+      "jabatan": "BINTARA SIKEU",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.349365",
+      "updated_at": "2026-03-02T10:18:08.349376"
+    },
+    {
+      "id": 48,
+      "nomor": 48,
+      "nama": "HESKIEL WANDANA MELIALA",
+      "pangkat": "BRIPDA",
+      "nrp": "03070010",
+      "unit": "SIKEU",
+      "jabatan": "BINTARA SIKEU",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.349637",
+      "updated_at": "2026-03-02T10:18:08.349648"
+    },
+    {
+      "id": 49,
+      "nomor": 49,
+      "nama": "DANIEL RICARDO SARAGIH",
+      "pangkat": "BRIPDA",
+      "nrp": "03040138",
+      "unit": "SIKEU",
+      "jabatan": "BINTARA SIKEU",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.349860",
+      "updated_at": "2026-03-02T10:18:08.349867"
+    },
+    {
+      "id": 50,
+      "nomor": 50,
+      "nama": "NENENG GUSNIARTI",
+      "pangkat": "PENATA",
+      "nrp": "197008291993032002",
+      "unit": "SIDOKKES",
+      "jabatan": "KASIDOKKES",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.349999",
+      "updated_at": "2026-03-02T10:18:08.350005"
+    },
+    {
+      "id": 51,
+      "nomor": 51,
+      "nama": "EDDY SURANTA SARAGIH",
+      "pangkat": "BRIPKA",
+      "nrp": "84040532",
+      "unit": "SIDOKKES",
+      "jabatan": "BA SIDOKKES",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.350115",
+      "updated_at": "2026-03-02T10:18:08.350120"
+    },
+    {
+      "id": 52,
+      "nomor": 52,
+      "nama": "BILMAR SITUMORANG",
+      "pangkat": "AIPTU",
+      "nrp": "75060617",
+      "unit": "SIWAS",
+      "jabatan": "Plt. KASIWAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.350226",
+      "updated_at": "2026-03-02T10:18:08.350231"
+    },
+    {
+      "id": 53,
+      "nomor": 53,
+      "nama": "YOHANES EDI SUPRIATNO, S.H., M.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "94080815",
+      "unit": "SIWAS",
+      "jabatan": "BINTARA SIWAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.350336",
+      "updated_at": "2026-03-02T10:18:08.350341"
+    },
+    {
+      "id": 54,
+      "nomor": 54,
+      "nama": "AGUSTIAWAN SINAGA",
+      "pangkat": "BRIGPOL",
+      "nrp": "94080892",
+      "unit": "SIWAS",
+      "jabatan": "BINTARA SIWAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.350446",
+      "updated_at": "2026-03-02T10:18:08.350451"
+    },
+    {
+      "id": 55,
+      "nomor": 55,
+      "nama": "LISTER BROUN SITORUS",
+      "pangkat": "BRIGPOL",
+      "nrp": "93060444",
+      "unit": "SITIK",
+      "jabatan": "BINTARA SITIK",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.350555",
+      "updated_at": "2026-03-02T10:18:08.350560"
+    },
+    {
+      "id": 56,
+      "nomor": 56,
+      "nama": "ANDREAS D. S. SITANGGANG",
+      "pangkat": "BRIPDA",
+      "nrp": "00070791",
+      "unit": "SITIK",
+      "jabatan": "BINTARA SITIK",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.350665",
+      "updated_at": "2026-03-02T10:18:08.350670"
+    },
+    {
+      "id": 57,
+      "nomor": 57,
+      "nama": "JACKSON SIDABUTAR",
+      "pangkat": "BRIPDA",
+      "nrp": "01101139",
+      "unit": "SITIK",
+      "jabatan": "BINTARA SITIK",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.350772",
+      "updated_at": "2026-03-02T10:18:08.350777"
+    },
+    {
+      "id": 58,
+      "nomor": 58,
+      "nama": "PARIMPUNAN SIREGAR",
+      "pangkat": "IPDA",
+      "nrp": "73050261",
+      "unit": "SIKUM",
+      "jabatan": "KASUBSIBANKUM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.350897",
+      "updated_at": "2026-03-02T10:18:08.350902"
+    },
+    {
+      "id": 59,
+      "nomor": 59,
+      "nama": "DANIEL E. LUMBANTORUAN, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "95030599",
+      "unit": "SIKUM",
+      "jabatan": "BINTARA SIKUM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.351006",
+      "updated_at": "2026-03-02T10:18:08.351011"
+    },
+    {
+      "id": 60,
+      "nomor": 60,
+      "nama": "DENNI BOYKE H. SIREGAR, S.H.",
+      "pangkat": "IPDA",
+      "nrp": "76120670",
+      "unit": "SIPROPAM",
+      "jabatan": "PS. KASIPROPAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.351115",
+      "updated_at": "2026-03-02T10:18:08.351120"
+    },
+    {
+      "id": 61,
+      "nomor": 61,
+      "nama": "BENNI ARDINAL, S.H., M.H.",
+      "pangkat": "AIPDA",
+      "nrp": "81010202",
+      "unit": "SIPROPAM",
+      "jabatan": "PS. KANIT PROPOS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.351221",
+      "updated_at": "2026-03-02T10:18:08.351226"
+    },
+    {
+      "id": 62,
+      "nomor": 62,
+      "nama": "AGUSTINUS SINAGA",
+      "pangkat": "AIPDA",
+      "nrp": "85081088",
+      "unit": "SIPROPAM",
+      "jabatan": "PS. KANIT PAMINAL",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.351328",
+      "updated_at": "2026-03-02T10:18:08.351333"
+    },
+    {
+      "id": 63,
+      "nomor": 63,
+      "nama": "RAMBO CISLER NADEAK",
+      "pangkat": "BRIPKA",
+      "nrp": "86081359",
+      "unit": "SIPROPAM",
+      "jabatan": "BINTARA SIPROPAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.351435",
+      "updated_at": "2026-03-02T10:18:08.351440"
+    },
+    {
+      "id": 64,
+      "nomor": 64,
+      "nama": "PERY RAPEN YONES PARDOSI, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "95030796",
+      "unit": "SIPROPAM",
+      "jabatan": "BINTARA SIPROPAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.351542",
+      "updated_at": "2026-03-02T10:18:08.351547"
+    },
+    {
+      "id": 65,
+      "nomor": 65,
+      "nama": "DWI HETRIANDY, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "97070014",
+      "unit": "SIPROPAM",
+      "jabatan": "BINTARA SIPROPAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.351649",
+      "updated_at": "2026-03-02T10:18:08.351654"
+    },
+    {
+      "id": 66,
+      "nomor": 66,
+      "nama": "TRY WIBOWO",
+      "pangkat": "BRIPTU",
+      "nrp": "97120554",
+      "unit": "SIPROPAM",
+      "jabatan": "BINTARA SIPROPAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.351756",
+      "updated_at": "2026-03-02T10:18:08.351761"
+    },
+    {
+      "id": 67,
+      "nomor": 67,
+      "nama": "SIMON TIGRIS SIAGIAN",
+      "pangkat": "BRIPTU",
+      "nrp": "00080343",
+      "unit": "SIPROPAM",
+      "jabatan": "BINTARA SIPROPAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.351892",
+      "updated_at": "2026-03-02T10:18:08.351897"
+    },
+    {
+      "id": 68,
+      "nomor": 68,
+      "nama": "FIRIAN JOSUA SITORUS",
+      "pangkat": "BRIPDA",
+      "nrp": "01080575",
+      "unit": "SIPROPAM",
+      "jabatan": "BINTARA SIPROPAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.351999",
+      "updated_at": "2026-03-02T10:18:08.352004"
+    },
+    {
+      "id": 69,
+      "nomor": 69,
+      "nama": "DION MAR'YANSEN SILITONGA",
+      "pangkat": "BRIGPOL",
+      "nrp": "87030647",
+      "unit": "SIPROPAM",
+      "jabatan": "BA PEMBINAAN",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.352106",
+      "updated_at": "2026-03-02T10:18:08.352111"
+    },
+    {
+      "id": 70,
+      "nomor": 70,
+      "nama": "CLAUDIUS HARIS PARDEDE",
+      "pangkat": "BRIGPOL",
+      "nrp": "89080105",
+      "unit": "SIPROPAM",
+      "jabatan": "BA PEMBINAAN",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.352260",
+      "updated_at": "2026-03-02T10:18:08.352269"
+    },
+    {
+      "id": 71,
+      "nomor": 71,
+      "nama": "RADIAMAN SIMARMATA",
+      "pangkat": "AKP",
+      "nrp": "70010290",
+      "unit": "SIHUMAS",
+      "jabatan": "KASIHUMAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.352419",
+      "updated_at": "2026-03-02T10:18:08.352425"
+    },
+    {
+      "id": 72,
+      "nomor": 72,
+      "nama": "GUNAWAN SITUMORANG",
+      "pangkat": "BRIGPOL",
+      "nrp": "93030551",
+      "unit": "SIHUMAS",
+      "jabatan": "BINTARA SIHUMAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.352532",
+      "updated_at": "2026-03-02T10:18:08.352537"
+    },
+    {
+      "id": 73,
+      "nomor": 73,
+      "nama": "DANIEL BAHTERA SINAGA",
+      "pangkat": "BRIPTU",
+      "nrp": "98091488",
+      "unit": "SIHUMAS",
+      "jabatan": "BINTARA SIHUMAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.352640",
+      "updated_at": "2026-03-02T10:18:08.352645"
+    },
+    {
+      "id": 74,
+      "nomor": 74,
+      "nama": "HORAS LARIUS SITUMORANG",
+      "pangkat": "IPDA",
+      "nrp": "75120560",
+      "unit": "SAT BINMAS",
+      "jabatan": "KAURBINOPS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.352753",
+      "updated_at": "2026-03-02T10:18:08.352759"
+    },
+    {
+      "id": 75,
+      "nomor": 75,
+      "nama": "JEFTA OCTAVIANUS NICO SIANTURI",
+      "pangkat": "BRIGPOL",
+      "nrp": "95090650",
+      "unit": "SAT BINMAS",
+      "jabatan": "BINTARA SAT BINMAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.352888",
+      "updated_at": "2026-03-02T10:18:08.352895"
+    },
+    {
+      "id": 76,
+      "nomor": 76,
+      "nama": "SAHAT MARULI TUA SINAGA, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "94091146",
+      "unit": "SAT BINMAS",
+      "jabatan": "BINTARA SAT BINMAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.353005",
+      "updated_at": "2026-03-02T10:18:08.353010"
+    },
+    {
+      "id": 77,
+      "nomor": 77,
+      "nama": "RONAL PARTOGI SITUMORANG",
+      "pangkat": "BRIPDA",
+      "nrp": "04020118",
+      "unit": "SAT BINMAS",
+      "jabatan": "BINTARA SAT BINMAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.353117",
+      "updated_at": "2026-03-02T10:18:08.353123"
+    },
+    {
+      "id": 78,
+      "nomor": 78,
+      "nama": "DONAL P. SITANGGANG, S.H., M.H.",
+      "pangkat": "IPTU",
+      "nrp": "82070670",
+      "unit": "SAT INTELKAM",
+      "jabatan": "PS. KASAT INTELKAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.353229",
+      "updated_at": "2026-03-02T10:18:08.353234"
+    },
+    {
+      "id": 79,
+      "nomor": 79,
+      "nama": "MUHAMMAD YUNUS LUBIS, S.H.",
+      "pangkat": "IPDA",
+      "nrp": "85050489",
+      "unit": "SAT INTELKAM",
+      "jabatan": "KAURBINOPS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.353337",
+      "updated_at": "2026-03-02T10:18:08.353342"
+    },
+    {
+      "id": 80,
+      "nomor": 80,
+      "nama": "MARBETA S. SIANIPAR, S.H.",
+      "pangkat": "AIPDA",
+      "nrp": "80070348",
+      "unit": "SAT INTELKAM",
+      "jabatan": "PS. KAURMINTU",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.353444",
+      "updated_at": "2026-03-02T10:18:08.353450"
+    },
+    {
+      "id": 81,
+      "nomor": 81,
+      "nama": "SITARDA AKABRI SIBUEA",
+      "pangkat": "AIPDA",
+      "nrp": "87080112",
+      "unit": "SAT INTELKAM",
+      "jabatan": "PS. KANIT 3",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.353552",
+      "updated_at": "2026-03-02T10:18:08.353558"
+    },
+    {
+      "id": 82,
+      "nomor": 82,
+      "nama": "CINTER ROKHY SINAGA",
+      "pangkat": "BRIPKA",
+      "nrp": "87051430",
+      "unit": "SAT INTELKAM",
+      "jabatan": "PS. KANIT 1",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.353660",
+      "updated_at": "2026-03-02T10:18:08.353666"
+    },
+    {
+      "id": 83,
+      "nomor": 83,
+      "nama": "VANDU P. MARPAUNG",
+      "pangkat": "BRIPKA",
+      "nrp": "90080088",
+      "unit": "SAT INTELKAM",
+      "jabatan": "PS. KANIT 2",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.353772",
+      "updated_at": "2026-03-02T10:18:08.353777"
+    },
+    {
+      "id": 84,
+      "nomor": 84,
+      "nama": "ALFONSIUS GULTOM, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "93080556",
+      "unit": "SAT INTELKAM",
+      "jabatan": "BINTARA SAT INTELKAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.353958",
+      "updated_at": "2026-03-02T10:18:08.353966"
+    },
+    {
+      "id": 85,
+      "nomor": 85,
+      "nama": "TRIFIKO P. NAINGGOLAN, S.H.",
+      "pangkat": "BRIPTU",
+      "nrp": "97040848",
+      "unit": "SAT INTELKAM",
+      "jabatan": "BINTARA SATINTELKAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.354081",
+      "updated_at": "2026-03-02T10:18:08.354087"
+    },
+    {
+      "id": 86,
+      "nomor": 86,
+      "nama": "ANDRI AFRIJAL SIMARMATA",
+      "pangkat": "BRIPTU",
+      "nrp": "98110618",
+      "unit": "SAT INTELKAM",
+      "jabatan": "BINTARA SATINTELKAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.354194",
+      "updated_at": "2026-03-02T10:18:08.354200"
+    },
+    {
+      "id": 87,
+      "nomor": 87,
+      "nama": "DIEN VAROSCY I. SITUMORANG",
+      "pangkat": "BRIPDA",
+      "nrp": "02030032",
+      "unit": "SAT INTELKAM",
+      "jabatan": "BINTARA SATINTELKAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.354306",
+      "updated_at": "2026-03-02T10:18:08.354312"
+    },
+    {
+      "id": 88,
+      "nomor": 88,
+      "nama": "ARDY TRIANO MALAU",
+      "pangkat": "BRIPDA",
+      "nrp": "02120339",
+      "unit": "SAT INTELKAM",
+      "jabatan": "BINTARA SATINTELKAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.354418",
+      "updated_at": "2026-03-02T10:18:08.354424"
+    },
+    {
+      "id": 89,
+      "nomor": 89,
+      "nama": "JUNEDI SAGALA",
+      "pangkat": "BRIPDA",
+      "nrp": "02040459",
+      "unit": "SAT INTELKAM",
+      "jabatan": "BINTARA SATINTELKAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.354530",
+      "updated_at": "2026-03-02T10:18:08.354536"
+    },
+    {
+      "id": 90,
+      "nomor": 90,
+      "nama": "GABRIEL SEBASTIAN SIREGAR",
+      "pangkat": "BRIPDA",
+      "nrp": "02101010",
+      "unit": "SAT INTELKAM",
+      "jabatan": "BINTARA SATINTELKAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.354643",
+      "updated_at": "2026-03-02T10:18:08.354648"
+    },
+    {
+      "id": 91,
+      "nomor": 91,
+      "nama": "RIO F. T ERENST PANJAITAN",
+      "pangkat": "BRIPDA",
+      "nrp": "04020209",
+      "unit": "SAT INTELKAM",
+      "jabatan": "BINTARA SATINTELKAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.354752",
+      "updated_at": "2026-03-02T10:18:08.354758"
+    },
+    {
+      "id": 92,
+      "nomor": 92,
+      "nama": "AGHEO HARMANA JOUSTRA SINURAYA",
+      "pangkat": "BRIPDA",
+      "nrp": "04080118",
+      "unit": "SAT INTELKAM",
+      "jabatan": "BINTARA SAT INTELKAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.354919",
+      "updated_at": "2026-03-02T10:18:08.354925"
+    },
+    {
+      "id": 93,
+      "nomor": 93,
+      "nama": "SAMUEL RINALDI PAKPAHAN",
+      "pangkat": "BRIPDA",
+      "nrp": "04010932",
+      "unit": "SAT INTELKAM",
+      "jabatan": "BINTARA SAT INTELKAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.355032",
+      "updated_at": "2026-03-02T10:18:08.355037"
+    },
+    {
+      "id": 94,
+      "nomor": 94,
+      "nama": "RAYMONTIUS HAROMUNTE",
+      "pangkat": "BRIPDA",
+      "nrp": "04040520",
+      "unit": "SAT INTELKAM",
+      "jabatan": "BINTARA SAT INTELKAM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.355145",
+      "updated_at": "2026-03-02T10:18:08.355150"
+    },
+    {
+      "id": 95,
+      "nomor": 95,
+      "nama": "EDWARD SIDAURUK, S.E., M.M.",
+      "pangkat": "AKP",
+      "nrp": "79120994",
+      "unit": "SAT RESKRIM",
+      "jabatan": "KASAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.355254",
+      "updated_at": "2026-03-02T10:18:08.355259"
+    },
+    {
+      "id": 96,
+      "nomor": 96,
+      "nama": "DARMONO SAMOSIR, S.H.",
+      "pangkat": "IPDA",
+      "nrp": "76020196",
+      "unit": "SAT RESKRIM",
+      "jabatan": "KANITIDIK 3",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.355362",
+      "updated_at": "2026-03-02T10:18:08.355367"
+    },
+    {
+      "id": 97,
+      "nomor": 97,
+      "nama": "ROYANTO PURBA, S.H.",
+      "pangkat": "IPDA",
+      "nrp": "83010825",
+      "unit": "SAT RESKRIM",
+      "jabatan": "KANITIDIK 4",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.355469",
+      "updated_at": "2026-03-02T10:18:08.355475"
+    },
+    {
+      "id": 98,
+      "nomor": 98,
+      "nama": "SUHADIYANTO, S.H.",
+      "pangkat": "IPDA",
+      "nrp": "83120602",
+      "unit": "SAT RESKRIM",
+      "jabatan": "KANITIDIK 1",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.355578",
+      "updated_at": "2026-03-02T10:18:08.355583"
+    },
+    {
+      "id": 99,
+      "nomor": 99,
+      "nama": "KUICAN SIMANJUNTAK",
+      "pangkat": "BRIPKA",
+      "nrp": "88060535",
+      "unit": "SAT RESKRIM",
+      "jabatan": "KANITIDIK 5",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.355687",
+      "updated_at": "2026-03-02T10:18:08.355693"
+    },
+    {
+      "id": 100,
+      "nomor": 100,
+      "nama": "MARTIN HABENSONY ARITONANG",
+      "pangkat": "AIPTU",
+      "nrp": "79030434",
+      "unit": "SAT RESKRIM",
+      "jabatan": "PS. KANITIDIK 2",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.355814",
+      "updated_at": "2026-03-02T10:18:08.355822"
+    },
+    {
+      "id": 101,
+      "nomor": 101,
+      "nama": "HENRY SIPAKKAR",
+      "pangkat": "AIPTU",
+      "nrp": "83060084",
+      "unit": "SAT RESKRIM",
+      "jabatan": "PS. KANIT IDENTIFIKASI",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.355946",
+      "updated_at": "2026-03-02T10:18:08.355951"
+    },
+    {
+      "id": 102,
+      "nomor": 102,
+      "nama": "CHANDRA HUTAPEA",
+      "pangkat": "BRIPKA",
+      "nrp": "87011165",
+      "unit": "SAT RESKRIM",
+      "jabatan": "PS. KAURMINTU",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.356056",
+      "updated_at": "2026-03-02T10:18:08.356061"
+    },
+    {
+      "id": 103,
+      "nomor": 103,
+      "nama": "CHANDRA BARIMBING",
+      "pangkat": "BRIPKA",
+      "nrp": "89030401",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.356165",
+      "updated_at": "2026-03-02T10:18:08.356170"
+    },
+    {
+      "id": 104,
+      "nomor": 104,
+      "nama": "DEDY SAOLOAN SIGALINGGING",
+      "pangkat": "BRIPKA",
+      "nrp": "87041596",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.356273",
+      "updated_at": "2026-03-02T10:18:08.356278"
+    },
+    {
+      "id": 105,
+      "nomor": 105,
+      "nama": "ISWAN LUKITO",
+      "pangkat": "BRIPKA",
+      "nrp": "82050798",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.356380",
+      "updated_at": "2026-03-02T10:18:08.356386"
+    },
+    {
+      "id": 106,
+      "nomor": 106,
+      "nama": "RONI HANSVERI BANJARNAHOR",
+      "pangkat": "BRIGPOL",
+      "nrp": "95030238",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.356489",
+      "updated_at": "2026-03-02T10:18:08.356494"
+    },
+    {
+      "id": 107,
+      "nomor": 107,
+      "nama": "RODEN SUANDI TURNIP",
+      "pangkat": "BRIGPOL",
+      "nrp": "94020506",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.356596",
+      "updated_at": "2026-03-02T10:18:08.356602"
+    },
+    {
+      "id": 108,
+      "nomor": 108,
+      "nama": "SAPUTRA, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "94121145",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.356705",
+      "updated_at": "2026-03-02T10:18:08.356710"
+    },
+    {
+      "id": 109,
+      "nomor": 109,
+      "nama": "DIAN LESTARI GULTOM, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "95100554",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.356849",
+      "updated_at": "2026-03-02T10:18:08.356857"
+    },
+    {
+      "id": 110,
+      "nomor": 110,
+      "nama": "ARGIO SIMBOLON",
+      "pangkat": "BRIGPOL",
+      "nrp": "95110886",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.357053",
+      "updated_at": "2026-03-02T10:18:08.357062"
+    },
+    {
+      "id": 111,
+      "nomor": 111,
+      "nama": "EKO DAHANA PARDEDE, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "97070616",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.357239",
+      "updated_at": "2026-03-02T10:18:08.357246"
+    },
+    {
+      "id": 112,
+      "nomor": 112,
+      "nama": "GIDEON AFRIADI LUMBAN RAJA",
+      "pangkat": "BRIPTU",
+      "nrp": "97040728",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.357362",
+      "updated_at": "2026-03-02T10:18:08.357379"
+    },
+    {
+      "id": 113,
+      "nomor": 113,
+      "nama": "FACHRUL REZA SILALAHI",
+      "pangkat": "BRIPTU",
+      "nrp": "98090397",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.357479",
+      "updated_at": "2026-03-02T10:18:08.357484"
+    },
+    {
+      "id": 114,
+      "nomor": 114,
+      "nama": "RIDHOTUA F. SITANGGANG",
+      "pangkat": "BRIPTU",
+      "nrp": "00030346",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.357580",
+      "updated_at": "2026-03-02T10:18:08.357584"
+    },
+    {
+      "id": 115,
+      "nomor": 115,
+      "nama": "NICHO FERNANDO SARAGIH",
+      "pangkat": "BRIPTU",
+      "nrp": "00110362",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.357682",
+      "updated_at": "2026-03-02T10:18:08.357686"
+    },
+    {
+      "id": 116,
+      "nomor": 116,
+      "nama": "ADI P.S. MARBUN",
+      "pangkat": "BRIPTU",
+      "nrp": "00090499",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.357818",
+      "updated_at": "2026-03-02T10:18:08.357823"
+    },
+    {
+      "id": 117,
+      "nomor": 117,
+      "nama": "PRIYATAMA ABDILLAH HARAHAP",
+      "pangkat": "BRIPDA",
+      "nrp": "01120358",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.357929",
+      "updated_at": "2026-03-02T10:18:08.357934"
+    },
+    {
+      "id": 118,
+      "nomor": 118,
+      "nama": "RIZKI AFRIZAL SIMANJUNTAK",
+      "pangkat": "BRIPDA",
+      "nrp": "01070839",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.358035",
+      "updated_at": "2026-03-02T10:18:08.358040"
+    },
+    {
+      "id": 119,
+      "nomor": 119,
+      "nama": "MIDUK YUDIANTO SINAGA",
+      "pangkat": "BRIPDA",
+      "nrp": "01060553",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.358141",
+      "updated_at": "2026-03-02T10:18:08.358147"
+    },
+    {
+      "id": 120,
+      "nomor": 120,
+      "nama": "FRAN'S ALEXANDER SIANIPAR",
+      "pangkat": "BRIPDA",
+      "nrp": "02110342",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.358248",
+      "updated_at": "2026-03-02T10:18:08.358254"
+    },
+    {
+      "id": 121,
+      "nomor": 121,
+      "nama": "RAFFLES SIJABAT",
+      "pangkat": "BRIPDA",
+      "nrp": "01110817",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.358355",
+      "updated_at": "2026-03-02T10:18:08.358361"
+    },
+    {
+      "id": 122,
+      "nomor": 122,
+      "nama": "HERIANTA TARIGAN",
+      "pangkat": "BRIPDA",
+      "nrp": "01091201",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.358510",
+      "updated_at": "2026-03-02T10:18:08.358516"
+    },
+    {
+      "id": 123,
+      "nomor": 123,
+      "nama": "RICKY AGATHA GINTING",
+      "pangkat": "BRIPDA",
+      "nrp": "03030809",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.358639",
+      "updated_at": "2026-03-02T10:18:08.358644"
+    },
+    {
+      "id": 124,
+      "nomor": 124,
+      "nama": "CHRISTIAN PROSPEROUS SIMANUNGKALIT",
+      "pangkat": "BRIPDA",
+      "nrp": "03020368",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.358741",
+      "updated_at": "2026-03-02T10:18:08.358746"
+    },
+    {
+      "id": 125,
+      "nomor": 125,
+      "nama": "PINIEL RAJAGUKGUK",
+      "pangkat": "BRIPDA",
+      "nrp": "04020196",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.358879",
+      "updated_at": "2026-03-02T10:18:08.358884"
+    },
+    {
+      "id": 126,
+      "nomor": 126,
+      "nama": "REZA SIREGAR",
+      "pangkat": "BRIPDA",
+      "nrp": "03090568",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.358980",
+      "updated_at": "2026-03-02T10:18:08.358985"
+    },
+    {
+      "id": 127,
+      "nomor": 127,
+      "nama": "ANDRE YEHEZKIEL HUTABARAT",
+      "pangkat": "BRIPDA",
+      "nrp": "04060050",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.359079",
+      "updated_at": "2026-03-02T10:18:08.359084"
+    },
+    {
+      "id": 128,
+      "nomor": 128,
+      "nama": "RAYMOND VAN HEZEKIEL SIAHAAN",
+      "pangkat": "BRIPDA",
+      "nrp": "04031206",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.359179",
+      "updated_at": "2026-03-02T10:18:08.359183"
+    },
+    {
+      "id": 129,
+      "nomor": 129,
+      "nama": "M. ALAMSYAH PRAYOGA TAMBUNAN",
+      "pangkat": "BRIPDA",
+      "nrp": "05080602",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.359278",
+      "updated_at": "2026-03-02T10:18:08.359283"
+    },
+    {
+      "id": 130,
+      "nomor": 130,
+      "nama": "IRVAN SYAPUTRA MALAU",
+      "pangkat": "BRIPDA",
+      "nrp": "04090567",
+      "unit": "SAT RESKRIM",
+      "jabatan": "BINTARA SAT RESKRIM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.359390",
+      "updated_at": "2026-03-02T10:18:08.359396"
+    },
+    {
+      "id": 131,
+      "nomor": 131,
+      "nama": "FERRY ARIANDY, S.H., M.H",
+      "pangkat": "AKP",
+      "nrp": "79060034",
+      "unit": "SAT RESNARKOBA",
+      "jabatan": "KASATRESNARKOBA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.359538",
+      "updated_at": "2026-03-02T10:18:08.359544"
+    },
+    {
+      "id": 132,
+      "nomor": 132,
+      "nama": "ALVIUS KRISTIAN GINTING, S.H.",
+      "pangkat": "IPDA",
+      "nrp": "88100591",
+      "unit": "SAT RESNARKOBA",
+      "jabatan": "KAURBINOPS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.359649",
+      "updated_at": "2026-03-02T10:18:08.359655"
+    },
+    {
+      "id": 133,
+      "nomor": 133,
+      "nama": "BENNY SITUMORANG, S.H.",
+      "pangkat": "BRIPKA",
+      "nrp": "89010155",
+      "unit": "SAT RESNARKOBA",
+      "jabatan": "PS.KANIT IDIK 1",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.359882",
+      "updated_at": "2026-03-02T10:18:08.359888"
+    },
+    {
+      "id": 134,
+      "nomor": 134,
+      "nama": "EKO PUTRA DAMANIK, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "93050797",
+      "unit": "SAT RESNARKOBA",
+      "jabatan": "BINTARA SATRESNARKOBA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.359997",
+      "updated_at": "2026-03-02T10:18:08.360002"
+    },
+    {
+      "id": 135,
+      "nomor": 135,
+      "nama": "MAY FRANSISCO SIAGIAN, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "91050361",
+      "unit": "SAT RESNARKOBA",
+      "jabatan": "BINTARA SATRESNARKOBA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.360106",
+      "updated_at": "2026-03-02T10:18:08.360111"
+    },
+    {
+      "id": 136,
+      "nomor": 136,
+      "nama": "ROBERTO MANALU",
+      "pangkat": "BRIPTU",
+      "nrp": "94090839",
+      "unit": "SAT RESNARKOBA",
+      "jabatan": "BINTARA SATRESNARKOBA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.360214",
+      "updated_at": "2026-03-02T10:18:08.360219"
+    },
+    {
+      "id": 137,
+      "nomor": 137,
+      "nama": "M. RONALD FAHROZI HARAHAP, S.H.",
+      "pangkat": "BRIPTU",
+      "nrp": "98110378",
+      "unit": "SAT RESNARKOBA",
+      "jabatan": "BINTARA SATRESNARKOBA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.360320",
+      "updated_at": "2026-03-02T10:18:08.360326"
+    },
+    {
+      "id": 138,
+      "nomor": 138,
+      "nama": "HERIANTO EFENDI, S.H.",
+      "pangkat": "BRIPTU",
+      "nrp": "97020694",
+      "unit": "SAT RESNARKOBA",
+      "jabatan": "BINTARA SATRESNARKOBA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.360427",
+      "updated_at": "2026-03-02T10:18:08.360434"
+    },
+    {
+      "id": 139,
+      "nomor": 139,
+      "nama": "TEDDI PARNASIPAN TOGATOROP",
+      "pangkat": "BRIPDA",
+      "nrp": "02120224",
+      "unit": "SAT RESNARKOBA",
+      "jabatan": "BINTARA SATRESNARKOBA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.360558",
+      "updated_at": "2026-03-02T10:18:08.360568"
+    },
+    {
+      "id": 140,
+      "nomor": 140,
+      "nama": "ONDIHON SIMBOLON",
+      "pangkat": "BRIPDA",
+      "nrp": "02090838",
+      "unit": "SAT RESNARKOBA",
+      "jabatan": "BINTARA SATRESNARKOBA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.360691",
+      "updated_at": "2026-03-02T10:18:08.360697"
+    },
+    {
+      "id": 141,
+      "nomor": 141,
+      "nama": "IVAN SIGOP SIHOMBING",
+      "pangkat": "BRIPDA",
+      "nrp": "05080131",
+      "unit": "SAT RESNARKOBA",
+      "jabatan": "BINTARA SATRESNARKOBA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.360985",
+      "updated_at": "2026-03-02T10:18:08.360994"
+    },
+    {
+      "id": 142,
+      "nomor": 142,
+      "nama": "NANDI BUTAR-BUTAR, S.H.",
+      "pangkat": "AKP",
+      "nrp": "80080676",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "KASAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.361297",
+      "updated_at": "2026-03-02T10:18:08.361311"
+    },
+    {
+      "id": 143,
+      "nomor": 143,
+      "nama": "BARTO ANTONIUS SIMALANGO",
+      "pangkat": "AIPTU",
+      "nrp": "80050867",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "PS. KAURBINOPS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.361534",
+      "updated_at": "2026-03-02T10:18:08.361544"
+    },
+    {
+      "id": 144,
+      "nomor": 144,
+      "nama": "HASUDUNGAN SILITONGA",
+      "pangkat": "AIPDA",
+      "nrp": "73040390",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "PS. KANIT DALMAS 2",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.361676",
+      "updated_at": "2026-03-02T10:18:08.361683"
+    },
+    {
+      "id": 145,
+      "nomor": 145,
+      "nama": "JHONNY LEONARDO SILALAHI",
+      "pangkat": "BRIPKA",
+      "nrp": "85090954",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "PS. KANIT TURJAWALI",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.361838",
+      "updated_at": "2026-03-02T10:18:08.361851"
+    },
+    {
+      "id": 146,
+      "nomor": 146,
+      "nama": "ASRIL",
+      "pangkat": "BRIPKA",
+      "nrp": "83081051",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "BINTARA SAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.362076",
+      "updated_at": "2026-03-02T10:18:08.362088"
+    },
+    {
+      "id": 147,
+      "nomor": 147,
+      "nama": "INDIRWAN FRIDERICK, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "94110350",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "BINTARA SAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.362275",
+      "updated_at": "2026-03-02T10:18:08.362283"
+    },
+    {
+      "id": 148,
+      "nomor": 148,
+      "nama": "EGIDIUM BRAUN SILITONGA",
+      "pangkat": "BRIGPOL",
+      "nrp": "93100793",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "BINTARA SAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.362479",
+      "updated_at": "2026-03-02T10:18:08.362488"
+    },
+    {
+      "id": 149,
+      "nomor": 149,
+      "nama": "DINAMIKA JAYA NEGARA SITANGGANG",
+      "pangkat": "BRIPDA",
+      "nrp": "97100701",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "BINTARA SAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.362674",
+      "updated_at": "2026-03-02T10:18:08.362684"
+    },
+    {
+      "id": 150,
+      "nomor": 150,
+      "nama": "ZULKIFLI NASUTION",
+      "pangkat": "BRIPDA",
+      "nrp": "02051553",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "BINTARA SAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.362909",
+      "updated_at": "2026-03-02T10:18:08.362920"
+    },
+    {
+      "id": 151,
+      "nomor": 151,
+      "nama": "WIRA HARZITA",
+      "pangkat": "BRIPDA",
+      "nrp": "05051087",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "BINTARA SAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.363123",
+      "updated_at": "2026-03-02T10:18:08.363134"
+    },
+    {
+      "id": 152,
+      "nomor": 152,
+      "nama": "RAHMAT ANDRIAN TAMBUNAN",
+      "pangkat": "BRIPDA",
+      "nrp": "06100189",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "BINTARA SAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.363335",
+      "updated_at": "2026-03-02T10:18:08.363345"
+    },
+    {
+      "id": 153,
+      "nomor": 153,
+      "nama": "JONATAN DWI SAPUTRA PARAPAT",
+      "pangkat": "BRIPDA",
+      "nrp": "07080045",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "BINTARA SAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.363545",
+      "updated_at": "2026-03-02T10:18:08.363554"
+    },
+    {
+      "id": 154,
+      "nomor": 154,
+      "nama": "PERDANA NIKOLA SEMBIRING",
+      "pangkat": "BRIPDA",
+      "nrp": "04051595",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "BINTARA SAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.363752",
+      "updated_at": "2026-03-02T10:18:08.363761"
+    },
+    {
+      "id": 155,
+      "nomor": 155,
+      "nama": "PETRUS SURIA HUGALUNG",
+      "pangkat": "BRIPDA",
+      "nrp": "04081205",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "BINTARA SAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.364000",
+      "updated_at": "2026-03-02T10:18:08.364010"
+    },
+    {
+      "id": 156,
+      "nomor": 156,
+      "nama": "RAFAEL ARSANLILO SINULINGGA",
+      "pangkat": "BRIPDA",
+      "nrp": "06010414",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "BINTARA SAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.364210",
+      "updated_at": "2026-03-02T10:18:08.364218"
+    },
+    {
+      "id": 157,
+      "nomor": 157,
+      "nama": "RAJASPER SIRINGORINGO",
+      "pangkat": "BRIPDA",
+      "nrp": "06090021",
+      "unit": "SAT SAMAPTA",
+      "jabatan": "BINTARA SAT SAMAPTA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.364409",
+      "updated_at": "2026-03-02T10:18:08.364418"
+    },
+    {
+      "id": 158,
+      "nomor": 158,
+      "nama": "TANGIO HAOJAHAN SITANGGANG, S.H.",
+      "pangkat": "IPTU",
+      "nrp": "72100604",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "KASAT PAMOBVIT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.364622",
+      "updated_at": "2026-03-02T10:18:08.364630"
+    },
+    {
+      "id": 159,
+      "nomor": 159,
+      "nama": "MARUBA NAINGGOLAN",
+      "pangkat": "AIPTU",
+      "nrp": "80100836",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "PS. KANITPAMWASTER",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.364863",
+      "updated_at": "2026-03-02T10:18:08.364872"
+    },
+    {
+      "id": 160,
+      "nomor": 160,
+      "nama": "ROY HARIS ST. SIMAREMARE",
+      "pangkat": "AIPDA",
+      "nrp": "85030645",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "PS. KANITPAMWISATA",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.365068",
+      "updated_at": "2026-03-02T10:18:08.365078"
+    },
+    {
+      "id": 161,
+      "nomor": 161,
+      "nama": "M. DENY WAHYU",
+      "pangkat": "AIPDA",
+      "nrp": "80050898",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "PS. PANIT PAMWASTER",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.365284",
+      "updated_at": "2026-03-02T10:18:08.365295"
+    },
+    {
+      "id": 162,
+      "nomor": 162,
+      "nama": "HENRI F. SIANIPAR",
+      "pangkat": "AIPTU",
+      "nrp": "83050202",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "BINTARA SAT PAMOBVIT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.365510",
+      "updated_at": "2026-03-02T10:18:08.365519"
+    },
+    {
+      "id": 163,
+      "nomor": 163,
+      "nama": "BUYUNG ANDRYANTO",
+      "pangkat": "BRIPKA",
+      "nrp": "85121325",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "PS. KAURMINTU",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.365711",
+      "updated_at": "2026-03-02T10:18:08.365718"
+    },
+    {
+      "id": 164,
+      "nomor": 164,
+      "nama": "RIANTO SITANGGANG",
+      "pangkat": "BRIGPOL",
+      "nrp": "91110130",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "BINTARA SAT PAMOBVIT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.365940",
+      "updated_at": "2026-03-02T10:18:08.365949"
+    },
+    {
+      "id": 165,
+      "nomor": 165,
+      "nama": "ROY NANDA SEMBIRING KEMBAREN",
+      "pangkat": "BRIGPOL",
+      "nrp": "94090948",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "BINTARA SAT PAMOBVIT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.366140",
+      "updated_at": "2026-03-02T10:18:08.366149"
+    },
+    {
+      "id": 166,
+      "nomor": 166,
+      "nama": "CANDRA SILALAHI, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "96031057",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "BINTARA SAT PAMOBVIT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.366328",
+      "updated_at": "2026-03-02T10:18:08.366337"
+    },
+    {
+      "id": 167,
+      "nomor": 167,
+      "nama": "HORAS J.M. ARITONANG",
+      "pangkat": "BRIPDA",
+      "nrp": "01060884",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "BINTARA SAT PAMOBVIT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.366570",
+      "updated_at": "2026-03-02T10:18:08.366587"
+    },
+    {
+      "id": 168,
+      "nomor": 168,
+      "nama": "YUNUS SAMDIO SIDABUTAR",
+      "pangkat": "BRIPDA",
+      "nrp": "02100599",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "BINTARA SAT PAMOBVIT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.367059",
+      "updated_at": "2026-03-02T10:18:08.367084"
+    },
+    {
+      "id": 169,
+      "nomor": 169,
+      "nama": "RAINHEART SITANGGANG",
+      "pangkat": "BRIPDA",
+      "nrp": "03010565",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "BINTARA SAT PAMOBVIT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.367574",
+      "updated_at": "2026-03-02T10:18:08.367595"
+    },
+    {
+      "id": 170,
+      "nomor": 170,
+      "nama": "BONIFASIUS NAINGGOLAN",
+      "pangkat": "BRIPDA",
+      "nrp": "02011312",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "BINTARA SAT PAMOBVIT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.367976",
+      "updated_at": "2026-03-02T10:18:08.367990"
+    },
+    {
+      "id": 171,
+      "nomor": 171,
+      "nama": "RAY YONDO SIAHAAN",
+      "pangkat": "BRIPDA",
+      "nrp": "00080816",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "BINTARA SAT PAMOBVIT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.368267",
+      "updated_at": "2026-03-02T10:18:08.368278"
+    },
+    {
+      "id": 172,
+      "nomor": 172,
+      "nama": "REDY EZRA JONATHAN",
+      "pangkat": "BRIPDA",
+      "nrp": "03040947",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "BINTARA SAT PAMOBVIT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.368502",
+      "updated_at": "2026-03-02T10:18:08.368512"
+    },
+    {
+      "id": 173,
+      "nomor": 173,
+      "nama": "CHARLY H. ARITONANG",
+      "pangkat": "BRIPDA",
+      "nrp": "04100485",
+      "unit": "SATPAMOBVIT",
+      "jabatan": "BINTARA SAT PAMOBVIT",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.368730",
+      "updated_at": "2026-03-02T10:18:08.368739"
+    },
+    {
+      "id": 174,
+      "nomor": 174,
+      "nama": "NATANAIL SURBAKTI, S.H",
+      "pangkat": "AKP",
+      "nrp": "79120800",
+      "unit": "SAT LANTAS",
+      "jabatan": "KASAT LANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.368943",
+      "updated_at": "2026-03-02T10:18:08.368950"
+    },
+    {
+      "id": 175,
+      "nomor": 175,
+      "nama": "JUSUF KETAREN",
+      "pangkat": "IPDA",
+      "nrp": "75080942",
+      "unit": "SAT LANTAS",
+      "jabatan": "KANITREGIDENT LANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.369132",
+      "updated_at": "2026-03-02T10:18:08.369140"
+    },
+    {
+      "id": 176,
+      "nomor": 176,
+      "nama": "ARON PERANGIN-ANGIN",
+      "pangkat": "AIPTU",
+      "nrp": "80070492",
+      "unit": "SAT LANTAS",
+      "jabatan": "PS. KANITGAKKUM",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.369315",
+      "updated_at": "2026-03-02T10:18:08.369322"
+    },
+    {
+      "id": 177,
+      "nomor": 177,
+      "nama": "HERON GINTING",
+      "pangkat": "BRIPKA",
+      "nrp": "79060704",
+      "unit": "SAT LANTAS",
+      "jabatan": "PS. KANITTURJAWALI",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.369510",
+      "updated_at": "2026-03-02T10:18:08.369518"
+    },
+    {
+      "id": 178,
+      "nomor": 178,
+      "nama": "JEFRI KHADAFI SIREGAR, S.H.",
+      "pangkat": "BRIPKA",
+      "nrp": "86030733",
+      "unit": "SAT LANTAS",
+      "jabatan": "PS. KANITKAMSEL",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.369710",
+      "updated_at": "2026-03-02T10:18:08.369718"
+    },
+    {
+      "id": 179,
+      "nomor": 179,
+      "nama": "HERIANTO TURNIP",
+      "pangkat": "BRIPKA",
+      "nrp": "89070031",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SAT LANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.369919",
+      "updated_at": "2026-03-02T10:18:08.369927"
+    },
+    {
+      "id": 180,
+      "nomor": 180,
+      "nama": "ROY GRIMSLAY, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "93020749",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SAT LANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.370113",
+      "updated_at": "2026-03-02T10:18:08.370121"
+    },
+    {
+      "id": 181,
+      "nomor": 181,
+      "nama": "BAGUS DWI PRAKOSO, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "93090673",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SAT LANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.370307",
+      "updated_at": "2026-03-02T10:18:08.370315"
+    },
+    {
+      "id": 182,
+      "nomor": 182,
+      "nama": "ICASANDRI MONANZA BR GINTING",
+      "pangkat": "BRIGPOL",
+      "nrp": "97040353",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SAT LANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.370498",
+      "updated_at": "2026-03-02T10:18:08.370506"
+    },
+    {
+      "id": 183,
+      "nomor": 183,
+      "nama": "DIKI FEBRIAN SITORUS",
+      "pangkat": "BRIPTU",
+      "nrp": "95021078",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SAT LANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.370686",
+      "updated_at": "2026-03-02T10:18:08.370695"
+    },
+    {
+      "id": 184,
+      "nomor": 184,
+      "nama": "MARCHLANDA SITOHANG",
+      "pangkat": "BRIPTU",
+      "nrp": "96031061",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SAT LANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.370907",
+      "updated_at": "2026-03-02T10:18:08.370916"
+    },
+    {
+      "id": 185,
+      "nomor": 185,
+      "nama": "JULIVER SIDABUTAR",
+      "pangkat": "BRIPTU",
+      "nrp": "01080438",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SAT LANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.371106",
+      "updated_at": "2026-03-02T10:18:08.371114"
+    },
+    {
+      "id": 186,
+      "nomor": 186,
+      "nama": "FATHURROZI TINDAON",
+      "pangkat": "BRIPDA",
+      "nrp": "01120281",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SAT LANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.371298",
+      "updated_at": "2026-03-02T10:18:08.371306"
+    },
+    {
+      "id": 187,
+      "nomor": 187,
+      "nama": "ANDRE TARUNA SIMBOLON",
+      "pangkat": "BRIPDA",
+      "nrp": "02090891",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SATLANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.371489",
+      "updated_at": "2026-03-02T10:18:08.371497"
+    },
+    {
+      "id": 188,
+      "nomor": 188,
+      "nama": "BENY BOY CHRISTIAN SIAHAAN",
+      "pangkat": "BRIPDA",
+      "nrp": "02111012",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SATLANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.371679",
+      "updated_at": "2026-03-02T10:18:08.371687"
+    },
+    {
+      "id": 189,
+      "nomor": 189,
+      "nama": "RADOT NOVALDO PANDAPOTAN PURBA",
+      "pangkat": "BRIPDA",
+      "nrp": "02111051",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SATLANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.371881",
+      "updated_at": "2026-03-02T10:18:08.371889"
+    },
+    {
+      "id": 190,
+      "nomor": 190,
+      "nama": "DIDI HOT BAGAS SITORUS",
+      "pangkat": "BRIPDA",
+      "nrp": "96061331",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SATLANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.372073",
+      "updated_at": "2026-03-02T10:18:08.372080"
+    },
+    {
+      "id": 191,
+      "nomor": 191,
+      "nama": "MUHAMMAD ZIDHAN RIFALDI",
+      "pangkat": "BRIPDA",
+      "nrp": "05030251",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SATLANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.372261",
+      "updated_at": "2026-03-02T10:18:08.372269"
+    },
+    {
+      "id": 192,
+      "nomor": 192,
+      "nama": "DANI INDRA PERMANA SINAGA",
+      "pangkat": "BRIPDA",
+      "nrp": "04050615",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SATLANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.372450",
+      "updated_at": "2026-03-02T10:18:08.372458"
+    },
+    {
+      "id": 193,
+      "nomor": 193,
+      "nama": "HEZKIEL CAPRI SITINDAON",
+      "pangkat": "BRIPDA",
+      "nrp": "05010048",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SATLANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.372637",
+      "updated_at": "2026-03-02T10:18:08.372645"
+    },
+    {
+      "id": 194,
+      "nomor": 194,
+      "nama": "BONARIS TSUYOKO DITASANI SINAGA",
+      "pangkat": "BRIPDA",
+      "nrp": "04030824",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SATLANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.372853",
+      "updated_at": "2026-03-02T10:18:08.372862"
+    },
+    {
+      "id": 195,
+      "nomor": 195,
+      "nama": "ARY ANJAS SARAGIH",
+      "pangkat": "BRIPDA",
+      "nrp": "05010014",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SATLANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.373047",
+      "updated_at": "2026-03-02T10:18:08.373055"
+    },
+    {
+      "id": 196,
+      "nomor": 196,
+      "nama": "GABRIEL VERY JUNIOR SITOHANG",
+      "pangkat": "BRIPDA",
+      "nrp": "04030805",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SATLANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.373235",
+      "updated_at": "2026-03-02T10:18:08.373243"
+    },
+    {
+      "id": 197,
+      "nomor": 197,
+      "nama": "FIRMAN BAHTERA",
+      "pangkat": "BRIPDA",
+      "nrp": "02121477",
+      "unit": "SAT LANTAS",
+      "jabatan": "BINTARA SATLANTAS",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.373422",
+      "updated_at": "2026-03-02T10:18:08.373430"
+    },
+    {
+      "id": 198,
+      "nomor": 198,
+      "nama": "SULAIMAN PANGARIBUAN, S.H",
+      "pangkat": "AKP",
+      "nrp": "68120522",
+      "unit": "SATPOLAIRUD",
+      "jabatan": "KASAT POLAIRUD",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.373611",
+      "updated_at": "2026-03-02T10:18:08.373619"
+    },
+    {
+      "id": 199,
+      "nomor": 199,
+      "nama": "EFENDI M.  SIREGAR",
+      "pangkat": "AIPDA",
+      "nrp": "83080822",
+      "unit": "SATPOLAIRUD",
+      "jabatan": "PS. KANITPATROLI",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.373806",
+      "updated_at": "2026-03-02T10:18:08.373814"
+    },
+    {
+      "id": 200,
+      "nomor": 200,
+      "nama": "ROMEL LINDUNG SIAHAAN",
+      "pangkat": "AIPDA",
+      "nrp": "73120275",
+      "unit": "SATPOLAIRUD",
+      "jabatan": "PS. KAURMINTU",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.373995",
+      "updated_at": "2026-03-02T10:18:08.374003"
+    },
+    {
+      "id": 201,
+      "nomor": 201,
+      "nama": "FRANS HOTMAN MANURUNG, S.H.",
+      "pangkat": "BRIPKA",
+      "nrp": "90060273",
+      "unit": "SATPOLAIRUD",
+      "jabatan": "BINTARA SATPOLAIRUD",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.374177",
+      "updated_at": "2026-03-02T10:18:08.374184"
+    },
+    {
+      "id": 202,
+      "nomor": 202,
+      "nama": "ANTONIUS SIPAYUNG",
+      "pangkat": "BRIGPOL",
+      "nrp": "77070919",
+      "unit": "SATPOLAIRUD",
+      "jabatan": "BINTARA SATPOLAIRUD",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.374367",
+      "updated_at": "2026-03-02T10:18:08.374375"
+    },
+    {
+      "id": 203,
+      "nomor": 203,
+      "nama": "SAUT H. SIAHAAN",
+      "pangkat": "AIPDA",
+      "nrp": "82051018",
+      "unit": "SAT TAHTI",
+      "jabatan": "PS. KASAT TAHTI",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.374551",
+      "updated_at": "2026-03-02T10:18:08.374560"
+    },
+    {
+      "id": 204,
+      "nomor": 204,
+      "nama": "FERNANDO SIMBOLON",
+      "pangkat": "BRIPTU",
+      "nrp": "98050496",
+      "unit": "SAT TAHTI",
+      "jabatan": "BINTARA SAT TAHTI",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.374742",
+      "updated_at": "2026-03-02T10:18:08.374750"
+    },
+    {
+      "id": 205,
+      "nomor": 205,
+      "nama": "KURNIA PERMANA",
+      "pangkat": "BRIPTU",
+      "nrp": "98030531",
+      "unit": "SAT TAHTI",
+      "jabatan": "BINTARA SAT TAHTI",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.374946",
+      "updated_at": "2026-03-02T10:18:08.374954"
+    },
+    {
+      "id": 206,
+      "nomor": 206,
+      "nama": "STEVEN IMANUEL SITUMEANG",
+      "pangkat": "BRIPDA",
+      "nrp": "05090232",
+      "unit": "SAT TAHTI",
+      "jabatan": "BINTARA SAT TAHTI",
+      "kantor": "POLRES SAMOSIR",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.375134",
+      "updated_at": "2026-03-02T10:18:08.375142"
+    },
+    {
+      "id": 207,
+      "nomor": 207,
+      "nama": "RAHMAT KURNIAWAN",
+      "pangkat": "IPTU",
+      "nrp": "69090552",
+      "unit": "KAPOLSEK",
+      "jabatan": "PS. KAPOLSEK HARIAN BOHO",
+      "kantor": "POLSEK HARIAN BOHO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.375319",
+      "updated_at": "2026-03-02T10:18:08.375326"
+    },
+    {
+      "id": 208,
+      "nomor": 208,
+      "nama": "MARUKKIL J.M. PASARIBU",
+      "pangkat": "AIPTU",
+      "nrp": "79090296",
+      "unit": "UNIT INTELKAM",
+      "jabatan": "PS. KANIT INTELKAM",
+      "kantor": "POLSEK HARIAN BOHO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.375492",
+      "updated_at": "2026-03-02T10:18:08.375499"
+    },
+    {
+      "id": 209,
+      "nomor": 209,
+      "nama": "LANTRO LANDELINUS SAGALA",
+      "pangkat": "AIPDA",
+      "nrp": "82070930",
+      "unit": "UNIT BINMAS",
+      "jabatan": "PS. KANIT BINMAS",
+      "kantor": "POLSEK HARIAN BOHO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.375672",
+      "updated_at": "2026-03-02T10:18:08.375680"
+    },
+    {
+      "id": 210,
+      "nomor": 210,
+      "nama": "ANDY DEDY SIHOMBING, S.H.",
+      "pangkat": "BRIPKA",
+      "nrp": "87120701",
+      "unit": "UNIT RESKRIM",
+      "jabatan": "PS. KANIT RESKRIM",
+      "kantor": "POLSEK HARIAN BOHO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.375906",
+      "updated_at": "2026-03-02T10:18:08.375914"
+    },
+    {
+      "id": 211,
+      "nomor": 211,
+      "nama": "RANGGA HATTA",
+      "pangkat": "BRIPKA",
+      "nrp": "86021428",
+      "unit": "UNIT SABHARA",
+      "jabatan": "PS.KANIT SAMAPTA",
+      "kantor": "POLSEK HARIAN BOHO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.376104",
+      "updated_at": "2026-03-02T10:18:08.376112"
+    },
+    {
+      "id": 212,
+      "nomor": 212,
+      "nama": "ARDIANSYAH BUTAR-BUTAR",
+      "pangkat": "BRIPKA",
+      "nrp": "80120573",
+      "unit": "BINTARA POLSEK",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK HARIAN BOHO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.376302",
+      "updated_at": "2026-03-02T10:18:08.376312"
+    },
+    {
+      "id": 213,
+      "nomor": 213,
+      "nama": "ADRYANTO SINAGA, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "96120123",
+      "unit": "BINTARA POLSEK",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK HARIAN BOHO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.376509",
+      "updated_at": "2026-03-02T10:18:08.376518"
+    },
+    {
+      "id": 214,
+      "nomor": 214,
+      "nama": "BROLIN ADFRIALDI HALOHO",
+      "pangkat": "BRIGPOL",
+      "nrp": "94040538",
+      "unit": "BINTARA POLSEK",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK HARIAN BOHO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.376720",
+      "updated_at": "2026-03-02T10:18:08.376733"
+    },
+    {
+      "id": 215,
+      "nomor": 215,
+      "nama": "SUGIANTO ERIK SIBORO",
+      "pangkat": "BRIGPOL",
+      "nrp": "95110806",
+      "unit": "BINTARA POLSEK",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK HARIAN BOHO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.376958",
+      "updated_at": "2026-03-02T10:18:08.376971"
+    },
+    {
+      "id": 216,
+      "nomor": 216,
+      "nama": "RISKO SIMBOLON",
+      "pangkat": "BRIPDA",
+      "nrp": "01020739",
+      "unit": "BINTARA POLSEK",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK HARIAN BOHO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.377191",
+      "updated_at": "2026-03-02T10:18:08.377201"
+    },
+    {
+      "id": 217,
+      "nomor": 217,
+      "nama": "MAXON NAINGGOLAN",
+      "pangkat": "AKP",
+      "nrp": "70050412",
+      "unit": "KAPOLSEK",
+      "jabatan": "KAPOLSEK PALIPI",
+      "kantor": "POLSEK PALIPI",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.377474",
+      "updated_at": "2026-03-02T10:18:08.377485"
+    },
+    {
+      "id": 218,
+      "nomor": 218,
+      "nama": "H. SWANDI SINAGA",
+      "pangkat": "AIPTU",
+      "nrp": "78040213",
+      "unit": "SPKT",
+      "jabatan": "PS. KA SPKT 1",
+      "kantor": "POLSEK PALIPI",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.377896",
+      "updated_at": "2026-03-02T10:18:08.377914"
+    },
+    {
+      "id": 219,
+      "nomor": 219,
+      "nama": "HARATUA GULTOM",
+      "pangkat": "AIPTU",
+      "nrp": "77030463",
+      "unit": "SIUM",
+      "jabatan": "PS. KASIUM",
+      "kantor": "POLSEK PALIPI",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.378290",
+      "updated_at": "2026-03-02T10:18:08.378306"
+    },
+    {
+      "id": 220,
+      "nomor": 220,
+      "nama": "ASA MELKI HUTABARAT",
+      "pangkat": "AIPDA",
+      "nrp": "76120606",
+      "unit": "UNIT SABHARA",
+      "jabatan": "PS. KANIT SAMAPTA",
+      "kantor": "POLSEK PALIPI",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.378558",
+      "updated_at": "2026-03-02T10:18:08.378568"
+    },
+    {
+      "id": 221,
+      "nomor": 221,
+      "nama": "JARIAHMAN SARAGIH",
+      "pangkat": "AIPDA",
+      "nrp": "78100741",
+      "unit": "UNIT BINMAS",
+      "jabatan": "PS. KANIT BINMAS",
+      "kantor": "POLSEK PALIPI",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.378922",
+      "updated_at": "2026-03-02T10:18:08.378937"
+    },
+    {
+      "id": 222,
+      "nomor": 222,
+      "nama": "MUHAMMAD SYAFEI RAMADHAN",
+      "pangkat": "AIPDA",
+      "nrp": "87041134",
+      "unit": "UNIT RESKRIM",
+      "jabatan": "PS. KANIT RESKRIM",
+      "kantor": "POLSEK PALIPI",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.379210",
+      "updated_at": "2026-03-02T10:18:08.379219"
+    },
+    {
+      "id": 223,
+      "nomor": 223,
+      "nama": "RIJALUL FIKRI SINAGA",
+      "pangkat": "BRIPKA",
+      "nrp": "86121371",
+      "unit": "UNIT INTELKAM",
+      "jabatan": "PS. KANIT INTELKAM",
+      "kantor": "POLSEK PALIPI",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.379417",
+      "updated_at": "2026-03-02T10:18:08.379425"
+    },
+    {
+      "id": 224,
+      "nomor": 224,
+      "nama": "TEGUH SYAHPUTRA",
+      "pangkat": "BRIPKA",
+      "nrp": "85071450",
+      "unit": "SPKT",
+      "jabatan": "PS. KA SPKT 2",
+      "kantor": "POLSEK PALIPI",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.379629",
+      "updated_at": "2026-03-02T10:18:08.379639"
+    },
+    {
+      "id": 225,
+      "nomor": 225,
+      "nama": "RUDYANTO LUMBANRAJA",
+      "pangkat": "BRIPKA",
+      "nrp": "85041500",
+      "unit": "BINTARA  POLSEK",
+      "jabatan": "BINTARA  POLSEK",
+      "kantor": "POLSEK PALIPI",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.379852",
+      "updated_at": "2026-03-02T10:18:08.379861"
+    },
+    {
+      "id": 226,
+      "nomor": 226,
+      "nama": "ZULPAN SYAHPUTRA DAMANIK",
+      "pangkat": "BRIPTU",
+      "nrp": "96031075",
+      "unit": "BINTARA  POLSEK",
+      "jabatan": "BINTARA  POLSEK",
+      "kantor": "POLSEK PALIPI",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.380072",
+      "updated_at": "2026-03-02T10:18:08.380082"
+    },
+    {
+      "id": 227,
+      "nomor": 227,
+      "nama": "RAMADAN SIREGAR, S.H.",
+      "pangkat": "IPTU",
+      "nrp": "83061022",
+      "unit": "KAPOLSEK",
+      "jabatan": "PS. KAPOLSEK SIMANINDO",
+      "kantor": "POLSEK SIMANINDO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.380290",
+      "updated_at": "2026-03-02T10:18:08.380301"
+    },
+    {
+      "id": 228,
+      "nomor": 228,
+      "nama": "WIDODO KABAN, S.H.",
+      "pangkat": "IPDA",
+      "nrp": "86071792",
+      "unit": "SPKT",
+      "jabatan": "KANIT RESKRIM",
+      "kantor": "POLSEK SIMANINDO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.380502",
+      "updated_at": "2026-03-02T10:18:08.380510"
+    },
+    {
+      "id": 229,
+      "nomor": 229,
+      "nama": "GUNTAR TAMBUNAN",
+      "pangkat": "AIPTU",
+      "nrp": "75120864",
+      "unit": "SPKT",
+      "jabatan": "PS. KA SPKT 1",
+      "kantor": "POLSEK SIMANINDO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.380712",
+      "updated_at": "2026-03-02T10:18:08.380722"
+    },
+    {
+      "id": 230,
+      "nomor": 230,
+      "nama": "JEFRI RICARDO SAMOSIR",
+      "pangkat": "AIPTU",
+      "nrp": "82040124",
+      "unit": "UNIT PROPAM",
+      "jabatan": "PS. KANIT PROPAM",
+      "kantor": "POLSEK SIMANINDO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.380971",
+      "updated_at": "2026-03-02T10:18:08.380981"
+    },
+    {
+      "id": 231,
+      "nomor": 231,
+      "nama": "JUITO SUPANOTO PERANGIN-ANGIN",
+      "pangkat": "AIPDA",
+      "nrp": "84020306",
+      "unit": "UNIT BINMAS",
+      "jabatan": "PS. KANIT BINMAS",
+      "kantor": "POLSEK SIMANINDO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.381179",
+      "updated_at": "2026-03-02T10:18:08.381188"
+    },
+    {
+      "id": 232,
+      "nomor": 232,
+      "nama": "YOPPHY RHODEAR MUNTHE",
+      "pangkat": "AIPDA",
+      "nrp": "83080042",
+      "unit": "SPKT",
+      "jabatan": "PS. KA SPKT 3",
+      "kantor": "POLSEK SIMANINDO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.381378",
+      "updated_at": "2026-03-02T10:18:08.381386"
+    },
+    {
+      "id": 233,
+      "nomor": 233,
+      "nama": "TUMBUR SITOHANG",
+      "pangkat": "AIPDA",
+      "nrp": "86010311",
+      "unit": "UNIT INTELKAM",
+      "jabatan": "PS. KANIT INTELKAM",
+      "kantor": "POLSEK SIMANINDO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.381582",
+      "updated_at": "2026-03-02T10:18:08.381591"
+    },
+    {
+      "id": 234,
+      "nomor": 234,
+      "nama": "DONI SURIANTO PURBA, S.H.",
+      "pangkat": "BRIPKA",
+      "nrp": "84110202",
+      "unit": "SIUM",
+      "jabatan": "PS. KASIUM",
+      "kantor": "POLSEK SIMANINDO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.381787",
+      "updated_at": "2026-03-02T10:18:08.381811"
+    },
+    {
+      "id": 235,
+      "nomor": 235,
+      "nama": "PATAR F. ANRI SIAHAAN",
+      "pangkat": "BRIPKA",
+      "nrp": "89020409",
+      "unit": "UNIT SABHARA",
+      "jabatan": "PS. KANIT SAMAPTA",
+      "kantor": "POLSEK SIMANINDO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.382013",
+      "updated_at": "2026-03-02T10:18:08.382022"
+    },
+    {
+      "id": 236,
+      "nomor": 236,
+      "nama": "KURNIAWAN, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "94090490",
+      "unit": "BINTARA POLSEK",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK SIMANINDO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.382219",
+      "updated_at": "2026-03-02T10:18:08.382229"
+    },
+    {
+      "id": 237,
+      "nomor": 237,
+      "nama": "ASHARI BUTAR-BUTAR, S.H.",
+      "pangkat": "BRIGPOL",
+      "nrp": "95060432",
+      "unit": "BINTARA POLSEK",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK SIMANINDO",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.382438",
+      "updated_at": "2026-03-02T10:18:08.382449"
+    },
+    {
+      "id": 238,
+      "nomor": 238,
+      "nama": "MARLAN SILALAHI",
+      "pangkat": "KOMPOL",
+      "nrp": "68020268",
+      "unit": "KAPOLSEK",
+      "jabatan": "KAPOLSEK ONANRUNGGU",
+      "kantor": "POLSEK ONAN RUNGGU",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.382655",
+      "updated_at": "2026-03-02T10:18:08.382664"
+    },
+    {
+      "id": 239,
+      "nomor": 239,
+      "nama": "HERMAWADI",
+      "pangkat": "AIPDA",
+      "nrp": "82050839",
+      "unit": "UNIT RESKRIM",
+      "jabatan": "PS. KANIT RESKRIM",
+      "kantor": "POLSEK ONAN RUNGGU",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.382906",
+      "updated_at": "2026-03-02T10:18:08.382917"
+    },
+    {
+      "id": 240,
+      "nomor": 240,
+      "nama": "BISSAR LUMBANTUNGKUP",
+      "pangkat": "AIPDA",
+      "nrp": "84091124",
+      "unit": "UNIT BINMAS",
+      "jabatan": "PS. KANIT BINMAS",
+      "kantor": "POLSEK ONAN RUNGGU",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.383127",
+      "updated_at": "2026-03-02T10:18:08.383136"
+    },
+    {
+      "id": 241,
+      "nomor": 241,
+      "nama": "BONAR JUBEL SIBARANI",
+      "pangkat": "BRIPKA",
+      "nrp": "70090340",
+      "unit": "UNIT SABHARA",
+      "jabatan": "PS. KANIT SAMAPTA",
+      "kantor": "POLSEK ONAN RUNGGU",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.383347",
+      "updated_at": "2026-03-02T10:18:08.383356"
+    },
+    {
+      "id": 242,
+      "nomor": 242,
+      "nama": "RAMLES SITANGGANG",
+      "pangkat": "BRIPKA",
+      "nrp": "77020642",
+      "unit": "UNIT INTELKAM",
+      "jabatan": "PS. KANIT INTELKAM",
+      "kantor": "POLSEK ONAN RUNGGU",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.383561",
+      "updated_at": "2026-03-02T10:18:08.383569"
+    },
+    {
+      "id": 243,
+      "nomor": 243,
+      "nama": "LUHUT SIRINGO-RINGO",
+      "pangkat": "BRIGPOL",
+      "nrp": "83031377",
+      "unit": "POLSEK ONAN RUNGGU",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK ONAN RUNGGU",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.383754",
+      "updated_at": "2026-03-02T10:18:08.383763"
+    },
+    {
+      "id": 244,
+      "nomor": 244,
+      "nama": "ANRIAN SIGALINGGING",
+      "pangkat": "BRIPDA",
+      "nrp": "03100001",
+      "unit": "POLSEK ONAN RUNGGU",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK ONAN RUNGGU",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.383985",
+      "updated_at": "2026-03-02T10:18:08.383994"
+    },
+    {
+      "id": 245,
+      "nomor": 245,
+      "nama": "BONATUA LUMBANTUNGKUP",
+      "pangkat": "BRIPDA",
+      "nrp": "99110755",
+      "unit": "POLSEK ONAN RUNGGU",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK ONAN RUNGGU",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.384190",
+      "updated_at": "2026-03-02T10:18:08.384199"
+    },
+    {
+      "id": 246,
+      "nomor": 246,
+      "nama": "ANDRE SUGIARTO MARPAUNG",
+      "pangkat": "BRIPDA",
+      "nrp": "03050116",
+      "unit": "POLSEK ONAN RUNGGU",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK ONAN RUNGGU",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.384385",
+      "updated_at": "2026-03-02T10:18:08.384394"
+    },
+    {
+      "id": 247,
+      "nomor": 247,
+      "nama": "ERWIN KEVIN GULTOM",
+      "pangkat": "BRIPDA",
+      "nrp": "04030125",
+      "unit": "POLSEK ONAN RUNGGU",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK ONAN RUNGGU",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.384585",
+      "updated_at": "2026-03-02T10:18:08.384594"
+    },
+    {
+      "id": 248,
+      "nomor": 248,
+      "nama": "BANGUN TUA DALIMUNTHE",
+      "pangkat": "AKP",
+      "nrp": "70020298",
+      "unit": "KAPOLSEK",
+      "jabatan": "KAPOLSEK PANGURURAN",
+      "kantor": "POLSEK PANGURURAN",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.384838",
+      "updated_at": "2026-03-02T10:18:08.384850"
+    },
+    {
+      "id": 249,
+      "nomor": 249,
+      "nama": "LANCASTER ARIANTO CANDY PASARIBU, S.H.",
+      "pangkat": "AIPTU",
+      "nrp": "81050713",
+      "unit": "UNIT RESKRIM",
+      "jabatan": "PS. KANIT RESKRIM",
+      "kantor": "POLSEK PANGURURAN",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.385062",
+      "updated_at": "2026-03-02T10:18:08.385071"
+    },
+    {
+      "id": 250,
+      "nomor": 250,
+      "nama": "RUDY SETYAWAN",
+      "pangkat": "AIPTU",
+      "nrp": "80090905",
+      "unit": "UNIT INTELKAM",
+      "jabatan": "PS. KANIT INTELKAM",
+      "kantor": "POLSEK PANGURURAN",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.385252",
+      "updated_at": "2026-03-02T10:18:08.385260"
+    },
+    {
+      "id": 251,
+      "nomor": 251,
+      "nama": "MANGATUR TUA TINDAON",
+      "pangkat": "AIPDA",
+      "nrp": "80080892",
+      "unit": "UNIT BINMAS",
+      "jabatan": "PS. KANIT BINMAS",
+      "kantor": "POLSEK PANGURURAN",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.385453",
+      "updated_at": "2026-03-02T10:18:08.385462"
+    },
+    {
+      "id": 252,
+      "nomor": 252,
+      "nama": "RENO HOTMARULI TUA MANIK, S.H.",
+      "pangkat": "BRIPKA",
+      "nrp": "87110154",
+      "unit": "UNIT SABHARA",
+      "jabatan": "PS. KANIT SAMAPTA",
+      "kantor": "POLSEK PANGURURAN",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.385662",
+      "updated_at": "2026-03-02T10:18:08.385670"
+    },
+    {
+      "id": 253,
+      "nomor": 253,
+      "nama": "HERBINTUPA SITANGGANG",
+      "pangkat": "BRIGPOL",
+      "nrp": "79020443",
+      "unit": "BINTARA POLSEK",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK PANGURURAN",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.385862",
+      "updated_at": "2026-03-02T10:18:08.385871"
+    },
+    {
+      "id": 254,
+      "nomor": 254,
+      "nama": "IBRAHIM TARIGAN",
+      "pangkat": "BRIGPOL",
+      "nrp": "85121751",
+      "unit": "BINTARA POLSEK",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK PANGURURAN",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.386052",
+      "updated_at": "2026-03-02T10:18:08.386060"
+    },
+    {
+      "id": 255,
+      "nomor": 255,
+      "nama": "AGUNG NUGRAHA HARIANJA, S.H.",
+      "pangkat": "BRIPTU",
+      "nrp": "98090406",
+      "unit": "BINTARA POLSEK",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK PANGURURAN",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.386250",
+      "updated_at": "2026-03-02T10:18:08.386259"
+    },
+    {
+      "id": 256,
+      "nomor": 256,
+      "nama": "DANI PUTRA RUMAHORBO",
+      "pangkat": "BRIPTU",
+      "nrp": "98091274",
+      "unit": "BINTARA POLSEK",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK PANGURURAN",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.386443",
+      "updated_at": "2026-03-02T10:18:08.386452"
+    },
+    {
+      "id": 257,
+      "nomor": 257,
+      "nama": "KRISMAN JULU GULTOM",
+      "pangkat": "BRIPDA",
+      "nrp": "01060198",
+      "unit": "BINTARA POLSEK",
+      "jabatan": "BINTARA POLSEK",
+      "kantor": "POLSEK PANGURURAN",
+      "status_aktif": true,
+      "created_at": "2026-03-02T10:18:08.386639",
+      "updated_at": "2026-03-02T10:18:08.386647"
+    }
+  ],
+  "personel_structure": {
+    "units": {
+      "total_count": 33,
+      "data": [
+        {
+          "nama_unit": "BAG LOG",
+          "jumlah_personel": 4,
+          "personel_list": [
+            {
+              "nama": "AWALUDDIN",
+              "nrp": "76040221",
+              "pangkat": "IPDA",
+              "jabatan": "Plt. KASUBBAGBEKPAL"
+            },
+            {
+              "nama": "EFRON SARWEDY SINAGA, S.H.",
+              "nrp": "97050588",
+              "pangkat": "BRIPTU",
+              "jabatan": "BA MIN BAG LOG"
+            },
+            {
+              "nama": "PRIADI MAROJAHAN HUTABARAT",
+              "nrp": "00010095",
+              "pangkat": "BRIPTU",
+              "jabatan": "BA MIN BAG LOG"
+            },
+            {
+              "nama": "CHRIST JERICHO SAPUTRA TAMPUBOLON",
+              "nrp": "03070263",
+              "pangkat": "BRIPDA",
+              "jabatan": "BA MIN BAG LOG"
+            }
+          ]
+        },
+        {
+          "nama_unit": "BAG OPS",
+          "jumlah_personel": 8,
+          "personel_list": [
+            {
+              "nama": "EDUAR, S.H.",
+              "nrp": "68100259",
+              "pangkat": "KOMPOL",
+              "jabatan": "KABAG OPS"
+            },
+            {
+              "nama": "PATRI SIHALOHO",
+              "nrp": "82080038",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. PAUR SUBBAGBINOPS"
+            },
+            {
+              "nama": "AGUNG NUGRAHA NADAP-DAP",
+              "nrp": "02120141",
+              "pangkat": "BRIPDA",
+              "jabatan": "BA MIN BAG OPS"
+            },
+            {
+              "nama": "ALDI PRANATA GINTING",
+              "nrp": "03010386",
+              "pangkat": "BRIPDA",
+              "jabatan": "BA MIN BAG OPS"
+            },
+            {
+              "nama": "HENDRIKSON SILALAHI",
+              "nrp": "02040489",
+              "pangkat": "BRIPDA",
+              "jabatan": "BA MIN BAG OPS"
+            }
+          ]
+        },
+        {
+          "nama_unit": "BAG REN",
+          "jumlah_personel": 3,
+          "personel_list": [
+            {
+              "nama": "SURUNG SAGALA",
+              "nrp": "72100484",
+              "pangkat": "IPDA",
+              "jabatan": "PAURSUBBAGPROGAR"
+            },
+            {
+              "nama": "ZAKHARIA S. I. SIMANJUNTAK, S.H.",
+              "nrp": "96090857",
+              "pangkat": "BRIPTU",
+              "jabatan": "BA MIN BAG REN"
+            },
+            {
+              "nama": "GRENIEL WIARTO SIHITE",
+              "nrp": "03080202",
+              "pangkat": "BRIPDA",
+              "jabatan": "BA MIN BAG REN"
+            }
+          ]
+        },
+        {
+          "nama_unit": "BAG SDM",
+          "jumlah_personel": 8,
+          "personel_list": [
+            {
+              "nama": "TARMIZI LUBIS, S.H.",
+              "nrp": "73010107",
+              "pangkat": "AKP",
+              "jabatan": "PS. KABAG SDM"
+            },
+            {
+              "nama": "REYMESTA AMBARITA, S.Kom.",
+              "nrp": "`198111252014122004",
+              "pangkat": "PENDA",
+              "jabatan": "PAURSUBBAGBINKAR"
+            },
+            {
+              "nama": "LAMTIO SINAGA, S.H.",
+              "nrp": "97090248",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BA MIN BAG SDM"
+            },
+            {
+              "nama": "DODI KURNIADI",
+              "nrp": "97120490",
+              "pangkat": "BRIPTU",
+              "jabatan": "BA MIN BAG SDM"
+            },
+            {
+              "nama": "EFRANTA SAPUTRA SITEPU",
+              "nrp": "05070285",
+              "pangkat": "BRIPDA",
+              "jabatan": "BA MIN BAG SDM"
+            }
+          ]
+        },
+        {
+          "nama_unit": "BINTARA  POLSEK",
+          "jumlah_personel": 2,
+          "personel_list": [
+            {
+              "nama": "RUDYANTO LUMBANRAJA",
+              "nrp": "85041500",
+              "pangkat": "BRIPKA",
+              "jabatan": "BINTARA  POLSEK"
+            },
+            {
+              "nama": "ZULPAN SYAHPUTRA DAMANIK",
+              "nrp": "96031075",
+              "pangkat": "BRIPTU",
+              "jabatan": "BINTARA  POLSEK"
+            }
+          ]
+        },
+        {
+          "nama_unit": "BINTARA POLSEK",
+          "jumlah_personel": 12,
+          "personel_list": [
+            {
+              "nama": "ARDIANSYAH BUTAR-BUTAR",
+              "nrp": "80120573",
+              "pangkat": "BRIPKA",
+              "jabatan": "BINTARA POLSEK"
+            },
+            {
+              "nama": "ADRYANTO SINAGA, S.H.",
+              "nrp": "96120123",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA POLSEK"
+            },
+            {
+              "nama": "BROLIN ADFRIALDI HALOHO",
+              "nrp": "94040538",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA POLSEK"
+            },
+            {
+              "nama": "SUGIANTO ERIK SIBORO",
+              "nrp": "95110806",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA POLSEK"
+            },
+            {
+              "nama": "RISKO SIMBOLON",
+              "nrp": "01020739",
+              "pangkat": "BRIPDA",
+              "jabatan": "BINTARA POLSEK"
+            }
+          ]
+        },
+        {
+          "nama_unit": "BKO",
+          "jumlah_personel": 3,
+          "personel_list": [
+            {
+              "nama": "SYAUQI LUTFI LUBIS, S.H., M.H.",
+              "nrp": "95080918",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BA POLRES SAMOSIR"
+            },
+            {
+              "nama": "DANIEL BRANDO SIDABUKKE",
+              "nrp": "97050575",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BA POLRES SAMOSIR"
+            },
+            {
+              "nama": "SUTRISNO BUTAR-BUTAR, S.H.",
+              "nrp": "98010119",
+              "pangkat": "BRIPTU",
+              "jabatan": "BA POLRES SAMOSIR"
+            }
+          ]
+        },
+        {
+          "nama_unit": "KAPOLSEK",
+          "jumlah_personel": 5,
+          "personel_list": [
+            {
+              "nama": "RAHMAT KURNIAWAN",
+              "nrp": "69090552",
+              "pangkat": "IPTU",
+              "jabatan": "PS. KAPOLSEK HARIAN BOHO"
+            },
+            {
+              "nama": "MAXON NAINGGOLAN",
+              "nrp": "70050412",
+              "pangkat": "AKP",
+              "jabatan": "KAPOLSEK PALIPI"
+            },
+            {
+              "nama": "RAMADAN SIREGAR, S.H.",
+              "nrp": "83061022",
+              "pangkat": "IPTU",
+              "jabatan": "PS. KAPOLSEK SIMANINDO"
+            },
+            {
+              "nama": "MARLAN SILALAHI",
+              "nrp": "68020268",
+              "pangkat": "KOMPOL",
+              "jabatan": "KAPOLSEK ONANRUNGGU"
+            },
+            {
+              "nama": "BANGUN TUA DALIMUNTHE",
+              "nrp": "70020298",
+              "pangkat": "AKP",
+              "jabatan": "KAPOLSEK PANGURURAN"
+            }
+          ]
+        },
+        {
+          "nama_unit": "PERS MUTASI",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "LEONARDO SINAGA",
+              "nrp": "81110363",
+              "pangkat": "AIPDA",
+              "jabatan": "BA POLRES SAMOSIR"
+            }
+          ]
+        },
+        {
+          "nama_unit": "POLSEK ONAN RUNGGU",
+          "jumlah_personel": 5,
+          "personel_list": [
+            {
+              "nama": "LUHUT SIRINGO-RINGO",
+              "nrp": "83031377",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA POLSEK"
+            },
+            {
+              "nama": "ANRIAN SIGALINGGING",
+              "nrp": "03100001",
+              "pangkat": "BRIPDA",
+              "jabatan": "BINTARA POLSEK"
+            },
+            {
+              "nama": "BONATUA LUMBANTUNGKUP",
+              "nrp": "99110755",
+              "pangkat": "BRIPDA",
+              "jabatan": "BINTARA POLSEK"
+            },
+            {
+              "nama": "ANDRE SUGIARTO MARPAUNG",
+              "nrp": "03050116",
+              "pangkat": "BRIPDA",
+              "jabatan": "BINTARA POLSEK"
+            },
+            {
+              "nama": "ERWIN KEVIN GULTOM",
+              "nrp": "04030125",
+              "pangkat": "BRIPDA",
+              "jabatan": "BINTARA POLSEK"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SAT BINMAS",
+          "jumlah_personel": 4,
+          "personel_list": [
+            {
+              "nama": "HORAS LARIUS SITUMORANG",
+              "nrp": "75120560",
+              "pangkat": "IPDA",
+              "jabatan": "KAURBINOPS"
+            },
+            {
+              "nama": "JEFTA OCTAVIANUS NICO SIANTURI",
+              "nrp": "95090650",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA SAT BINMAS"
+            },
+            {
+              "nama": "SAHAT MARULI TUA SINAGA, S.H.",
+              "nrp": "94091146",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA SAT BINMAS"
+            },
+            {
+              "nama": "RONAL PARTOGI SITUMORANG",
+              "nrp": "04020118",
+              "pangkat": "BRIPDA",
+              "jabatan": "BINTARA SAT BINMAS"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SAT INTELKAM",
+          "jumlah_personel": 17,
+          "personel_list": [
+            {
+              "nama": "DONAL P. SITANGGANG, S.H., M.H.",
+              "nrp": "82070670",
+              "pangkat": "IPTU",
+              "jabatan": "PS. KASAT INTELKAM"
+            },
+            {
+              "nama": "MUHAMMAD YUNUS LUBIS, S.H.",
+              "nrp": "85050489",
+              "pangkat": "IPDA",
+              "jabatan": "KAURBINOPS"
+            },
+            {
+              "nama": "MARBETA S. SIANIPAR, S.H.",
+              "nrp": "80070348",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KAURMINTU"
+            },
+            {
+              "nama": "SITARDA AKABRI SIBUEA",
+              "nrp": "87080112",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT 3"
+            },
+            {
+              "nama": "CINTER ROKHY SINAGA",
+              "nrp": "87051430",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANIT 1"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SAT LANTAS",
+          "jumlah_personel": 24,
+          "personel_list": [
+            {
+              "nama": "NATANAIL SURBAKTI, S.H",
+              "nrp": "79120800",
+              "pangkat": "AKP",
+              "jabatan": "KASAT LANTAS"
+            },
+            {
+              "nama": "JUSUF KETAREN",
+              "nrp": "75080942",
+              "pangkat": "IPDA",
+              "jabatan": "KANITREGIDENT LANTAS"
+            },
+            {
+              "nama": "ARON PERANGIN-ANGIN",
+              "nrp": "80070492",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KANITGAKKUM"
+            },
+            {
+              "nama": "HERON GINTING",
+              "nrp": "79060704",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANITTURJAWALI"
+            },
+            {
+              "nama": "JEFRI KHADAFI SIREGAR, S.H.",
+              "nrp": "86030733",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANITKAMSEL"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SAT RESKRIM",
+          "jumlah_personel": 36,
+          "personel_list": [
+            {
+              "nama": "EDWARD SIDAURUK, S.E., M.M.",
+              "nrp": "79120994",
+              "pangkat": "AKP",
+              "jabatan": "KASAT RESKRIM"
+            },
+            {
+              "nama": "DARMONO SAMOSIR, S.H.",
+              "nrp": "76020196",
+              "pangkat": "IPDA",
+              "jabatan": "KANITIDIK 3"
+            },
+            {
+              "nama": "ROYANTO PURBA, S.H.",
+              "nrp": "83010825",
+              "pangkat": "IPDA",
+              "jabatan": "KANITIDIK 4"
+            },
+            {
+              "nama": "SUHADIYANTO, S.H.",
+              "nrp": "83120602",
+              "pangkat": "IPDA",
+              "jabatan": "KANITIDIK 1"
+            },
+            {
+              "nama": "KUICAN SIMANJUNTAK",
+              "nrp": "88060535",
+              "pangkat": "BRIPKA",
+              "jabatan": "KANITIDIK 5"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SAT RESNARKOBA",
+          "jumlah_personel": 11,
+          "personel_list": [
+            {
+              "nama": "FERRY ARIANDY, S.H., M.H",
+              "nrp": "79060034",
+              "pangkat": "AKP",
+              "jabatan": "KASATRESNARKOBA"
+            },
+            {
+              "nama": "ALVIUS KRISTIAN GINTING, S.H.",
+              "nrp": "88100591",
+              "pangkat": "IPDA",
+              "jabatan": "KAURBINOPS"
+            },
+            {
+              "nama": "BENNY SITUMORANG, S.H.",
+              "nrp": "89010155",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS.KANIT IDIK 1"
+            },
+            {
+              "nama": "EKO PUTRA DAMANIK, S.H.",
+              "nrp": "93050797",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA SATRESNARKOBA"
+            },
+            {
+              "nama": "MAY FRANSISCO SIAGIAN, S.H.",
+              "nrp": "91050361",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA SATRESNARKOBA"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SAT SAMAPTA",
+          "jumlah_personel": 16,
+          "personel_list": [
+            {
+              "nama": "NANDI BUTAR-BUTAR, S.H.",
+              "nrp": "80080676",
+              "pangkat": "AKP",
+              "jabatan": "KASAT SAMAPTA"
+            },
+            {
+              "nama": "BARTO ANTONIUS SIMALANGO",
+              "nrp": "80050867",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KAURBINOPS"
+            },
+            {
+              "nama": "HASUDUNGAN SILITONGA",
+              "nrp": "73040390",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT DALMAS 2"
+            },
+            {
+              "nama": "JHONNY LEONARDO SILALAHI",
+              "nrp": "85090954",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANIT TURJAWALI"
+            },
+            {
+              "nama": "ASRIL",
+              "nrp": "83081051",
+              "pangkat": "BRIPKA",
+              "jabatan": "BINTARA SAT SAMAPTA"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SAT TAHTI",
+          "jumlah_personel": 4,
+          "personel_list": [
+            {
+              "nama": "SAUT H. SIAHAAN",
+              "nrp": "82051018",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KASAT TAHTI"
+            },
+            {
+              "nama": "FERNANDO SIMBOLON",
+              "nrp": "98050496",
+              "pangkat": "BRIPTU",
+              "jabatan": "BINTARA SAT TAHTI"
+            },
+            {
+              "nama": "KURNIA PERMANA",
+              "nrp": "98030531",
+              "pangkat": "BRIPTU",
+              "jabatan": "BINTARA SAT TAHTI"
+            },
+            {
+              "nama": "STEVEN IMANUEL SITUMEANG",
+              "nrp": "05090232",
+              "pangkat": "BRIPDA",
+              "jabatan": "BINTARA SAT TAHTI"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SATPAMOBVIT",
+          "jumlah_personel": 16,
+          "personel_list": [
+            {
+              "nama": "TANGIO HAOJAHAN SITANGGANG, S.H.",
+              "nrp": "72100604",
+              "pangkat": "IPTU",
+              "jabatan": "KASAT PAMOBVIT"
+            },
+            {
+              "nama": "MARUBA NAINGGOLAN",
+              "nrp": "80100836",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KANITPAMWASTER"
+            },
+            {
+              "nama": "ROY HARIS ST. SIMAREMARE",
+              "nrp": "85030645",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANITPAMWISATA"
+            },
+            {
+              "nama": "M. DENY WAHYU",
+              "nrp": "80050898",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. PANIT PAMWASTER"
+            },
+            {
+              "nama": "HENRI F. SIANIPAR",
+              "nrp": "83050202",
+              "pangkat": "AIPTU",
+              "jabatan": "BINTARA SAT PAMOBVIT"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SATPOLAIRUD",
+          "jumlah_personel": 5,
+          "personel_list": [
+            {
+              "nama": "SULAIMAN PANGARIBUAN, S.H",
+              "nrp": "68120522",
+              "pangkat": "AKP",
+              "jabatan": "KASAT POLAIRUD"
+            },
+            {
+              "nama": "EFENDI M.  SIREGAR",
+              "nrp": "83080822",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANITPATROLI"
+            },
+            {
+              "nama": "ROMEL LINDUNG SIAHAAN",
+              "nrp": "73120275",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KAURMINTU"
+            },
+            {
+              "nama": "FRANS HOTMAN MANURUNG, S.H.",
+              "nrp": "90060273",
+              "pangkat": "BRIPKA",
+              "jabatan": "BINTARA SATPOLAIRUD"
+            },
+            {
+              "nama": "ANTONIUS SIPAYUNG",
+              "nrp": "77070919",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA SATPOLAIRUD"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SIDOKKES",
+          "jumlah_personel": 2,
+          "personel_list": [
+            {
+              "nama": "NENENG GUSNIARTI",
+              "nrp": "197008291993032002",
+              "pangkat": "PENATA",
+              "jabatan": "KASIDOKKES"
+            },
+            {
+              "nama": "EDDY SURANTA SARAGIH",
+              "nrp": "84040532",
+              "pangkat": "BRIPKA",
+              "jabatan": "BA SIDOKKES"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SIHUMAS",
+          "jumlah_personel": 3,
+          "personel_list": [
+            {
+              "nama": "RADIAMAN SIMARMATA",
+              "nrp": "70010290",
+              "pangkat": "AKP",
+              "jabatan": "KASIHUMAS"
+            },
+            {
+              "nama": "GUNAWAN SITUMORANG",
+              "nrp": "93030551",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA SIHUMAS"
+            },
+            {
+              "nama": "DANIEL BAHTERA SINAGA",
+              "nrp": "98091488",
+              "pangkat": "BRIPTU",
+              "jabatan": "BINTARA SIHUMAS"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SIKEU",
+          "jumlah_personel": 5,
+          "personel_list": [
+            {
+              "nama": "PENGEJAPEN, S.H.",
+              "nrp": "93100676",
+              "pangkat": "BRIGPOL",
+              "jabatan": "PS. KASIKEU"
+            },
+            {
+              "nama": "MUHARRAM SYAHRI, S.H.",
+              "nrp": "97050876",
+              "pangkat": "BRIPTU",
+              "jabatan": "BINTARA SIKEU"
+            },
+            {
+              "nama": "M.FATHUR RAHMAN, S.H.",
+              "nrp": "97100685",
+              "pangkat": "BRIPTU",
+              "jabatan": "BINTARA SIKEU"
+            },
+            {
+              "nama": "HESKIEL WANDANA MELIALA",
+              "nrp": "03070010",
+              "pangkat": "BRIPDA",
+              "jabatan": "BINTARA SIKEU"
+            },
+            {
+              "nama": "DANIEL RICARDO SARAGIH",
+              "nrp": "03040138",
+              "pangkat": "BRIPDA",
+              "jabatan": "BINTARA SIKEU"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SIKUM",
+          "jumlah_personel": 2,
+          "personel_list": [
+            {
+              "nama": "PARIMPUNAN SIREGAR",
+              "nrp": "73050261",
+              "pangkat": "IPDA",
+              "jabatan": "KASUBSIBANKUM"
+            },
+            {
+              "nama": "DANIEL E. LUMBANTORUAN, S.H.",
+              "nrp": "95030599",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA SIKUM"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SIPROPAM",
+          "jumlah_personel": 11,
+          "personel_list": [
+            {
+              "nama": "DENNI BOYKE H. SIREGAR, S.H.",
+              "nrp": "76120670",
+              "pangkat": "IPDA",
+              "jabatan": "PS. KASIPROPAM"
+            },
+            {
+              "nama": "BENNI ARDINAL, S.H., M.H.",
+              "nrp": "81010202",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT PROPOS"
+            },
+            {
+              "nama": "AGUSTINUS SINAGA",
+              "nrp": "85081088",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT PAMINAL"
+            },
+            {
+              "nama": "RAMBO CISLER NADEAK",
+              "nrp": "86081359",
+              "pangkat": "BRIPKA",
+              "jabatan": "BINTARA SIPROPAM"
+            },
+            {
+              "nama": "PERY RAPEN YONES PARDOSI, S.H.",
+              "nrp": "95030796",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA SIPROPAM"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SITIK",
+          "jumlah_personel": 3,
+          "personel_list": [
+            {
+              "nama": "LISTER BROUN SITORUS",
+              "nrp": "93060444",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA SITIK"
+            },
+            {
+              "nama": "ANDREAS D. S. SITANGGANG",
+              "nrp": "00070791",
+              "pangkat": "BRIPDA",
+              "jabatan": "BINTARA SITIK"
+            },
+            {
+              "nama": "JACKSON SIDABUTAR",
+              "nrp": "01101139",
+              "pangkat": "BRIPDA",
+              "jabatan": "BINTARA SITIK"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SIUM",
+          "jumlah_personel": 4,
+          "personel_list": [
+            {
+              "nama": "EFRI PANDI",
+              "nrp": "86100287",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KASIUM"
+            },
+            {
+              "nama": "YOGI ADE PRATAMA SITOHANG",
+              "nrp": "04010804",
+              "pangkat": "BRIPDA",
+              "jabatan": "BINTARA SIUM"
+            },
+            {
+              "nama": "HARATUA GULTOM",
+              "nrp": "77030463",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KASIUM"
+            },
+            {
+              "nama": "DONI SURIANTO PURBA, S.H.",
+              "nrp": "84110202",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KASIUM"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SIWAS",
+          "jumlah_personel": 3,
+          "personel_list": [
+            {
+              "nama": "BILMAR SITUMORANG",
+              "nrp": "75060617",
+              "pangkat": "AIPTU",
+              "jabatan": "Plt. KASIWAS"
+            },
+            {
+              "nama": "YOHANES EDI SUPRIATNO, S.H., M.H.",
+              "nrp": "94080815",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA SIWAS"
+            },
+            {
+              "nama": "AGUSTIAWAN SINAGA",
+              "nrp": "94080892",
+              "pangkat": "BRIGPOL",
+              "jabatan": "BINTARA SIWAS"
+            }
+          ]
+        },
+        {
+          "nama_unit": "SPKT",
+          "jumlah_personel": 18,
+          "personel_list": [
+            {
+              "nama": "HENDRI SIAGIAN, S.H.",
+              "nrp": "76030248",
+              "pangkat": "IPDA",
+              "jabatan": "KA SPKT"
+            },
+            {
+              "nama": "DENI MUSTIKA SUKMANA, S.E.",
+              "nrp": "87070134",
+              "pangkat": "IPDA",
+              "jabatan": "PAMAPTA 1"
+            },
+            {
+              "nama": "JAMIL MUNTHE, S.H., M.H.",
+              "nrp": "85081770",
+              "pangkat": "IPDA",
+              "jabatan": "PAMAPTA 2"
+            },
+            {
+              "nama": "BULET MARS SWANTO LBN. BATU, S.H.",
+              "nrp": "87030020",
+              "pangkat": "IPDA",
+              "jabatan": "PAMAPTA 3"
+            },
+            {
+              "nama": "RAMADHAN PUTRA, S.H.",
+              "nrp": "96010872",
+              "pangkat": "BRIPTU",
+              "jabatan": "BAMIN PAMAPTA 2"
+            }
+          ]
+        },
+        {
+          "nama_unit": "UNIT BINMAS",
+          "jumlah_personel": 5,
+          "personel_list": [
+            {
+              "nama": "LANTRO LANDELINUS SAGALA",
+              "nrp": "82070930",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT BINMAS"
+            },
+            {
+              "nama": "JARIAHMAN SARAGIH",
+              "nrp": "78100741",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT BINMAS"
+            },
+            {
+              "nama": "JUITO SUPANOTO PERANGIN-ANGIN",
+              "nrp": "84020306",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT BINMAS"
+            },
+            {
+              "nama": "BISSAR LUMBANTUNGKUP",
+              "nrp": "84091124",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT BINMAS"
+            },
+            {
+              "nama": "MANGATUR TUA TINDAON",
+              "nrp": "80080892",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT BINMAS"
+            }
+          ]
+        },
+        {
+          "nama_unit": "UNIT INTELKAM",
+          "jumlah_personel": 5,
+          "personel_list": [
+            {
+              "nama": "MARUKKIL J.M. PASARIBU",
+              "nrp": "79090296",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KANIT INTELKAM"
+            },
+            {
+              "nama": "RIJALUL FIKRI SINAGA",
+              "nrp": "86121371",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANIT INTELKAM"
+            },
+            {
+              "nama": "TUMBUR SITOHANG",
+              "nrp": "86010311",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT INTELKAM"
+            },
+            {
+              "nama": "RAMLES SITANGGANG",
+              "nrp": "77020642",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANIT INTELKAM"
+            },
+            {
+              "nama": "RUDY SETYAWAN",
+              "nrp": "80090905",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KANIT INTELKAM"
+            }
+          ]
+        },
+        {
+          "nama_unit": "UNIT PROPAM",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "JEFRI RICARDO SAMOSIR",
+              "nrp": "82040124",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KANIT PROPAM"
+            }
+          ]
+        },
+        {
+          "nama_unit": "UNIT RESKRIM",
+          "jumlah_personel": 4,
+          "personel_list": [
+            {
+              "nama": "ANDY DEDY SIHOMBING, S.H.",
+              "nrp": "87120701",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANIT RESKRIM"
+            },
+            {
+              "nama": "MUHAMMAD SYAFEI RAMADHAN",
+              "nrp": "87041134",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT RESKRIM"
+            },
+            {
+              "nama": "HERMAWADI",
+              "nrp": "82050839",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT RESKRIM"
+            },
+            {
+              "nama": "LANCASTER ARIANTO CANDY PASARIBU, S.H.",
+              "nrp": "81050713",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KANIT RESKRIM"
+            }
+          ]
+        },
+        {
+          "nama_unit": "UNIT SABHARA",
+          "jumlah_personel": 5,
+          "personel_list": [
+            {
+              "nama": "RANGGA HATTA",
+              "nrp": "86021428",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS.KANIT SAMAPTA"
+            },
+            {
+              "nama": "ASA MELKI HUTABARAT",
+              "nrp": "76120606",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT SAMAPTA"
+            },
+            {
+              "nama": "PATAR F. ANRI SIAHAAN",
+              "nrp": "89020409",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANIT SAMAPTA"
+            },
+            {
+              "nama": "BONAR JUBEL SIBARANI",
+              "nrp": "70090340",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANIT SAMAPTA"
+            },
+            {
+              "nama": "RENO HOTMARULI TUA MANIK, S.H.",
+              "nrp": "87110154",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANIT SAMAPTA"
+            }
+          ]
+        }
+      ]
+    },
+    "jabatans": {
+      "total_count": 100,
+      "data": [
+        {
+          "nama_jabatan": "ADC KAPOLRES",
+          "jumlah_personel": 2,
+          "personel_list": [
+            {
+              "nama": "REYSON YOHANNES SIMBOLON",
+              "nrp": "00080579",
+              "pangkat": "BRIPDA",
+              "unit": "BAG SDM"
+            },
+            {
+              "nama": "YOLANDA NAULIVIA ARITONANG",
+              "nrp": "03081525",
+              "pangkat": "BRIPDA",
+              "unit": "BAG SDM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "ASN BAG OPS",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "FERNANDO SILALAHI, A.Md.",
+              "nrp": "198112262024211002",
+              "pangkat": "-",
+              "unit": "BAG OPS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BA MIN BAG LOG",
+          "jumlah_personel": 3,
+          "personel_list": [
+            {
+              "nama": "EFRON SARWEDY SINAGA, S.H.",
+              "nrp": "97050588",
+              "pangkat": "BRIPTU",
+              "unit": "BAG LOG"
+            },
+            {
+              "nama": "PRIADI MAROJAHAN HUTABARAT",
+              "nrp": "00010095",
+              "pangkat": "BRIPTU",
+              "unit": "BAG LOG"
+            },
+            {
+              "nama": "CHRIST JERICHO SAPUTRA TAMPUBOLON",
+              "nrp": "03070263",
+              "pangkat": "BRIPDA",
+              "unit": "BAG LOG"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BA MIN BAG OPS",
+          "jumlah_personel": 5,
+          "personel_list": [
+            {
+              "nama": "AGUNG NUGRAHA NADAP-DAP",
+              "nrp": "02120141",
+              "pangkat": "BRIPDA",
+              "unit": "BAG OPS"
+            },
+            {
+              "nama": "ALDI PRANATA GINTING",
+              "nrp": "03010386",
+              "pangkat": "BRIPDA",
+              "unit": "BAG OPS"
+            },
+            {
+              "nama": "HENDRIKSON SILALAHI",
+              "nrp": "02040489",
+              "pangkat": "BRIPDA",
+              "unit": "BAG OPS"
+            },
+            {
+              "nama": "TOHONAN SITOHANG",
+              "nrp": "02071119",
+              "pangkat": "BRIPDA",
+              "unit": "BAG OPS"
+            },
+            {
+              "nama": "GILANG SUTOYO",
+              "nrp": "03101364",
+              "pangkat": "BRIPDA",
+              "unit": "BAG OPS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BA MIN BAG REN",
+          "jumlah_personel": 2,
+          "personel_list": [
+            {
+              "nama": "ZAKHARIA S. I. SIMANJUNTAK, S.H.",
+              "nrp": "96090857",
+              "pangkat": "BRIPTU",
+              "unit": "BAG REN"
+            },
+            {
+              "nama": "GRENIEL WIARTO SIHITE",
+              "nrp": "03080202",
+              "pangkat": "BRIPDA",
+              "unit": "BAG REN"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BA MIN BAG SDM",
+          "jumlah_personel": 3,
+          "personel_list": [
+            {
+              "nama": "LAMTIO SINAGA, S.H.",
+              "nrp": "97090248",
+              "pangkat": "BRIGPOL",
+              "unit": "BAG SDM"
+            },
+            {
+              "nama": "DODI KURNIADI",
+              "nrp": "97120490",
+              "pangkat": "BRIPTU",
+              "unit": "BAG SDM"
+            },
+            {
+              "nama": "EFRANTA SAPUTRA SITEPU",
+              "nrp": "05070285",
+              "pangkat": "BRIPDA",
+              "unit": "BAG SDM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BA PEMBINAAN",
+          "jumlah_personel": 2,
+          "personel_list": [
+            {
+              "nama": "DION MAR'YANSEN SILITONGA",
+              "nrp": "87030647",
+              "pangkat": "BRIGPOL",
+              "unit": "SIPROPAM"
+            },
+            {
+              "nama": "CLAUDIUS HARIS PARDEDE",
+              "nrp": "89080105",
+              "pangkat": "BRIGPOL",
+              "unit": "SIPROPAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BA POLRES SAMOSIR",
+          "jumlah_personel": 5,
+          "personel_list": [
+            {
+              "nama": "RADOS. S. TOGATOROP,S.H.",
+              "nrp": "86070985",
+              "pangkat": "AIPDA",
+              "unit": "BAG SDM"
+            },
+            {
+              "nama": "SYAUQI LUTFI LUBIS, S.H., M.H.",
+              "nrp": "95080918",
+              "pangkat": "BRIGPOL",
+              "unit": "BKO"
+            },
+            {
+              "nama": "DANIEL BRANDO SIDABUKKE",
+              "nrp": "97050575",
+              "pangkat": "BRIGPOL",
+              "unit": "BKO"
+            },
+            {
+              "nama": "SUTRISNO BUTAR-BUTAR, S.H.",
+              "nrp": "98010119",
+              "pangkat": "BRIPTU",
+              "unit": "BKO"
+            },
+            {
+              "nama": "LEONARDO SINAGA",
+              "nrp": "81110363",
+              "pangkat": "AIPDA",
+              "unit": "PERS MUTASI"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BA SIDOKKES",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "EDDY SURANTA SARAGIH",
+              "nrp": "84040532",
+              "pangkat": "BRIPKA",
+              "unit": "SIDOKKES"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BAMIN PAMAPTA 1",
+          "jumlah_personel": 2,
+          "personel_list": [
+            {
+              "nama": "EDY SUSANTO PARDEDE",
+              "nrp": "00010166",
+              "pangkat": "BRIPTU",
+              "unit": "SPKT"
+            },
+            {
+              "nama": "BOBBY ANGGARA PUTRA SIREGAR",
+              "nrp": "98010470",
+              "pangkat": "BRIPDA",
+              "unit": "SPKT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BAMIN PAMAPTA 2",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "RAMADHAN PUTRA, S.H.",
+              "nrp": "96010872",
+              "pangkat": "BRIPTU",
+              "unit": "SPKT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BAMIN PAMAPTA 3",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "ABEDNEGO TARIGAN",
+              "nrp": "98090415",
+              "pangkat": "BRIPTU",
+              "unit": "SPKT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA  POLSEK",
+          "jumlah_personel": 2,
+          "personel_list": [
+            {
+              "nama": "RUDYANTO LUMBANRAJA",
+              "nrp": "85041500",
+              "pangkat": "BRIPKA",
+              "unit": "BINTARA  POLSEK"
+            },
+            {
+              "nama": "ZULPAN SYAHPUTRA DAMANIK",
+              "nrp": "96031075",
+              "pangkat": "BRIPTU",
+              "unit": "BINTARA  POLSEK"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA POLSEK",
+          "jumlah_personel": 17,
+          "personel_list": [
+            {
+              "nama": "ARDIANSYAH BUTAR-BUTAR",
+              "nrp": "80120573",
+              "pangkat": "BRIPKA",
+              "unit": "BINTARA POLSEK"
+            },
+            {
+              "nama": "ADRYANTO SINAGA, S.H.",
+              "nrp": "96120123",
+              "pangkat": "BRIGPOL",
+              "unit": "BINTARA POLSEK"
+            },
+            {
+              "nama": "BROLIN ADFRIALDI HALOHO",
+              "nrp": "94040538",
+              "pangkat": "BRIGPOL",
+              "unit": "BINTARA POLSEK"
+            },
+            {
+              "nama": "SUGIANTO ERIK SIBORO",
+              "nrp": "95110806",
+              "pangkat": "BRIGPOL",
+              "unit": "BINTARA POLSEK"
+            },
+            {
+              "nama": "RISKO SIMBOLON",
+              "nrp": "01020739",
+              "pangkat": "BRIPDA",
+              "unit": "BINTARA POLSEK"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SAT BINMAS",
+          "jumlah_personel": 3,
+          "personel_list": [
+            {
+              "nama": "JEFTA OCTAVIANUS NICO SIANTURI",
+              "nrp": "95090650",
+              "pangkat": "BRIGPOL",
+              "unit": "SAT BINMAS"
+            },
+            {
+              "nama": "SAHAT MARULI TUA SINAGA, S.H.",
+              "nrp": "94091146",
+              "pangkat": "BRIGPOL",
+              "unit": "SAT BINMAS"
+            },
+            {
+              "nama": "RONAL PARTOGI SITUMORANG",
+              "nrp": "04020118",
+              "pangkat": "BRIPDA",
+              "unit": "SAT BINMAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SAT INTELKAM",
+          "jumlah_personel": 4,
+          "personel_list": [
+            {
+              "nama": "ALFONSIUS GULTOM, S.H.",
+              "nrp": "93080556",
+              "pangkat": "BRIGPOL",
+              "unit": "SAT INTELKAM"
+            },
+            {
+              "nama": "AGHEO HARMANA JOUSTRA SINURAYA",
+              "nrp": "04080118",
+              "pangkat": "BRIPDA",
+              "unit": "SAT INTELKAM"
+            },
+            {
+              "nama": "SAMUEL RINALDI PAKPAHAN",
+              "nrp": "04010932",
+              "pangkat": "BRIPDA",
+              "unit": "SAT INTELKAM"
+            },
+            {
+              "nama": "RAYMONTIUS HAROMUNTE",
+              "nrp": "04040520",
+              "pangkat": "BRIPDA",
+              "unit": "SAT INTELKAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SAT LANTAS",
+          "jumlah_personel": 8,
+          "personel_list": [
+            {
+              "nama": "HERIANTO TURNIP",
+              "nrp": "89070031",
+              "pangkat": "BRIPKA",
+              "unit": "SAT LANTAS"
+            },
+            {
+              "nama": "ROY GRIMSLAY, S.H.",
+              "nrp": "93020749",
+              "pangkat": "BRIGPOL",
+              "unit": "SAT LANTAS"
+            },
+            {
+              "nama": "BAGUS DWI PRAKOSO, S.H.",
+              "nrp": "93090673",
+              "pangkat": "BRIGPOL",
+              "unit": "SAT LANTAS"
+            },
+            {
+              "nama": "ICASANDRI MONANZA BR GINTING",
+              "nrp": "97040353",
+              "pangkat": "BRIGPOL",
+              "unit": "SAT LANTAS"
+            },
+            {
+              "nama": "DIKI FEBRIAN SITORUS",
+              "nrp": "95021078",
+              "pangkat": "BRIPTU",
+              "unit": "SAT LANTAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SAT PAMOBVIT",
+          "jumlah_personel": 11,
+          "personel_list": [
+            {
+              "nama": "HENRI F. SIANIPAR",
+              "nrp": "83050202",
+              "pangkat": "AIPTU",
+              "unit": "SATPAMOBVIT"
+            },
+            {
+              "nama": "RIANTO SITANGGANG",
+              "nrp": "91110130",
+              "pangkat": "BRIGPOL",
+              "unit": "SATPAMOBVIT"
+            },
+            {
+              "nama": "ROY NANDA SEMBIRING KEMBAREN",
+              "nrp": "94090948",
+              "pangkat": "BRIGPOL",
+              "unit": "SATPAMOBVIT"
+            },
+            {
+              "nama": "CANDRA SILALAHI, S.H.",
+              "nrp": "96031057",
+              "pangkat": "BRIGPOL",
+              "unit": "SATPAMOBVIT"
+            },
+            {
+              "nama": "HORAS J.M. ARITONANG",
+              "nrp": "01060884",
+              "pangkat": "BRIPDA",
+              "unit": "SATPAMOBVIT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SAT RESKRIM",
+          "jumlah_personel": 28,
+          "personel_list": [
+            {
+              "nama": "CHANDRA BARIMBING",
+              "nrp": "89030401",
+              "pangkat": "BRIPKA",
+              "unit": "SAT RESKRIM"
+            },
+            {
+              "nama": "DEDY SAOLOAN SIGALINGGING",
+              "nrp": "87041596",
+              "pangkat": "BRIPKA",
+              "unit": "SAT RESKRIM"
+            },
+            {
+              "nama": "ISWAN LUKITO",
+              "nrp": "82050798",
+              "pangkat": "BRIPKA",
+              "unit": "SAT RESKRIM"
+            },
+            {
+              "nama": "RONI HANSVERI BANJARNAHOR",
+              "nrp": "95030238",
+              "pangkat": "BRIGPOL",
+              "unit": "SAT RESKRIM"
+            },
+            {
+              "nama": "RODEN SUANDI TURNIP",
+              "nrp": "94020506",
+              "pangkat": "BRIGPOL",
+              "unit": "SAT RESKRIM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SAT SAMAPTA",
+          "jumlah_personel": 12,
+          "personel_list": [
+            {
+              "nama": "ASRIL",
+              "nrp": "83081051",
+              "pangkat": "BRIPKA",
+              "unit": "SAT SAMAPTA"
+            },
+            {
+              "nama": "INDIRWAN FRIDERICK, S.H.",
+              "nrp": "94110350",
+              "pangkat": "BRIGPOL",
+              "unit": "SAT SAMAPTA"
+            },
+            {
+              "nama": "EGIDIUM BRAUN SILITONGA",
+              "nrp": "93100793",
+              "pangkat": "BRIGPOL",
+              "unit": "SAT SAMAPTA"
+            },
+            {
+              "nama": "DINAMIKA JAYA NEGARA SITANGGANG",
+              "nrp": "97100701",
+              "pangkat": "BRIPDA",
+              "unit": "SAT SAMAPTA"
+            },
+            {
+              "nama": "ZULKIFLI NASUTION",
+              "nrp": "02051553",
+              "pangkat": "BRIPDA",
+              "unit": "SAT SAMAPTA"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SAT TAHTI",
+          "jumlah_personel": 3,
+          "personel_list": [
+            {
+              "nama": "FERNANDO SIMBOLON",
+              "nrp": "98050496",
+              "pangkat": "BRIPTU",
+              "unit": "SAT TAHTI"
+            },
+            {
+              "nama": "KURNIA PERMANA",
+              "nrp": "98030531",
+              "pangkat": "BRIPTU",
+              "unit": "SAT TAHTI"
+            },
+            {
+              "nama": "STEVEN IMANUEL SITUMEANG",
+              "nrp": "05090232",
+              "pangkat": "BRIPDA",
+              "unit": "SAT TAHTI"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SATINTELKAM",
+          "jumlah_personel": 7,
+          "personel_list": [
+            {
+              "nama": "TRIFIKO P. NAINGGOLAN, S.H.",
+              "nrp": "97040848",
+              "pangkat": "BRIPTU",
+              "unit": "SAT INTELKAM"
+            },
+            {
+              "nama": "ANDRI AFRIJAL SIMARMATA",
+              "nrp": "98110618",
+              "pangkat": "BRIPTU",
+              "unit": "SAT INTELKAM"
+            },
+            {
+              "nama": "DIEN VAROSCY I. SITUMORANG",
+              "nrp": "02030032",
+              "pangkat": "BRIPDA",
+              "unit": "SAT INTELKAM"
+            },
+            {
+              "nama": "ARDY TRIANO MALAU",
+              "nrp": "02120339",
+              "pangkat": "BRIPDA",
+              "unit": "SAT INTELKAM"
+            },
+            {
+              "nama": "JUNEDI SAGALA",
+              "nrp": "02040459",
+              "pangkat": "BRIPDA",
+              "unit": "SAT INTELKAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SATLANTAS",
+          "jumlah_personel": 11,
+          "personel_list": [
+            {
+              "nama": "ANDRE TARUNA SIMBOLON",
+              "nrp": "02090891",
+              "pangkat": "BRIPDA",
+              "unit": "SAT LANTAS"
+            },
+            {
+              "nama": "BENY BOY CHRISTIAN SIAHAAN",
+              "nrp": "02111012",
+              "pangkat": "BRIPDA",
+              "unit": "SAT LANTAS"
+            },
+            {
+              "nama": "RADOT NOVALDO PANDAPOTAN PURBA",
+              "nrp": "02111051",
+              "pangkat": "BRIPDA",
+              "unit": "SAT LANTAS"
+            },
+            {
+              "nama": "DIDI HOT BAGAS SITORUS",
+              "nrp": "96061331",
+              "pangkat": "BRIPDA",
+              "unit": "SAT LANTAS"
+            },
+            {
+              "nama": "MUHAMMAD ZIDHAN RIFALDI",
+              "nrp": "05030251",
+              "pangkat": "BRIPDA",
+              "unit": "SAT LANTAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SATPOLAIRUD",
+          "jumlah_personel": 2,
+          "personel_list": [
+            {
+              "nama": "FRANS HOTMAN MANURUNG, S.H.",
+              "nrp": "90060273",
+              "pangkat": "BRIPKA",
+              "unit": "SATPOLAIRUD"
+            },
+            {
+              "nama": "ANTONIUS SIPAYUNG",
+              "nrp": "77070919",
+              "pangkat": "BRIGPOL",
+              "unit": "SATPOLAIRUD"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SATRESNARKOBA",
+          "jumlah_personel": 8,
+          "personel_list": [
+            {
+              "nama": "EKO PUTRA DAMANIK, S.H.",
+              "nrp": "93050797",
+              "pangkat": "BRIGPOL",
+              "unit": "SAT RESNARKOBA"
+            },
+            {
+              "nama": "MAY FRANSISCO SIAGIAN, S.H.",
+              "nrp": "91050361",
+              "pangkat": "BRIGPOL",
+              "unit": "SAT RESNARKOBA"
+            },
+            {
+              "nama": "ROBERTO MANALU",
+              "nrp": "94090839",
+              "pangkat": "BRIPTU",
+              "unit": "SAT RESNARKOBA"
+            },
+            {
+              "nama": "M. RONALD FAHROZI HARAHAP, S.H.",
+              "nrp": "98110378",
+              "pangkat": "BRIPTU",
+              "unit": "SAT RESNARKOBA"
+            },
+            {
+              "nama": "HERIANTO EFENDI, S.H.",
+              "nrp": "97020694",
+              "pangkat": "BRIPTU",
+              "unit": "SAT RESNARKOBA"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SIHUMAS",
+          "jumlah_personel": 2,
+          "personel_list": [
+            {
+              "nama": "GUNAWAN SITUMORANG",
+              "nrp": "93030551",
+              "pangkat": "BRIGPOL",
+              "unit": "SIHUMAS"
+            },
+            {
+              "nama": "DANIEL BAHTERA SINAGA",
+              "nrp": "98091488",
+              "pangkat": "BRIPTU",
+              "unit": "SIHUMAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SIKEU",
+          "jumlah_personel": 4,
+          "personel_list": [
+            {
+              "nama": "MUHARRAM SYAHRI, S.H.",
+              "nrp": "97050876",
+              "pangkat": "BRIPTU",
+              "unit": "SIKEU"
+            },
+            {
+              "nama": "M.FATHUR RAHMAN, S.H.",
+              "nrp": "97100685",
+              "pangkat": "BRIPTU",
+              "unit": "SIKEU"
+            },
+            {
+              "nama": "HESKIEL WANDANA MELIALA",
+              "nrp": "03070010",
+              "pangkat": "BRIPDA",
+              "unit": "SIKEU"
+            },
+            {
+              "nama": "DANIEL RICARDO SARAGIH",
+              "nrp": "03040138",
+              "pangkat": "BRIPDA",
+              "unit": "SIKEU"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SIKUM",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "DANIEL E. LUMBANTORUAN, S.H.",
+              "nrp": "95030599",
+              "pangkat": "BRIGPOL",
+              "unit": "SIKUM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SIPROPAM",
+          "jumlah_personel": 6,
+          "personel_list": [
+            {
+              "nama": "RAMBO CISLER NADEAK",
+              "nrp": "86081359",
+              "pangkat": "BRIPKA",
+              "unit": "SIPROPAM"
+            },
+            {
+              "nama": "PERY RAPEN YONES PARDOSI, S.H.",
+              "nrp": "95030796",
+              "pangkat": "BRIGPOL",
+              "unit": "SIPROPAM"
+            },
+            {
+              "nama": "DWI HETRIANDY, S.H.",
+              "nrp": "97070014",
+              "pangkat": "BRIGPOL",
+              "unit": "SIPROPAM"
+            },
+            {
+              "nama": "TRY WIBOWO",
+              "nrp": "97120554",
+              "pangkat": "BRIPTU",
+              "unit": "SIPROPAM"
+            },
+            {
+              "nama": "SIMON TIGRIS SIAGIAN",
+              "nrp": "00080343",
+              "pangkat": "BRIPTU",
+              "unit": "SIPROPAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SITIK",
+          "jumlah_personel": 3,
+          "personel_list": [
+            {
+              "nama": "LISTER BROUN SITORUS",
+              "nrp": "93060444",
+              "pangkat": "BRIGPOL",
+              "unit": "SITIK"
+            },
+            {
+              "nama": "ANDREAS D. S. SITANGGANG",
+              "nrp": "00070791",
+              "pangkat": "BRIPDA",
+              "unit": "SITIK"
+            },
+            {
+              "nama": "JACKSON SIDABUTAR",
+              "nrp": "01101139",
+              "pangkat": "BRIPDA",
+              "unit": "SITIK"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SIUM",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "YOGI ADE PRATAMA SITOHANG",
+              "nrp": "04010804",
+              "pangkat": "BRIPDA",
+              "unit": "SIUM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "BINTARA SIWAS",
+          "jumlah_personel": 2,
+          "personel_list": [
+            {
+              "nama": "YOHANES EDI SUPRIATNO, S.H., M.H.",
+              "nrp": "94080815",
+              "pangkat": "BRIGPOL",
+              "unit": "SIWAS"
+            },
+            {
+              "nama": "AGUSTIAWAN SINAGA",
+              "nrp": "94080892",
+              "pangkat": "BRIGPOL",
+              "unit": "SIWAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KA SPKT",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "HENDRI SIAGIAN, S.H.",
+              "nrp": "76030248",
+              "pangkat": "IPDA",
+              "unit": "SPKT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KABAG OPS",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "EDUAR, S.H.",
+              "nrp": "68100259",
+              "pangkat": "KOMPOL",
+              "unit": "BAG OPS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KANIT RESKRIM",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "WIDODO KABAN, S.H.",
+              "nrp": "86071792",
+              "pangkat": "IPDA",
+              "unit": "SPKT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KANITIDIK 1",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "SUHADIYANTO, S.H.",
+              "nrp": "83120602",
+              "pangkat": "IPDA",
+              "unit": "SAT RESKRIM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KANITIDIK 3",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "DARMONO SAMOSIR, S.H.",
+              "nrp": "76020196",
+              "pangkat": "IPDA",
+              "unit": "SAT RESKRIM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KANITIDIK 4",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "ROYANTO PURBA, S.H.",
+              "nrp": "83010825",
+              "pangkat": "IPDA",
+              "unit": "SAT RESKRIM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KANITIDIK 5",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "KUICAN SIMANJUNTAK",
+              "nrp": "88060535",
+              "pangkat": "BRIPKA",
+              "unit": "SAT RESKRIM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KANITREGIDENT LANTAS",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "JUSUF KETAREN",
+              "nrp": "75080942",
+              "pangkat": "IPDA",
+              "unit": "SAT LANTAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KAPOLRES SAMOSIR",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "RINA SRY NIRWANA TARIGAN, S.I.K., M.H.",
+              "nrp": "84031648",
+              "pangkat": "AKBP",
+              "unit": ""
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KAPOLSEK ONANRUNGGU",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "MARLAN SILALAHI",
+              "nrp": "68020268",
+              "pangkat": "KOMPOL",
+              "unit": "KAPOLSEK"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KAPOLSEK PALIPI",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "MAXON NAINGGOLAN",
+              "nrp": "70050412",
+              "pangkat": "AKP",
+              "unit": "KAPOLSEK"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KAPOLSEK PANGURURAN",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "BANGUN TUA DALIMUNTHE",
+              "nrp": "70020298",
+              "pangkat": "AKP",
+              "unit": "KAPOLSEK"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KASAT LANTAS",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "NATANAIL SURBAKTI, S.H",
+              "nrp": "79120800",
+              "pangkat": "AKP",
+              "unit": "SAT LANTAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KASAT PAMOBVIT",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "TANGIO HAOJAHAN SITANGGANG, S.H.",
+              "nrp": "72100604",
+              "pangkat": "IPTU",
+              "unit": "SATPAMOBVIT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KASAT POLAIRUD",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "SULAIMAN PANGARIBUAN, S.H",
+              "nrp": "68120522",
+              "pangkat": "AKP",
+              "unit": "SATPOLAIRUD"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KASAT RESKRIM",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "EDWARD SIDAURUK, S.E., M.M.",
+              "nrp": "79120994",
+              "pangkat": "AKP",
+              "unit": "SAT RESKRIM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KASAT SAMAPTA",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "NANDI BUTAR-BUTAR, S.H.",
+              "nrp": "80080676",
+              "pangkat": "AKP",
+              "unit": "SAT SAMAPTA"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KASATRESNARKOBA",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "FERRY ARIANDY, S.H., M.H",
+              "nrp": "79060034",
+              "pangkat": "AKP",
+              "unit": "SAT RESNARKOBA"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KASIDOKKES",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "NENENG GUSNIARTI",
+              "nrp": "197008291993032002",
+              "pangkat": "PENATA",
+              "unit": "SIDOKKES"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KASIHUMAS",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "RADIAMAN SIMARMATA",
+              "nrp": "70010290",
+              "pangkat": "AKP",
+              "unit": "SIHUMAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KASUBSIBANKUM",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "PARIMPUNAN SIREGAR",
+              "nrp": "73050261",
+              "pangkat": "IPDA",
+              "unit": "SIKUM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "KAURBINOPS",
+          "jumlah_personel": 3,
+          "personel_list": [
+            {
+              "nama": "HORAS LARIUS SITUMORANG",
+              "nrp": "75120560",
+              "pangkat": "IPDA",
+              "unit": "SAT BINMAS"
+            },
+            {
+              "nama": "MUHAMMAD YUNUS LUBIS, S.H.",
+              "nrp": "85050489",
+              "pangkat": "IPDA",
+              "unit": "SAT INTELKAM"
+            },
+            {
+              "nama": "ALVIUS KRISTIAN GINTING, S.H.",
+              "nrp": "88100591",
+              "pangkat": "IPDA",
+              "unit": "SAT RESNARKOBA"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "OP CALL CENTRE",
+          "jumlah_personel": 5,
+          "personel_list": [
+            {
+              "nama": "GABRIEL PAULIMA NADEAK",
+              "nrp": "01070820",
+              "pangkat": "BRIPDA",
+              "unit": "SPKT"
+            },
+            {
+              "nama": "ANDRE OWEN PURBA",
+              "nrp": "02091526",
+              "pangkat": "BRIPDA",
+              "unit": "SPKT"
+            },
+            {
+              "nama": "EDWARD FERDINAND SIDABUTAR",
+              "nrp": "04070159",
+              "pangkat": "BRIPDA",
+              "unit": "SPKT"
+            },
+            {
+              "nama": "BIMA SANTO HUTAGAOL",
+              "nrp": "03060873",
+              "pangkat": "BRIPDA",
+              "unit": "SPKT"
+            },
+            {
+              "nama": "KRISTIAN M. H. NABABAN",
+              "nrp": "03121291",
+              "pangkat": "BRIPDA",
+              "unit": "SPKT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PAMAPTA 1",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "DENI MUSTIKA SUKMANA, S.E.",
+              "nrp": "87070134",
+              "pangkat": "IPDA",
+              "unit": "SPKT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PAMAPTA 2",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "JAMIL MUNTHE, S.H., M.H.",
+              "nrp": "85081770",
+              "pangkat": "IPDA",
+              "unit": "SPKT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PAMAPTA 3",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "BULET MARS SWANTO LBN. BATU, S.H.",
+              "nrp": "87030020",
+              "pangkat": "IPDA",
+              "unit": "SPKT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PAURSUBBAGBINKAR",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "REYMESTA AMBARITA, S.Kom.",
+              "nrp": "`198111252014122004",
+              "pangkat": "PENDA",
+              "unit": "BAG SDM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PAURSUBBAGPROGAR",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "SURUNG SAGALA",
+              "nrp": "72100484",
+              "pangkat": "IPDA",
+              "unit": "BAG REN"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KA SPKT 1",
+          "jumlah_personel": 2,
+          "personel_list": [
+            {
+              "nama": "H. SWANDI SINAGA",
+              "nrp": "78040213",
+              "pangkat": "AIPTU",
+              "unit": "SPKT"
+            },
+            {
+              "nama": "GUNTAR TAMBUNAN",
+              "nrp": "75120864",
+              "pangkat": "AIPTU",
+              "unit": "SPKT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KA SPKT 2",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "TEGUH SYAHPUTRA",
+              "nrp": "85071450",
+              "pangkat": "BRIPKA",
+              "unit": "SPKT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KA SPKT 3",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "YOPPHY RHODEAR MUNTHE",
+              "nrp": "83080042",
+              "pangkat": "AIPDA",
+              "unit": "SPKT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KABAG SDM",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "TARMIZI LUBIS, S.H.",
+              "nrp": "73010107",
+              "pangkat": "AKP",
+              "unit": "BAG SDM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT 1",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "CINTER ROKHY SINAGA",
+              "nrp": "87051430",
+              "pangkat": "BRIPKA",
+              "unit": "SAT INTELKAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT 2",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "VANDU P. MARPAUNG",
+              "nrp": "90080088",
+              "pangkat": "BRIPKA",
+              "unit": "SAT INTELKAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT 3",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "SITARDA AKABRI SIBUEA",
+              "nrp": "87080112",
+              "pangkat": "AIPDA",
+              "unit": "SAT INTELKAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT BINMAS",
+          "jumlah_personel": 5,
+          "personel_list": [
+            {
+              "nama": "LANTRO LANDELINUS SAGALA",
+              "nrp": "82070930",
+              "pangkat": "AIPDA",
+              "unit": "UNIT BINMAS"
+            },
+            {
+              "nama": "JARIAHMAN SARAGIH",
+              "nrp": "78100741",
+              "pangkat": "AIPDA",
+              "unit": "UNIT BINMAS"
+            },
+            {
+              "nama": "JUITO SUPANOTO PERANGIN-ANGIN",
+              "nrp": "84020306",
+              "pangkat": "AIPDA",
+              "unit": "UNIT BINMAS"
+            },
+            {
+              "nama": "BISSAR LUMBANTUNGKUP",
+              "nrp": "84091124",
+              "pangkat": "AIPDA",
+              "unit": "UNIT BINMAS"
+            },
+            {
+              "nama": "MANGATUR TUA TINDAON",
+              "nrp": "80080892",
+              "pangkat": "AIPDA",
+              "unit": "UNIT BINMAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT DALMAS 2",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "HASUDUNGAN SILITONGA",
+              "nrp": "73040390",
+              "pangkat": "AIPDA",
+              "unit": "SAT SAMAPTA"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT IDENTIFIKASI",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "HENRY SIPAKKAR",
+              "nrp": "83060084",
+              "pangkat": "AIPTU",
+              "unit": "SAT RESKRIM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT INTELKAM",
+          "jumlah_personel": 5,
+          "personel_list": [
+            {
+              "nama": "MARUKKIL J.M. PASARIBU",
+              "nrp": "79090296",
+              "pangkat": "AIPTU",
+              "unit": "UNIT INTELKAM"
+            },
+            {
+              "nama": "RIJALUL FIKRI SINAGA",
+              "nrp": "86121371",
+              "pangkat": "BRIPKA",
+              "unit": "UNIT INTELKAM"
+            },
+            {
+              "nama": "TUMBUR SITOHANG",
+              "nrp": "86010311",
+              "pangkat": "AIPDA",
+              "unit": "UNIT INTELKAM"
+            },
+            {
+              "nama": "RAMLES SITANGGANG",
+              "nrp": "77020642",
+              "pangkat": "BRIPKA",
+              "unit": "UNIT INTELKAM"
+            },
+            {
+              "nama": "RUDY SETYAWAN",
+              "nrp": "80090905",
+              "pangkat": "AIPTU",
+              "unit": "UNIT INTELKAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT PAMINAL",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "AGUSTINUS SINAGA",
+              "nrp": "85081088",
+              "pangkat": "AIPDA",
+              "unit": "SIPROPAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT PROPAM",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "JEFRI RICARDO SAMOSIR",
+              "nrp": "82040124",
+              "pangkat": "AIPTU",
+              "unit": "UNIT PROPAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT PROPOS",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "BENNI ARDINAL, S.H., M.H.",
+              "nrp": "81010202",
+              "pangkat": "AIPDA",
+              "unit": "SIPROPAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT RESKRIM",
+          "jumlah_personel": 4,
+          "personel_list": [
+            {
+              "nama": "ANDY DEDY SIHOMBING, S.H.",
+              "nrp": "87120701",
+              "pangkat": "BRIPKA",
+              "unit": "UNIT RESKRIM"
+            },
+            {
+              "nama": "MUHAMMAD SYAFEI RAMADHAN",
+              "nrp": "87041134",
+              "pangkat": "AIPDA",
+              "unit": "UNIT RESKRIM"
+            },
+            {
+              "nama": "HERMAWADI",
+              "nrp": "82050839",
+              "pangkat": "AIPDA",
+              "unit": "UNIT RESKRIM"
+            },
+            {
+              "nama": "LANCASTER ARIANTO CANDY PASARIBU, S.H.",
+              "nrp": "81050713",
+              "pangkat": "AIPTU",
+              "unit": "UNIT RESKRIM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT SAMAPTA",
+          "jumlah_personel": 4,
+          "personel_list": [
+            {
+              "nama": "ASA MELKI HUTABARAT",
+              "nrp": "76120606",
+              "pangkat": "AIPDA",
+              "unit": "UNIT SABHARA"
+            },
+            {
+              "nama": "PATAR F. ANRI SIAHAAN",
+              "nrp": "89020409",
+              "pangkat": "BRIPKA",
+              "unit": "UNIT SABHARA"
+            },
+            {
+              "nama": "BONAR JUBEL SIBARANI",
+              "nrp": "70090340",
+              "pangkat": "BRIPKA",
+              "unit": "UNIT SABHARA"
+            },
+            {
+              "nama": "RENO HOTMARULI TUA MANIK, S.H.",
+              "nrp": "87110154",
+              "pangkat": "BRIPKA",
+              "unit": "UNIT SABHARA"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANIT TURJAWALI",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "JHONNY LEONARDO SILALAHI",
+              "nrp": "85090954",
+              "pangkat": "BRIPKA",
+              "unit": "SAT SAMAPTA"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANITGAKKUM",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "ARON PERANGIN-ANGIN",
+              "nrp": "80070492",
+              "pangkat": "AIPTU",
+              "unit": "SAT LANTAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANITIDIK 2",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "MARTIN HABENSONY ARITONANG",
+              "nrp": "79030434",
+              "pangkat": "AIPTU",
+              "unit": "SAT RESKRIM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANITKAMSEL",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "JEFRI KHADAFI SIREGAR, S.H.",
+              "nrp": "86030733",
+              "pangkat": "BRIPKA",
+              "unit": "SAT LANTAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANITPAMWASTER",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "MARUBA NAINGGOLAN",
+              "nrp": "80100836",
+              "pangkat": "AIPTU",
+              "unit": "SATPAMOBVIT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANITPAMWISATA",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "ROY HARIS ST. SIMAREMARE",
+              "nrp": "85030645",
+              "pangkat": "AIPDA",
+              "unit": "SATPAMOBVIT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANITPATROLI",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "EFENDI M.  SIREGAR",
+              "nrp": "83080822",
+              "pangkat": "AIPDA",
+              "unit": "SATPOLAIRUD"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KANITTURJAWALI",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "HERON GINTING",
+              "nrp": "79060704",
+              "pangkat": "BRIPKA",
+              "unit": "SAT LANTAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KAPOLSEK HARIAN BOHO",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "RAHMAT KURNIAWAN",
+              "nrp": "69090552",
+              "pangkat": "IPTU",
+              "unit": "KAPOLSEK"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KAPOLSEK SIMANINDO",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "RAMADAN SIREGAR, S.H.",
+              "nrp": "83061022",
+              "pangkat": "IPTU",
+              "unit": "KAPOLSEK"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KASAT INTELKAM",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "DONAL P. SITANGGANG, S.H., M.H.",
+              "nrp": "82070670",
+              "pangkat": "IPTU",
+              "unit": "SAT INTELKAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KASAT TAHTI",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "SAUT H. SIAHAAN",
+              "nrp": "82051018",
+              "pangkat": "AIPDA",
+              "unit": "SAT TAHTI"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KASIKEU",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "PENGEJAPEN, S.H.",
+              "nrp": "93100676",
+              "pangkat": "BRIGPOL",
+              "unit": "SIKEU"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KASIPROPAM",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "DENNI BOYKE H. SIREGAR, S.H.",
+              "nrp": "76120670",
+              "pangkat": "IPDA",
+              "unit": "SIPROPAM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KASIUM",
+          "jumlah_personel": 3,
+          "personel_list": [
+            {
+              "nama": "EFRI PANDI",
+              "nrp": "86100287",
+              "pangkat": "AIPDA",
+              "unit": "SIUM"
+            },
+            {
+              "nama": "HARATUA GULTOM",
+              "nrp": "77030463",
+              "pangkat": "AIPTU",
+              "unit": "SIUM"
+            },
+            {
+              "nama": "DONI SURIANTO PURBA, S.H.",
+              "nrp": "84110202",
+              "pangkat": "BRIPKA",
+              "unit": "SIUM"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KAURBINOPS",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "BARTO ANTONIUS SIMALANGO",
+              "nrp": "80050867",
+              "pangkat": "AIPTU",
+              "unit": "SAT SAMAPTA"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. KAURMINTU",
+          "jumlah_personel": 4,
+          "personel_list": [
+            {
+              "nama": "MARBETA S. SIANIPAR, S.H.",
+              "nrp": "80070348",
+              "pangkat": "AIPDA",
+              "unit": "SAT INTELKAM"
+            },
+            {
+              "nama": "CHANDRA HUTAPEA",
+              "nrp": "87011165",
+              "pangkat": "BRIPKA",
+              "unit": "SAT RESKRIM"
+            },
+            {
+              "nama": "BUYUNG ANDRYANTO",
+              "nrp": "85121325",
+              "pangkat": "BRIPKA",
+              "unit": "SATPAMOBVIT"
+            },
+            {
+              "nama": "ROMEL LINDUNG SIAHAAN",
+              "nrp": "73120275",
+              "pangkat": "AIPDA",
+              "unit": "SATPOLAIRUD"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. PANIT PAMWASTER",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "M. DENY WAHYU",
+              "nrp": "80050898",
+              "pangkat": "AIPDA",
+              "unit": "SATPAMOBVIT"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS. PAUR SUBBAGBINOPS",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "PATRI SIHALOHO",
+              "nrp": "82080038",
+              "pangkat": "AIPDA",
+              "unit": "BAG OPS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS.KANIT IDIK 1",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "BENNY SITUMORANG, S.H.",
+              "nrp": "89010155",
+              "pangkat": "BRIPKA",
+              "unit": "SAT RESNARKOBA"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "PS.KANIT SAMAPTA",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "RANGGA HATTA",
+              "nrp": "86021428",
+              "pangkat": "BRIPKA",
+              "unit": "UNIT SABHARA"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "Plt. KASIWAS",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "BILMAR SITUMORANG",
+              "nrp": "75060617",
+              "pangkat": "AIPTU",
+              "unit": "SIWAS"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "Plt. KASUBBAGBEKPAL",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "AWALUDDIN",
+              "nrp": "76040221",
+              "pangkat": "IPDA",
+              "unit": "BAG LOG"
+            }
+          ]
+        },
+        {
+          "nama_jabatan": "WAKAPOLRES",
+          "jumlah_personel": 1,
+          "personel_list": [
+            {
+              "nama": "BRISTON AGUS MUNTECARLO, S.T., S.I.K.",
+              "nrp": "83081648",
+              "pangkat": "KOMPOL",
+              "unit": ""
+            }
+          ]
+        }
+      ]
+    },
+    "kantors": {
+      "total_count": 6,
+      "data": [
+        {
+          "nama_kantor": "POLRES SAMOSIR",
+          "jumlah_personel": 206,
+          "personel_list": [
+            {
+              "nama": "RINA SRY NIRWANA TARIGAN, S.I.K., M.H.",
+              "nrp": "84031648",
+              "pangkat": "AKBP",
+              "jabatan": "KAPOLRES SAMOSIR"
+            },
+            {
+              "nama": "BRISTON AGUS MUNTECARLO, S.T., S.I.K.",
+              "nrp": "83081648",
+              "pangkat": "KOMPOL",
+              "jabatan": "WAKAPOLRES"
+            },
+            {
+              "nama": "EDUAR, S.H.",
+              "nrp": "68100259",
+              "pangkat": "KOMPOL",
+              "jabatan": "KABAG OPS"
+            },
+            {
+              "nama": "PATRI SIHALOHO",
+              "nrp": "82080038",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. PAUR SUBBAGBINOPS"
+            },
+            {
+              "nama": "AGUNG NUGRAHA NADAP-DAP",
+              "nrp": "02120141",
+              "pangkat": "BRIPDA",
+              "jabatan": "BA MIN BAG OPS"
+            }
+          ]
+        },
+        {
+          "nama_kantor": "POLSEK HARIAN BOHO",
+          "jumlah_personel": 10,
+          "personel_list": [
+            {
+              "nama": "RAHMAT KURNIAWAN",
+              "nrp": "69090552",
+              "pangkat": "IPTU",
+              "jabatan": "PS. KAPOLSEK HARIAN BOHO"
+            },
+            {
+              "nama": "MARUKKIL J.M. PASARIBU",
+              "nrp": "79090296",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KANIT INTELKAM"
+            },
+            {
+              "nama": "LANTRO LANDELINUS SAGALA",
+              "nrp": "82070930",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT BINMAS"
+            },
+            {
+              "nama": "ANDY DEDY SIHOMBING, S.H.",
+              "nrp": "87120701",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANIT RESKRIM"
+            },
+            {
+              "nama": "RANGGA HATTA",
+              "nrp": "86021428",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS.KANIT SAMAPTA"
+            }
+          ]
+        },
+        {
+          "nama_kantor": "POLSEK ONAN RUNGGU",
+          "jumlah_personel": 10,
+          "personel_list": [
+            {
+              "nama": "MARLAN SILALAHI",
+              "nrp": "68020268",
+              "pangkat": "KOMPOL",
+              "jabatan": "KAPOLSEK ONANRUNGGU"
+            },
+            {
+              "nama": "HERMAWADI",
+              "nrp": "82050839",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT RESKRIM"
+            },
+            {
+              "nama": "BISSAR LUMBANTUNGKUP",
+              "nrp": "84091124",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT BINMAS"
+            },
+            {
+              "nama": "BONAR JUBEL SIBARANI",
+              "nrp": "70090340",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANIT SAMAPTA"
+            },
+            {
+              "nama": "RAMLES SITANGGANG",
+              "nrp": "77020642",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANIT INTELKAM"
+            }
+          ]
+        },
+        {
+          "nama_kantor": "POLSEK PALIPI",
+          "jumlah_personel": 10,
+          "personel_list": [
+            {
+              "nama": "MAXON NAINGGOLAN",
+              "nrp": "70050412",
+              "pangkat": "AKP",
+              "jabatan": "KAPOLSEK PALIPI"
+            },
+            {
+              "nama": "H. SWANDI SINAGA",
+              "nrp": "78040213",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KA SPKT 1"
+            },
+            {
+              "nama": "HARATUA GULTOM",
+              "nrp": "77030463",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KASIUM"
+            },
+            {
+              "nama": "ASA MELKI HUTABARAT",
+              "nrp": "76120606",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT SAMAPTA"
+            },
+            {
+              "nama": "JARIAHMAN SARAGIH",
+              "nrp": "78100741",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT BINMAS"
+            }
+          ]
+        },
+        {
+          "nama_kantor": "POLSEK PANGURURAN",
+          "jumlah_personel": 10,
+          "personel_list": [
+            {
+              "nama": "BANGUN TUA DALIMUNTHE",
+              "nrp": "70020298",
+              "pangkat": "AKP",
+              "jabatan": "KAPOLSEK PANGURURAN"
+            },
+            {
+              "nama": "LANCASTER ARIANTO CANDY PASARIBU, S.H.",
+              "nrp": "81050713",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KANIT RESKRIM"
+            },
+            {
+              "nama": "RUDY SETYAWAN",
+              "nrp": "80090905",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KANIT INTELKAM"
+            },
+            {
+              "nama": "MANGATUR TUA TINDAON",
+              "nrp": "80080892",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT BINMAS"
+            },
+            {
+              "nama": "RENO HOTMARULI TUA MANIK, S.H.",
+              "nrp": "87110154",
+              "pangkat": "BRIPKA",
+              "jabatan": "PS. KANIT SAMAPTA"
+            }
+          ]
+        },
+        {
+          "nama_kantor": "POLSEK SIMANINDO",
+          "jumlah_personel": 11,
+          "personel_list": [
+            {
+              "nama": "RAMADAN SIREGAR, S.H.",
+              "nrp": "83061022",
+              "pangkat": "IPTU",
+              "jabatan": "PS. KAPOLSEK SIMANINDO"
+            },
+            {
+              "nama": "WIDODO KABAN, S.H.",
+              "nrp": "86071792",
+              "pangkat": "IPDA",
+              "jabatan": "KANIT RESKRIM"
+            },
+            {
+              "nama": "GUNTAR TAMBUNAN",
+              "nrp": "75120864",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KA SPKT 1"
+            },
+            {
+              "nama": "JEFRI RICARDO SAMOSIR",
+              "nrp": "82040124",
+              "pangkat": "AIPTU",
+              "jabatan": "PS. KANIT PROPAM"
+            },
+            {
+              "nama": "JUITO SUPANOTO PERANGIN-ANGIN",
+              "nrp": "84020306",
+              "pangkat": "AIPDA",
+              "jabatan": "PS. KANIT BINMAS"
+            }
+          ]
+        }
+      ]
+    },
+    "keterangans": {
+      "total_count": 5,
+      "data": [
+        {
+          "keterangan": "ADC BUPATI"
+        },
+        {
+          "keterangan": "BELUM MENGHADAP"
+        },
+        {
+          "keterangan": "DIK SIP"
+        },
+        {
+          "keterangan": "P3K/ BKO POLDA"
+        },
+        {
+          "keterangan": "POLDA SUMUT"
+        }
+      ]
+    }
+  }
+}

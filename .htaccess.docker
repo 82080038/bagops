@@ -1,0 +1,15 @@
+# Docker Apache Configuration untuk /bagops path
+RewriteEngine On
+
+# Redirect root to /bagops
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^(.*)$ /bagops/ [R=301,L]
+
+# Handle /bagops subdirectory
+RewriteCond %{REQUEST_URI} ^/bagops/(.*)$
+RewriteRule ^.*$ %1 [L]
+
+# Default rewrite rules
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]

@@ -1,32 +1,34 @@
 <?php
-/**
- * Front controller for BAGOPS Application
- * 
- * This file should be placed in the root directory of the application
- * and will automatically redirect all requests to the public/ directory.
- */
+session_start();
 
-// Define the path to the public directory
-$publicDir = __DIR__ . '/public';
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-// Get the request URI and remove query string
-$request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$request = ltrim($request, '/');
+require_once 'config/config.php';
+require_once 'config/database.php';
+require_once 'classes/Auth.php';
 
-// Remove the base directory from the request if needed
-$baseDir = basename(dirname(__DIR__)) . '/' . basename(__DIR__);
-if (strpos($request, $baseDir) === 0) {
-    $request = substr($request, strlen($baseDir));
+// Debug: Log untuk troubleshooting
+error_log("BAGOPS index.php accessed - " . date('Y-m-d H:i:s'));
+error_log("REQUEST_URI: " . ($_SERVER['REQUEST_URI'] ?? 'not set'));
+error_log("PHP_SELF: " . ($_SERVER['PHP_SELF'] ?? 'not set'));
+
+// Check if user is logged in
+$auth = new Auth((new Database())->getConnection());
+
+// Debug: Log authentication status
+error_log("Auth status: " . ($auth->isLoggedIn() ? 'logged_in' : 'not_logged_in'));
+
+// Redirect based on authentication status
+if (!$auth->isLoggedIn()) {
+    error_log("Redirecting to login.php");
+    header('Location: login.php');
+    exit();
 }
-$request = ltrim($request, '/');
 
-// Build the target URL
-$target = $publicDir . '/' . $request;
-
-// If the request is for a file that exists, serve it directly
-if ($request && file_exists($target) && is_file($target)) {
-    return false;
-}
-
-// Otherwise, include the main index.php from the public directory
-require $publicDir . '/index.php';
+// If logged in, redirect to root page system
+error_log("Redirecting to simple_root_system.php");
+header('Location: simple_root_system.php?page=dashboard');
+exit();
+?>

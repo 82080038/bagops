@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-03-02 10:59:49",
+  "total_pages": 9,
+  "success_count": 5,
+  "error_count": 4,
+  "results": [
+    {
+      "page": "dashboard",
+      "title": "Dashboard",
+      "status": "SUCCESS",
+      "response_time": 0.0,
+      "content_length": 17154,
+      "has_content": true,
+      "has_error": false,
+      "has_title": true
+    },
+    {
+      "page": "personel",
+      "title": "Personel",
+      "status": "SUCCESS",
+      "response_time": 0.01,
+      "content_length": 31880,
+      "has_content": true,
+      "has_error": false,
+      "has_title": true
+    },
+    {
+      "page": "jabatan_management",
+      "title": "Jabatan Management",
+      "status": "ERROR",
+      "response_time": 0.0,
+      "content_length": 28712,
+      "has_content": true,
+      "has_error": true,
+      "has_title": false
+    },
+    {
+      "page": "settings",
+      "title": "Settings",
+      "status": "ERROR",
+      "response_time": 0.01,
+      "content_length": 29100,
+      "has_content": true,
+      "has_error": true,
+      "has_title": true
+    },
+    {
+      "page": "reports",
+      "title": "Reports",
+      "status": "ERROR",
+      "response_time": 0.01,
+      "content_length": 20608,
+      "has_content": true,
+      "has_error": true,
+      "has_title": true
+    },
+    {
+      "page": "profile",
+      "title": "Profile",
+      "status": "SUCCESS",
+      "response_time": 0.0,
+      "content_length": 16889,
+      "has_content": true,
+      "has_error": false,
+      "has_title": true
+    },
+    {
+      "page": "help",
+      "title": "Help",
+      "status": "SUCCESS",
+      "response_time": 0.01,
+      "content_length": 26442,
+      "has_content": true,
+      "has_error": false,
+      "has_title": true
+    },
+    {
+      "page": "assignments",
+      "title": "Assignments",
+      "status": "ERROR",
+      "response_time": 0.01,
+      "content_length": 20941,
+      "has_content": true,
+      "has_error": true,
+      "has_title": true
+    },
+    {
+      "page": "operations",
+      "title": "Operations",
+      "status": "SUCCESS",
+      "response_time": 0.0,
+      "content_length": 22316,
+      "has_content": true,
+      "has_error": false,
+      "has_title": true
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+<?php
+
+// Enable error reporting for development
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+/**
+ * AJAX endpoint untuk get personel data
+ * Author: BAGOPS System
+ * Date: 2026-03-02
+ */
+
+// Start session and include required files
+session_start();
+require_once '../config/database.php';
+
+// Check authentication
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    http_response_code(401);
+    echo json_encode(['error' => 'Unauthorized']);
+    exit();
+}
+
+// Initialize response
+$response = [
+    'draw' => intval($_GET['draw'] ?? 1),
+    'recordsTotal' => 0,
+    'recordsFiltered' => 0,
+    'data' => []
+];
+
+try {
+    // Get database connection
+    $db = (new Database())->getConnection();
+    
+    // Get total records
+    $stmt = $db->prepare("SELECT COUNT(*) as total FROM personel WHERE is_active = 1");
+    $stmt->execute();
+    $totalRecords = $stmt->fetch()['total'];
+    
+    // Get filtered records (with search)
+    $searchValue = $_GET['search']['value'] ?? '';
+    $offset = intval($_GET['start'] ?? 0);
+    $limit = intval($_GET['length'] ?? 10);
+    
+    // Build search query
+    $searchCondition = '';
+    $params = [];
+    
+    if (!empty($searchValue)) {
+        $searchCondition = " AND (nrp LIKE ? OR nama LIKE ? OR pangkat LIKE ? OR jabatan LIKE ? OR unit LIKE ?)";
+        $searchParam = "%{$searchValue}%";
+        $params = [$searchParam, $searchParam, $searchParam, $searchParam, $searchParam];
+    }
+    
+    // Get filtered count
+    $countSql = "SELECT COUNT(*) as total FROM personel WHERE is_active = 1 {$searchCondition}";
+    $stmt = $db->prepare($countSql);
+    
+    if (!empty($params)) {
+        $stmt->execute($params);
+    } else {
+        $stmt->execute();
+    }
+    
+    $filteredRecords = $stmt->fetch()['total'];
+    
+    // Get data with pagination and search
+    $dataSql = "SELECT id, nrp, nama, pangkat, jabatan, unit, is_active 
+                FROM personel 
+                WHERE is_active = 1 {$searchCondition}
+                ORDER BY nama ASC 
+                LIMIT {$limit} OFFSET {$offset}";
+    
+    $stmt = $db->prepare($dataSql);
+    
+    if (!empty($params)) {
+        $stmt->execute($params);
+    } else {
+        $stmt->execute();
+    }
+    $personelData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    // Format data for DataTables
+    $formattedData = [];
+    foreach ($personelData as $personel) {
+        $formattedData[] = [
+            htmlspecialchars($personel['nrp'] ?? '-'),
+            htmlspecialchars($personel['nama'] ?? '-'),
+            htmlspecialchars($personel['pangkat'] ?? '-'),
+            htmlspecialchars($personel['jabatan'] ?? '-'),
+            htmlspecialchars($personel['unit'] ?? '-'),
+            $personel['is_active'] ? 
+                '<span class="badge bg-success">Aktif</span>' : 
+                '<span class="badge bg-secondary">Tidak Aktif</span>',
+            '<button class="btn btn-warning btn-sm" title="Edit" onclick="editPersonel(\'' . $personel['id'] . '\')">
+                <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn btn-danger btn-sm" title="Hapus" onclick="deletePersonel(\'' . $personel['id'] . '\')">
+                <i class="fas fa-trash"></i>
+            </button>'
+        ];
+    }
+    
+    // Set response data
+    $response['recordsTotal'] = $totalRecords;
+    $response['recordsFiltered'] = $filteredRecords;
+    $response['data'] = $formattedData;
+    
+} catch (Exception $e) {
+    $response['error'] = 'Database error: ' . $e->getMessage();
+    http_response_code(500);
+}
+
+// Send JSON response
+header('Content-Type: application/json');
+echo json_encode($response);
+?>

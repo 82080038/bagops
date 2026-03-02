@@ -1,0 +1,51 @@
+<?php
+
+// Enable error reporting for development
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+session_start();
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../classes/Auth.php';
+
+// Set headers for AJAX
+header('Content-Type: application/json');
+
+try {
+    // Logout user
+    $auth = new Auth((new Database())->getConnection());
+    $auth->logout();
+
+    // Clear all session data
+    $_SESSION = array();
+
+    // Destroy session completely
+    if (session_status() === PHP_SESSION_ACTIVE) {
+        session_destroy();
+    }
+
+    // Clear session cookie
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(session_name(), '', time() - 42000,
+            $params["path"], $params["domain"],
+            $params["secure"], $params["httponly"]
+        );
+    }
+
+    // Return success response
+    echo json_encode([
+        'success' => true,
+        'message' => 'Logout successful',
+        'redirect' => 'login.php'
+    ]);
+
+} catch (Exception $e) {
+    // Return error response
+    echo json_encode([
+        'success' => false,
+        'message' => 'Logout failed: ' . $e->getMessage()
+    ]);
+}
+?>

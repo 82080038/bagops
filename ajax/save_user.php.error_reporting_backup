@@ -1,0 +1,126 @@
+<?php
+require_once '../config/config.php';
+require_once '../config/database.php';
+require_once '../classes/Auth.php';
+
+// Start session if not already started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Check authentication and admin access
+$auth = new Auth((new Database())->getConnection());
+$auth->requireAuth();
+
+// Only admins can manage users
+$currentUser = $auth->getCurrentUser();
+if ($currentUser['role'] !== 'super_admin' && $currentUser['role'] !== 'admin') {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'message' => 'Access denied. Admin privileges required.']);
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+    exit;
+}
+
+try {
+    $pdo = (new Database())->getConnection();
+
+    // Get form data
+    $username = trim($_POST['username'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+    $confirm_password = $_POST['confirm_password'] ?? '';
+    $role = $_POST['role'] ?? 'user';
+    $name = trim($_POST['name'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    $is_active = isset($_POST['is_active']) ? 1 : 0;
+
+    // Validate required fields
+    if (empty($username) || empty($email) || empty($password)) {
+        echo json_encode(['success' => false, 'message' => 'Username, email, dan password harus diisi']);
+        exit;
+    }
+
+    // Validate email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo json_encode(['success' => false, 'message' => 'Format email tidak valid']);
+        exit;
+    }
+
+    // Validate password strength
+    if (strlen($password) < 6) {
+        echo json_encode(['success' => false, 'message' => 'Password minimal 6 karakter']);
+        exit;
+    }
+
+    // Check password confirmation
+    if ($password !== $confirm_password) {
+        echo json_encode(['success' => false, 'message' => 'Konfirmasi password tidak cocok']);
+        exit;
+    }
+
+    // Validate role
+    $valid_roles = ['super_admin', 'admin', 'kabag_ops', 'kaur_ops', 'user'];
+    if (!in_array($role, $valid_roles)) {
+        echo json_encode(['success' => false, 'message' => 'Role tidak valid']);
+        exit;
+    }
+
+    // Check if username already exists
+    $stmt = $pdo->prepare("SELECT id FROM users WHERE username = ?");
+    $stmt->execute([$username]);
+    if ($stmt->fetch()) {
+        echo json_encode(['success' => false, 'message' => 'Username sudah digunakan']);
+        exit;
+    }
+
+    // Check if email already exists
+    $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ?");
+    $stmt->execute([$email]);
+    if ($stmt->fetch()) {
+        echo json_encode(['success' => false, 'message' => 'Email sudah terdaftar']);
+        exit;
+    }
+
+    // Hash password
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    // Insert user record
+    $stmt = $pdo->prepare("
+        INSERT INTO users (
+            username, email, password, role, name, phone, is_active, created_at, updated_at
+        ) VALUES (
+            ?, ?, ?, ?, ?, ?, ?, NOW(), NOW()
+        )
+    ");
+
+    $stmt->execute([
+        $username,
+        $email,
+        $hashed_password,
+        $role,
+        $name ?: null,
+        $phone ?: null,
+        $is_active
+    ]);
+
+    $userId = $pdo->lastInsertId();
+
+    echo json_encode([
+        'success' => true,
+        'message' => 'User berhasil dibuat',
+        'user_id' => $userId
+    ]);
+
+} catch (Exception $e) {
+    error_log("Save User error: " . $e->getMessage());
+    echo json_encode([
+        'success' => false,
+        'message' => 'Terjadi kesalahan saat membuat user: ' . $e->getMessage()
+    ]);
+}
+?>

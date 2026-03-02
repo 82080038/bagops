@@ -1,0 +1,136 @@
+<?php
+
+// Enable error reporting for development
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+/**
+ * Simple Root Page System - Working Version
+ */
+
+session_start();
+
+require_once __DIR__ . '/config/database.php';
+require_once __DIR__ . '/classes/Auth.php';
+
+class SimpleRootPageSystem {
+    private $db;
+    private $auth;
+    private $currentPage;
+    private $userRole;
+    private $pageData;
+    
+    public function __construct() {
+        // Database connection
+        $this->db = (new Database())->getConnection();
+        $this->auth = new Auth($this->db);
+        
+        // Check authentication
+        if (!$this->auth->isLoggedIn()) {
+            header('Location: login.php');
+            exit();
+        }
+        
+        // Get current page
+        $this->currentPage = $_GET['page'] ?? 'dashboard';
+        $this->userRole = $this->auth->getCurrentUser()['role'] ?? 'user';
+        
+        // Load page data
+        $this->pageData = $this->loadPageData();
+        
+        // Check access
+        if (!$this->hasPageAccess()) {
+            $this->denyAccess();
+        }
+        
+        // Render page
+        $this->renderPage();
+    }
+    
+    private function loadPageData() {
+        try {
+            $stmt = $this->db->prepare("SELECT * FROM pages WHERE page_key = :page AND is_active = 1");
+            $stmt->bindParam(':page', $this->currentPage);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
+        } catch (Exception $e) {
+            return [];
+        }
+    }
+    
+    private function hasPageAccess() {
+        // Allow pages that exist as templates
+        $allowedPages = ["dashboard", "profile", "help", "reports", "assignments", "operations", "settings", "personel", "personel_ultra", "jabatan_management"];
+        
+        if (!in_array($this->currentPage, $allowedPages)) {
+            return false;
+        }
+        
+        // For template-only pages, check role permissions directly
+        $rolePermissions = [
+            'super_admin' => ["dashboard", "profile", "help", "reports", "assignments", "operations", "settings", "personel", "personel_ultra", "jabatan_management"],
+            'admin' => ['dashboard', 'profile', 'help', 'reports', 'assignments', 'personel', 'personel_ultra'],
+            'kabag_ops' => ['dashboard', 'profile', 'help', 'operations', 'personel', 'personel_ultra'],
+            'user' => ['dashboard', 'profile', 'help', 'personel', 'personel_ultra']
+        ];
+        
+        return in_array($this->currentPage, $rolePermissions[$this->userRole] ?? []);
+    }
+    
+    private function denyAccess() {
+        http_response_code(403);
+        echo '<h1>Access Denied</h1>';
+        echo '<p>You do not have permission to access this page.</p>';
+        exit();
+    }
+    
+    private function renderPage() {
+        // Set page metadata
+        $title = $this->pageData['title'] ?? ucfirst($this->currentPage);
+        $description = $this->pageData['description'] ?? 'Halaman ' . ucfirst($this->currentPage);
+        
+        if ($this->currentPage === "personel") {
+            $this->currentPage = "personel_ultra";
+        }
+        // Set globals for template
+        $GLOBALS['db'] = $this->db;
+        $GLOBALS['auth'] = $this->auth;
+        $GLOBALS['current_page'] = $this->currentPage;
+        $GLOBALS['user_role'] = $this->userRole;
+        $GLOBALS['page_data'] = $this->pageData;
+        $GLOBALS['page_title'] = $title . ' - BAGOPS POLRES SAMOSIR';
+        $GLOBALS['page_description'] = $description;
+        
+        // Include layout which will include the template
+        include __DIR__ . '/layouts/simple_layout.php';
+    }
+    
+    private function renderFallbackPage($title, $description) {
+        echo '<!DOCTYPE html>';
+        echo '<html lang="id">';
+        echo '<head>';
+        echo '<meta charset="UTF-8">';
+        echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+        echo '<title>' . htmlspecialchars($title) . ' - BAGOPS</title>';
+        echo '<link href="assets/css/bootstrap.min.css" rel="stylesheet">';
+        echo '<link href="assets/css/fontawesome.min.css" rel="stylesheet">';
+        echo '</head>';
+        echo '<body class="bg-light">';
+        echo '<div class="container mt-4">';
+        echo '<h1><i class="fas fa-info-circle me-2"></i>' . htmlspecialchars($title) . '</h1>';
+        echo '<p class="text-muted">' . htmlspecialchars($description) . '</p>';
+        echo '<div class="alert alert-info">';
+        echo '<h5>Page Information</h5>';
+        echo '<p>Template file: pages/' . htmlspecialchars($this->currentPage) . '.php tidak ditemukan</p>';
+        echo '<p>Role: ' . htmlspecialchars($this->userRole) . '</p>';
+        echo '<p>Page: ' . htmlspecialchars($this->currentPage) . '</p>';
+        echo '</div>';
+        echo '</div>';
+        echo '</body>';
+        echo '</html>';
+    }
+}
+
+// Run the system
+new SimpleRootPageSystem();
+?>

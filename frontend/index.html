@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAGOPS POLRES SAMOSIR - Dashboard</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .sidebar .nav-link {
+            color: rgba(255,255,255,0.8);
+            border-radius: 8px;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            color: white;
+            background: rgba(255,255,255,0.1);
+        }
+        .main-content {
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 8px;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .table {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .stats-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .stats-card h3 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+        }
+        .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+        }
+        .badge {
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 sidebar p-3">
+                <div class="text-center mb-4">
+                    <h4><i class="fas fa-shield-alt"></i> BAGOPS</h4>
+                    <small>POLRES SAMOSIR</small>
+                </div>
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="#" data-page="dashboard">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
+                    <a class="nav-link" href="#" data-page="personel">
+                        <i class="fas fa-users"></i> Personel
+                    </a>
+                    <a class="nav-link" href="#" data-page="operations">
+                        <i class="fas fa-cogs"></i> Operasi
+                    </a>
+                    <a class="nav-link" href="#" data-page="renops">
+                        <i class="fas fa-file-alt"></i> RENOPS
+                    </a>
+                    <a class="nav-link" href="#" data-page="posko">
+                        <i class="fas fa-map-marker-alt"></i> POSKO
+                    </a>
+                    <a class="nav-link" href="#" data-page="analytics">
+                        <i class="fas fa-chart-bar"></i> Analytics
+                    </a>
+                    <a class="nav-link" href="#" data-page="mobile">
+                        <i class="fas fa-mobile-alt"></i> Mobile
+                    </a>
+                </nav>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-md-10 main-content p-4">
+                <!-- Dashboard Page -->
+                <div id="dashboard" class="page-content">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+                        <div>
+                            <span class="badge bg-success">Online</span>
+                            <span class="ms-2">Admin User</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Cards -->
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <div class="stats-card text-center">
+                                <i class="fas fa-users fa-2x mb-2"></i>
+                                <h3 id="totalPersonel">241</h3>
+                                <p>Total Personel</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stats-card text-center">
+                                <i class="fas fa-cogs fa-2x mb-2"></i>
+                                <h3 id="totalOperations">5</h3>
+                                <p>Operasi Aktif</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stats-card text-center">
+                                <i class="fas fa-file-alt fa-2x mb-2"></i>
+                                <h3 id="totalRenops">3</h3>
+                                <p>RENOPS Draft</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stats-card text-center">
+                                <i class="fas fa-map-marker-alt fa-2x mb-2"></i>
+                                <h3 id="totalPosko">3</h3>
+                                <p>POSKO Aktif</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Actions -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="fas fa-bolt"></i> Quick Actions</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center mb-3">
+                                            <button class="btn btn-primary w-100" onclick="showPage('personel')">
+                                                <i class="fas fa-plus"></i> Tambah Personel
+                                            </button>
+                                        </div>
+                                        <div class="col-md-3 text-center mb-3">
+                                            <button class="btn btn-primary w-100" onclick="showPage('operations')">
+                                                <i class="fas fa-plus"></i> Buat Operasi
+                                            </button>
+                                        </div>
+                                        <div class="col-md-3 text-center mb-3">
+                                            <button class="btn btn-primary w-100" onclick="showPage('renops')">
+                                                <i class="fas fa-plus"></i> Buat RENOPS
+                                            </button>
+                                        </div>
+                                        <div class="col-md-3 text-center mb-3">
+                                            <button class="btn btn-primary w-100" onclick="showPage('posko')">
+                                                <i class="fas fa-eye"></i> Lihat POSKO
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Personel Page -->
+                <div id="personel" class="page-content" style="display: none;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2><i class="fas fa-users"></i> Manajemen Personel</h2>
+                        <button class="btn btn-primary" onclick="showPersonelModal()">
+                            <i class="fas fa-plus"></i> Tambah Personel
+                        </button>
+                    </div>
+                    
+                    <!-- Search and Filter -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" id="searchPersonel" placeholder="Cari personel...">
+                                </div>
+                                <div class="col-md-3">
+                                    <select class="form-select" id="filterUnit">
+                                        <option value="">Semua Unit</option>
+                                        <option value="1">Polres Samosir</option>
+                                        <option value="2">Polsek Harian Boho</option>
+                                        <option value="3">Polsek Palipi</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select class="form-select" id="filterStatus">
+                                        <option value="">Semua Status</option>
+                                        <option value="1">Aktif</option>
+                                        <option value="0">Tidak Aktif</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-secondary w-100" onclick="searchPersonel()">
+                                        <i class="fas fa-search"></i> Cari
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Personel Table -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="loading" id="personelLoading">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <p class="mt-2">Memuat data...</p>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>NRP</th>
+                                            <th>Nama</th>
+                                            <th>Pangkat</th>
+                                            <th>Jabatan</th>
+                                            <th>Unit</th>
+                                            <th>Status</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="personelTableBody">
+                                        <!-- Data akan dimuat dengan JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Operations Page -->
+                <div id="operations" class="page-content" style="display: none;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2><i class="fas fa-cogs"></i> Manajemen Operasi</h2>
+                        <button class="btn btn-primary" onclick="showOperationModal()">
+                            <i class="fas fa-plus"></i> Buat Operasi
+                        </button>
+                    </div>
+                    
+                    <!-- Operations Table -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="loading" id="operationsLoading">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <p class="mt-2">Memuat data...</p>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Kode</th>
+                                            <th>Nama Operasi</th>
+                                            <th>Jenis</th>
+                                            <th>Status</th>
+                                            <th>Waktu Mulai</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="operationsTableBody">
+                                        <!-- Data akan dimuat dengan JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- RENOPS Page -->
+                <div id="renops" class="page-content" style="display: none;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2><i class="fas fa-file-alt"></i> Manajemen RENOPS</h2>
+                        <button class="btn btn-primary" onclick="showRenopsModal()">
+                            <i class="fas fa-plus"></i> Buat RENOPS
+                        </button>
+                    </div>
+                    
+                    <!-- RENOPS Table -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="loading" id="renopsLoading">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <p class="mt-2">Memuat data...</p>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Kode</th>
+                                            <th>Nomor</th>
+                                            <th>Tanggal</th>
+                                            <th>Status</th>
+                                            <th>Dibuat Oleh</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="renopsTableBody">
+                                        <!-- Data akan dimuat dengan JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- POSKO Page -->
+                <div id="posko" class="page-content" style="display: none;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2><i class="fas fa-map-marker-alt"></i> Monitoring POSKO</h2>
+                    </div>
+                    
+                    <!-- POSKO Cards -->
+                    <div class="row" id="poskoCards">
+                        <!-- POSKO cards akan dimuat dengan JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Analytics Page -->
+                <div id="analytics" class="page-content" style="display: none;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2><i class="fas fa-chart-bar"></i> Analytics Dashboard</h2>
+                    </div>
+                    
+                    <!-- Analytics Charts -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Distribusi Personel</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="personelChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Trend Operasi</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="operationsChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Page -->
+                <div id="mobile" class="page-content" style="display: none;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2><i class="fas fa-mobile-alt"></i> Mobile Management</h2>
+                    </div>
+                    
+                    <!-- Mobile Devices Table -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="loading" id="mobileLoading">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <p class="mt-2">Memuat data...</p>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Device ID</th>
+                                            <th>Personel</th>
+                                            <th>Type</th>
+                                            <th>Model</th>
+                                            <th>Status</th>
+                                            <th>Last Active</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="mobileTableBody">
+                                        <!-- Data akan dimuat dengan JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Personel Modal -->
+    <div class="modal fade" id="personelModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="personelModalTitle">Tambah Personel</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="personelForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">NRP</label>
+                                    <input type="text" class="form-control" id="personelNrp" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Nama</label>
+                                    <input type="text" class="form-control" id="personelNama" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="personelEmail">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Telepon</label>
+                                    <input type="text" class="form-control" id="personelTelepon">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Pangkat</label>
+                                    <select class="form-select" id="personelPangkat" required>
+                                        <option value="">Pilih Pangkat</option>
+                                        <option value="1">AKP</option>
+                                        <option value="2">IPTU</option>
+                                        <option value="3">IPDA</option>
+                                        <option value="4">AIPDA</option>
+                                        <option value="5">BRIPTU</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Jabatan</label>
+                                    <select class="form-select" id="personelJabatan" required>
+                                        <option value="">Pilih Jabatan</option>
+                                        <option value="1">Kapolres</option>
+                                        <option value="2">Wakapolres</option>
+                                        <option value="3">Kapolsek</option>
+                                        <option value="4">Kanit Reskrim</option>
+                                        <option value="5">Kanit Intel</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Unit</label>
+                                    <select class="form-select" id="personelUnit" required>
+                                        <option value="">Pilih Unit</option>
+                                        <option value="1">Polres Samosir</option>
+                                        <option value="2">Polsek Harian Boho</option>
+                                        <option value="3">Polsek Palipi</option>
+                                        <option value="4">Satuan Reskrim</option>
+                                        <option value="5">Satuan Intel</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Foto</label>
+                            <input type="file" class="form-control" id="personelFoto" accept="image/*">
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="personelAktif" checked>
+                                <label class="form-check-label" for="personelAktif">
+                                    Aktif
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary" onclick="savePersonel()">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/chart.min.js"></script>
+    <script>
+        // Global variables
+        let currentPage = 'dashboard';
+        let editingPersonelId = null;
+        
+        // API Configuration
+        const API_BASE_URL = 'http://localhost:8000/api';
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDashboardData();
+            setupNavigation();
+            setupSearchFilters();
+        });
+        
+        // Navigation
+        function setupNavigation() {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    showPage(page);
+                });
+            });
+        }
+        
+        function showPage(page) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Show selected page
+            document.getElementById(page).style.display = 'block';
+            
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`[data-page="${page}"]`).classList.add('active');
+            
+            currentPage = page;
+            
+            // Load page data
+            switch(page) {
+                case 'dashboard':
+                    loadDashboardData();
+                    break;
+                case 'personel':
+                    loadPersonelData();
+                    break;
+                case 'operations':
+                    loadOperationsData();
+                    break;
+                case 'renops':
+                    loadRenopsData();
+                    break;
+                case 'posko':
+                    loadPoskoData();
+                    break;
+                case 'analytics':
+                    loadAnalyticsData();
+                    break;
+                case 'mobile':
+                    loadMobileData();
+                    break;
+            }
+        }
+        
+        // Dashboard Functions
+        function loadDashboardData() {
+            // Simulate API calls
+            setTimeout(() => {
+                document.getElementById('totalPersonel').textContent = '241';
+                document.getElementById('totalOperations').textContent = '5';
+                document.getElementById('totalRenops').textContent = '3';
+                document.getElementById('totalPosko').textContent = '3';
+            }, 500);
+        }
+        
+        // Personel Functions
+        function loadPersonelData() {
+            showLoading('personelLoading');
+            
+            // Simulate API call
+            setTimeout(() => {
+                hideLoading('personelLoading');
+                const tbody = document.getElementById('personelTableBody');
+                tbody.innerHTML = `
+                    <tr>
+                        <td>123456789</td>
+                        <td>Ahmad Wijaya</td>
+                        <td>AKP</td>
+                        <td>Kapolres</td>
+                        <td>Polres Samosir</td>
+                        <td><span class="badge bg-success">Aktif</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary" onclick="editPersonel(1)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-danger" onclick="deletePersonel(1)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>123456790</td>
+                        <td>Budi Santoso</td>
+                        <td>IPTU</td>
+                        <td>Wakapolres</td>
+                        <td>Polres Samosir</td>
+                        <td><span class="badge bg-success">Aktif</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary" onclick="editPersonel(2)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-danger" onclick="deletePersonel(2)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }, 1000);
+        }
+        
+        function showPersonelModal() {
+            editingPersonelId = null;
+            document.getElementById('personelModalTitle').textContent = 'Tambah Personel';
+            document.getElementById('personelForm').reset();
+            const modal = new bootstrap.Modal(document.getElementById('personelModal'));
+            modal.show();
+        }
+        
+        function editPersonel(id) {
+            editingPersonelId = id;
+            document.getElementById('personelModalTitle').textContent = 'Edit Personel';
+            // Load personel data and populate form
+            const modal = new bootstrap.Modal(document.getElementById('personelModal'));
+            modal.show();
+        }
+        
+        function savePersonel() {
+            // Simulate API call
+            alert('Personel berhasil disimpan!');
+            const modal = bootstrap.Modal.getInstance(document.getElementById('personelModal'));
+            modal.hide();
+            loadPersonelData();
+        }
+        
+        function deletePersonel(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus personel ini?')) {
+                // Simulate API call
+                alert('Personel berhasil dihapus!');
+                loadPersonelData();
+            }
+        }
+        
+        function searchPersonel() {
+            loadPersonelData();
+        }
+        
+        // Operations Functions
+        function loadOperationsData() {
+            showLoading('operationsLoading');
+            
+            setTimeout(() => {
+                hideLoading('operationsLoading');
+                const tbody = document.getElementById('operationsTableBody');
+                tbody.innerHTML = `
+                    <tr>
+                        <td>OP001</td>
+                        <td>Patroli Rutin Harian Boho</td>
+                        <td><span class="badge bg-info">OPERASI_RUTIN</span></td>
+                        <td><span class="badge bg-success">COMPLETED</span></td>
+                        <td>2024-02-28 08:00</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary" onclick="editOperation(1)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteOperation(1)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }, 1000);
+        }
+        
+        function showOperationModal() {
+            alert('Modal Operasi akan ditampilkan');
+        }
+        
+        function editOperation(id) {
+            alert('Edit operasi ' + id);
+        }
+        
+        function deleteOperation(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus operasi ini?')) {
+                alert('Operasi berhasil dihapus!');
+                loadOperationsData();
+            }
+        }
+        
+        // RENOPS Functions
+        function loadRenopsData() {
+            showLoading('renopsLoading');
+            
+            setTimeout(() => {
+                hideLoading('renopsLoading');
+                const tbody = document.getElementById('renopsTableBody');
+                tbody.innerHTML = `
+                    <tr>
+                        <td>REN001</td>
+                        <td>RENOPS/REN PAM PATROLI HARIAN BOHO</td>
+                        <td>2024-02-28</td>
+                        <td><span class="badge bg-warning">DRAFT</span></td>
+                        <td>Admin</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary" onclick="editRenops(1)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteRenops(1)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }, 1000);
+        }
+        
+        function showRenopsModal() {
+            alert('Modal RENOPS akan ditampilkan');
+        }
+        
+        function editRenops(id) {
+            alert('Edit RENOPS ' + id);
+        }
+        
+        function deleteRenops(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus RENOPS ini?')) {
+                alert('RENOPS berhasil dihapus!');
+                loadRenopsData();
+            }
+        }
+        
+        // POSKO Functions
+        function loadPoskoData() {
+            const container = document.getElementById('poskoCards');
+            container.innerHTML = `
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-map-marker-alt"></i> POSKO POLRES SAMOSIR</h5>
+                            <p><strong>Status:</strong> <span class="badge bg-success">ACTIVE</span></p>
+                            <p><strong>Kapasitas:</strong> 50 personel</p>
+                            <p><strong>Aktif:</strong> 0 personel</p>
+                            <p><strong>Telepon:</strong> (0623) 415-1234</p>
+                            <button class="btn btn-primary btn-sm">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-map-marker-alt"></i> POSKO POLSEK HARIAN BOHO</h5>
+                            <p><strong>Status:</strong> <span class="badge bg-success">ACTIVE</span></p>
+                            <p><strong>Kapasitas:</strong> 20 personel</p>
+                            <p><strong>Aktif:</strong> 0 personel</p>
+                            <p><strong>Telepon:</strong> (0623) 415-xxxx</p>
+                            <button class="btn btn-primary btn-sm">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-map-marker-alt"></i> POSKO POLSEK PALIPI</h5>
+                            <p><strong>Status:</strong> <span class="badge bg-success">ACTIVE</span></p>
+                            <p><strong>Kapasitas:</strong> 20 personel</p>
+                            <p><strong>Aktif:</strong> 0 personel</p>
+                            <p><strong>Telepon:</strong> (0623) 415-xxxx</p>
+                            <button class="btn btn-primary btn-sm">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Analytics Functions
+        function loadAnalyticsData() {
+            // Initialize charts
+            setTimeout(() => {
+                const personelCtx = document.getElementById('personelChart').getContext('2d');
+                new Chart(personelCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Polres Samosir', 'Polsek Harian Boho', 'Polsek Palipi'],
+                        datasets: [{
+                            data: [50, 30, 20],
+                            backgroundColor: ['#667eea', '#764ba2', '#f093fb']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+                
+                const operationsCtx = document.getElementById('operationsChart').getContext('2d');
+                new Chart(operationsCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'],
+                        datasets: [{
+                            label: 'Operasi',
+                            data: [2, 3, 1, 4, 2, 3, 1],
+                            borderColor: '#667eea',
+                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            }, 500);
+        }
+        
+        // Mobile Functions
+        function loadMobileData() {
+            showLoading('mobileLoading');
+            
+            setTimeout(() => {
+                hideLoading('mobileLoading');
+                const tbody = document.getElementById('mobileTableBody');
+                tbody.innerHTML = `
+                    <tr>
+                        <td>DEVICE001</td>
+                        <td>Ahmad Wijaya</td>
+                        <td><span class="badge bg-info">ANDROID</span></td>
+                        <td>Samsung Galaxy S21</td>
+                        <td><span class="badge bg-success">ACTIVE</span></td>
+                        <td>2024-02-28 14:30</td>
+                    </tr>
+                `;
+            }, 1000);
+        }
+        
+        // Utility Functions
+        function showLoading(elementId) {
+            document.getElementById(elementId).style.display = 'block';
+        }
+        
+        function hideLoading(elementId) {
+            document.getElementById(elementId).style.display = 'none';
+        }
+        
+        function setupSearchFilters() {
+            // Add event listeners for search and filter
+            document.getElementById('searchPersonel').addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    searchPersonel();
+                }
+            });
+        }
+    </script>
+</body>
+</html>

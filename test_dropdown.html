@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Test</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Bootstrap Dropdown Test</h1>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Test</a>
+                
+                <div class="navbar-nav">
+                    <!-- Simple Dropdown Test -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown Menu
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="mt-4">
+            <h2>Test Results</h2>
+            <p>Click the "Dropdown Menu" link above to test Bootstrap dropdown functionality.</p>
+        </div>
+    </div>
+    
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Test Bootstrap dropdown functionality
+        $(document).ready(function() {
+            console.log('Document ready');
+            
+            // Check if Bootstrap is loaded
+            if (typeof bootstrap !== 'undefined') {
+                console.log('Bootstrap is loaded');
+                
+                // Test dropdown initialization
+                var dropdownElementList = [].slice.call(document.querySelectorAll('[data-bs-toggle="dropdown"]'))
+                var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+                    return new bootstrap.Dropdown(dropdownToggleEl)
+                });
+                
+                console.log('Dropdowns initialized:', dropdownList.length);
+            } else {
+                console.error('Bootstrap is not loaded');
+            }
+            
+            // Test jQuery
+            if (typeof $ !== 'undefined') {
+                console.log('jQuery is loaded');
+            } else {
+                console.error('jQuery is not loaded');
+            }
+        });
+    </script>
+</body>
+</html>

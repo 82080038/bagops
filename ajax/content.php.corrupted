@@ -1,0 +1,1056 @@
+<?php
+// AJAX Content Handler for BAGOPS
+// Processes page requests and returns JSON responses
+
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../classes/Auth.php';
+
+// Initialize database and auth
+$db = (new Database())->getConnection();
+$auth = new Auth($db);
+
+// Get the requested page
+$page = $_POST['page'] ?? 'dashboard';
+
+// Process the request
+$content = '';
+$success = false;
+$message = '';
+
+try {
+function canAccessModule($userRole, $module) {
+    $permissions = [
+        'super_admin' => ['all'],
+        'admin' => ['dashboard', 'users', 'personel', 'operations', 'renops', 'posko', 'reports', 'settings', 'pengaturan', 'documents', 'calendar', 'analytics', 'mobile'],
+        'kabag_ops' => ['dashboard', 'renops', 'sprin', 'posko', 'reports', 'personel', 'analytics'],
+        'kaur_ops' => ['dashboard', 'renops', 'sprin', 'reports', 'personel'],
+        'user' => ['dashboard', 'personel', 'operations', 'settings', 'pengaturan', 'profile', 'assignments', 'reports']
+    ];
+    
+    return in_array($module, $permissions[$userRole] ?? []) || in_array('all', $permissions[$userRole] ?? []);
+}
+    // Check authentication
+    $currentUser = $auth->getCurrentUser();
+    $userRole = $currentUser['role'] ?? 'user';
+    
+    // Route to appropriate handler
+    switch ($page) {
+        case 'dashboard':
+            if (canAccessModule($userRole, 'dashboard')) {
+                $content = getDashboardContent();
+                $success = true;
+            } else {
+                $message = 'Akses ditolak ke modul dashboard';
+            }
+            break;
+            
+        case 'personel':
+            if (canAccessModule($userRole, 'personel')) {
+                $content = getPersonelContent();
+                $success = true;
+            } else {
+                $message = 'Akses ditolak ke modul personel';
+            }
+            break;
+            
+        case 'operations':
+            if (canAccessModule($userRole, 'operations')) {
+                $content = getOperationsContent();
+                $success = true;
+            } else {
+                $message = 'Akses ditolak ke modul operations';
+            }
+            break;
+            
+        case 'settings':
+            if (canAccessModule($userRole, 'settings')) {
+                $content = getSettingsContent();
+                $success = true;
+            } else {
+                $message = 'Akses ditolak ke modul settings';
+            }
+            break;
+            
+        case 'pengaturan':
+            if (canAccessModule($userRole, 'settings')) {
+                $content = getPengaturanContent();
+                $success = true;
+            } else {
+                $message = 'Akses ditolak ke modul pengaturan';
+            }
+            break;
+            
+        case 'reports':
+            if (canAccessModule($userRole, 'reports')) {
+                $content = getReportsContent();
+                $success = true;
+            } else {
+                $message = 'Akses ditolak ke modul reports';
+            }
+            break;
+            
+        case 'documents':
+            if (canAccessModule($userRole, 'documents')) {
+                $content = getDocumentsContent();
+                $success = true;
+            } else {
+                $message = 'Akses ditolak ke modul documents';
+            }
+            break;
+            
+        default:
+            $content = '<div class="alert alert-warning">Halaman tidak ditemukan</div>';
+            $success = false;
+            $message = 'Halaman tidak ditemukan';
+    }
+    
+} catch (Exception $e) {
+    $success = false;
+    $message = 'System error occurred: ' . $e->getMessage();
+    $content = '<div class="alert alert-danger">Terjadi kesalahan sistem</div>';
+}
+
+// Return JSON response
+header('Content-Type: application/json');
+echo json_encode([
+    'success' => $success,
+    'content' => $content,
+    'message' => $message
+]);
+
+// ==================== PAGE CONTENT FUNCTIONS ====================
+
+function getDashboardContent() {
+    ob_start();
+    ?>
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2><i class="fas fa-tachometer-alt me-2"></i>Dashboard</h2>
+            <p class="text-muted">Ringkasan aktivitas dan statistik sistem BAGOPS</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card stats-card primary">
+                <div class="card-body">
+                    <div class="stats-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stats-number">150</div>
+                    <div class="stats-label">Total Personel</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3 mb-4">
+            <div class="card stats-card success">
+                <div class="card-body">
+                    <div class="stats-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stats-number">25</div>
+                    <div class="stats-label">Operasi Aktif</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3 mb-4">
+            <div class="card stats-card warning">
+                <div class="card-body">
+                    <div class="stats-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stats-number">8</div>
+                    <div class="stats-label">Menunggu Approval</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3 mb-4">
+            <div class="card stats-card info">
+                <div class="card-body">
+                    <div class="stats-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stats-number">95%</div>
+                    <div class="stats-label">Efisiensi Sistem</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+
+function getPersonelContent() {
+    ob_start();
+    ?>
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2><i class="fas fa-users me-2"></i>Manajemen Personel</h2>
+            <p class="text-muted">Kelola data personel kepolisian</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>Daftar Personel</h5>
+                <button class="btn btn-primary" onclick="addPersonnel()">
+                    <i class="fas fa-plus me-2"></i>Tambah Personel
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="personnelTable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>NRP</th>
+                            <th>Nama</th>
+                            <th>Pangkat</th>
+                            <th>Jabatan</th>
+                            <th>Unit</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be loaded via AJAX -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+
+function getOperationsContent() {
+    ob_start();
+    ?>
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2><i class="fas fa-shield-alt me-2"></i>Manajemen Operasi</h2>
+            <p class="text-muted">Kelola operasi kepolisian</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>Daftar Operasi</h5>
+                <button class="btn btn-primary" onclick="createOperation()">
+                    <i class="fas fa-plus me-2"></i>Buat Operasi
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="operationsTable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nama Operasi</th>
+                            <th>Jenis</th>
+                            <th>Status</th>
+                            <th>Tanggal</th>
+                            <th>Lokasi</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be loaded via AJAX -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+
+function getSettingsContent() {
+    ob_start();
+    ?>
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2><i class="fas fa-cog me-2"></i>Pengaturan Sistem</h2>
+            <p class="text-muted">Konfigurasi fitur dan pengaturan aplikasi</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Fitur Aplikasi</h5>
+                </div>
+                <div class="card-body">
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" id="notificationsEnabled" checked>
+                        <label class="form-check-label" for="notificationsEnabled">
+                            Notifikasi Push
+                        </label>
+                    </div>
+                    
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" id="autoBackupEnabled">
+                        <label class="form-check-label" for="autoBackupEnabled">
+                            Backup Otomatis
+                        </label>
+                    </div>
+                    
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" id="darkModeEnabled">
+                        <label class="form-check-label" for="darkModeEnabled">
+                            Mode Gelap
+                        </label>
+                    </div>
+                    
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" id="analyticsEnabled" checked>
+                        <label class="form-check-label" for="analyticsEnabled">
+                            Analitik Penggunaan
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Preferensi Tampilan</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="languageSelect" class="form-label">Bahasa</label>
+                        <select class="form-select" id="languageSelect">
+                            <option value="id" selected>Indonesia</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="themeSelect" class="form-label">Tema</label>
+                        <select class="form-select" id="themeSelect">
+                            <option value="default" selected>Default</option>
+                            <option value="blue">Biru</option>
+                            <option value="green">Hijau</option>
+                            <option value="purple">Ungu</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="itemsPerPage" class="form-label">Item Per Halaman</label>
+                        <select class="form-select" id="itemsPerPage">
+                            <option value="10">10</option>
+                            <option value="25" selected>25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Aksi</h5>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-primary me-2" onclick="saveSettings()">
+                        <i class="fas fa-save me-2"></i>Simpan Pengaturan
+                    </button>
+                    <button class="btn btn-secondary me-2" onclick="resetSettings()">
+                        <i class="fas fa-undo me-2"></i>Reset ke Default
+                    </button>
+                    <button class="btn btn-info" onclick="exportSettings()">
+                        <i class="fas fa-download me-2"></i>Export Pengaturan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+
+function getPengaturanContent() {
+function getReportsContent() {
+    ob_start();
+    ?>
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2><i class="fas fa-chart-bar me-2"></i>Manajemen Laporan</h2>
+            <p class="text-muted">Kelola dan generate laporan sistem BAGOPS</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Generate Laporan</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="reportType" class="form-label">Tipe Laporan</label>
+                        <select class="form-select" id="reportType">
+                            <option value="personel">Laporan Personel</option>
+                            <option value="operations">Laporan Operasi</option>
+                            <option value="attendance">Laporan Kehadiran</option>
+                            <option value="performance">Laporan Kinerja</option>
+                        </select>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="startDate" class="form-label">Tanggal Mulai</label>
+                            <input type="date" class="form-control" id="startDate">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="endDate" class="form-label">Tanggal Akhir</label>
+                            <input type="date" class="form-control" id="endDate">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="generateReport()">
+                        <i class="fas fa-file-pdf me-2"></i>Generate PDF
+                    </button>
+                    <button class="btn btn-success ms-2" onclick="exportReport()">
+                        <i class="fas fa-file-excel me-2"></i>Export Excel
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Laporan Tersimpan</h5>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Laporan Personel - Januari 2024</h6>
+                                <small>2 hari yang lalu</small>
+                            </div>
+                            <p class="mb-1">Laporan lengkap data personel aktif</p>
+                            <small>PDF • 2.3 MB</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Laporan Operasi - Desember 2023</h6>
+                                <small>1 minggu yang lalu</small>
+                            </div>
+                            <p class="mb-1">Ringkasan operasi bulan Desember</p>
+                            <small>Excel • 1.8 MB</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function generateReport() {
+            alert("Fitur generate laporan akan segera tersedia");
+        }
+        
+        function exportReport() {
+            alert("Fitur export laporan akan segera tersedia");
+        }
+    </script>
+    <?php
+    return ob_get_clean();
+}
+
+function getDocumentsContent() {
+    ob_start();
+    ?>
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2><i class="fas fa-folder me-2"></i>Manajemen Dokumen</h2>
+            <p class="text-muted">Kelola arsip dan dokumen sistem BAGOPS</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5>Dokumen & File</h5>
+                        <button class="btn btn-primary btn-sm" onclick="uploadDocument()">
+                            <i class="fas fa-upload me-1"></i>Upload
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="documentsTable" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nama File</th>
+                                    <th>Tipe</th>
+                                    <th>Ukuran</th>
+                                    <th>Tanggal Upload</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="fas fa-file-pdf text-danger me-2"></i>Laporan_Bulanan.pdf</td>
+                                    <td>PDF</td>
+                                    <td>2.3 MB</td>
+                                    <td>2024-01-15</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="viewDocument(1)">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-success" onclick="downloadDocument(1)">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="deleteDocument(1)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-file-excel text-success me-2"></i>Data_Personel.xlsx</td>
+                                    <td>Excel</td>
+                                    <td>1.8 MB</td>
+                                    <td>2024-01-10</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="viewDocument(2)">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-success" onclick="downloadDocument(2)">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="deleteDocument(2)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Folder & Kategori</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <button class="btn btn-outline-primary btn-sm w-100 mb-2" onclick="createFolder()">
+                            <i class="fas fa-folder-plus me-1"></i>Buat Folder Baru
+                        </button>
+                        <button class="btn btn-outline-info btn-sm w-100" onclick="organizeDocuments()">
+                            <i class="fas fa-sort me-1"></i>Organisir Dokumen
+                        </button>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h6>Kategori Dokumen</h6>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item list-group-item-action py-2">
+                            <i class="fas fa-file-contract text-primary me-2"></i>Laporan Operasi
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-2">
+                            <i class="fas fa-users text-success me-2"></i>Data Personel
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-2">
+                            <i class="fas fa-chart-bar text-info me-2"></i>Statistik & Analitik
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-2">
+                            <i class="fas fa-file-alt text-warning me-2"></i>Dokumen Legal
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function uploadDocument() {
+            alert("Fitur upload dokumen akan segera tersedia");
+        }
+        
+        function viewDocument(id) {
+            alert("Fitur view dokumen akan segera tersedia (ID: " + id + ")");
+        }
+        
+        function downloadDocument(id) {
+            alert("Fitur download dokumen akan segera tersedia (ID: " + id + ")");
+        }
+        
+        function deleteDocument(id) {
+            if (confirm("Apakah Anda yakin ingin menghapus dokumen ini?")) {
+                alert("Fitur delete dokumen akan segera tersedia (ID: " + id + ")");
+            }
+        }
+        
+        function createFolder() {
+            alert("Fitur buat folder akan segera tersedia");
+        }
+        
+        function organizeDocuments() {
+            alert("Fitur organisir dokumen akan segera tersedia");
+        }
+    </script>
+    <?php
+    return ob_get_clean();
+}
+    ob_start();
+    ?>
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2><i class="fas fa-cog me-2"></i>Pengaturan Aplikasi</h2>
+            <p class="text-muted">Konfigurasi umum aplikasi BAGOPS</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-info-circle me-2"></i>Informasi Aplikasi</h5>
+                </div>
+                <div class="card-body">
+                    <form id="appSettingsForm">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="appName" class="form-label">Nama Aplikasi</label>
+                                <input type="text" class="form-control" id="appName" value="BAGOPS POLRES SAMOSIR" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appVersion" class="form-label">Versi Aplikasi</label>
+                                <input type="text" class="form-control" id="appVersion" value="1.0.0" readonly>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="officeName" class="form-label">Nama Kantor</label>
+                                <input type="text" class="form-control" id="officeName" value="POLRES SAMOSIR" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="officeType" class="form-label">Tipe Kantor</label>
+                                <input type="text" class="form-control" id="officeType" value="Kepolisian Resor" readonly>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="databaseHost" class="form-label">Database Host</label>
+                                <input type="text" class="form-control" id="databaseHost" value="127.0.0.1" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="databaseName" class="form-label">Database Name</label>
+                                <input type="text" class="form-control" id="databaseName" value="bagops_db" readonly>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="phpVersion" class="form-label">PHP Version</label>
+                                <input type="text" class="form-control" id="phpVersion" value="<?php echo PHP_VERSION; ?>" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="serverOS" class="form-label">Server OS</label>
+                                <input type="text" class="form-control" id="serverOS" value="<?php echo PHP_OS; ?>" readonly>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="appDescription" class="form-label">Deskripsi Aplikasi</label>
+                            <textarea class="form-control" id="appDescription" rows="3" readonly>Sistem Informasi Operasi Kepolisian Daerah Samosir (BAGOPS POLRES SAMOSIR) adalah aplikasi terintegrasi untuk manajemen operasi kepolisian, personel, laporan, dan dokumentasi.</textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-server me-2"></i>Status Sistem</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Database Connection</span>
+                            <span class="badge bg-success">Connected</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>File System</span>
+                            <span class="badge bg-success">OK</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Memory Usage</span>
+                            <span class="badge bg-info"><?php echo round(memory_get_peak_usage(true) / 1024 / 1024, 1); ?> MB</span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="mb-3">
+                        <h6>Quick Actions</h6>
+                        <button class="btn btn-outline-primary btn-sm w-100 mb-2" onclick="checkSystemHealth()">
+                            <i class="fas fa-heartbeat me-1"></i>Check System Health
+                        </button>
+                        <button class="btn btn-outline-info btn-sm w-100 mb-2" onclick="viewSystemLogs()">
+                            <i class="fas fa-file-alt me-1"></i>View System Logs
+                        </button>
+                        <button class="btn btn-outline-warning btn-sm w-100" onclick="clearCache()">
+                            <i class="fas fa-broom me-1"></i>Clear Cache
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function checkSystemHealth() {
+            alert("Fitur check system health akan segera tersedia");
+        }
+        
+        function viewSystemLogs() {
+            alert("Fitur view system logs akan segera tersedia");
+        }
+        
+        function clearCache() {
+            if (confirm("Apakah Anda yakin ingin membersihkan cache?")) {
+                alert("Cache berhasil dibersihkan");
+            }
+        }
+    </script>
+    <?php
+    return ob_get_clean();
+}
+?>
+function getReportsContent() {
+    ob_start();
+    ?>
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2><i class="fas fa-chart-bar me-2"></i>Manajemen Laporan</h2>
+            <p class="text-muted">Kelola dan generate laporan sistem BAGOPS</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Generate Laporan</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="reportType" class="form-label">Tipe Laporan</label>
+                        <select class="form-select" id="reportType">
+                            <option value="personel">Laporan Personel</option>
+                            <option value="operations">Laporan Operasi</option>
+                            <option value="attendance">Laporan Kehadiran</option>
+                            <option value="performance">Laporan Kinerja</option>
+                        </select>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="startDate" class="form-label">Tanggal Mulai</label>
+                            <input type="date" class="form-control" id="startDate">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="endDate" class="form-label">Tanggal Akhir</label>
+                            <input type="date" class="form-control" id="endDate">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="generateReport()">
+                        <i class="fas fa-file-pdf me-2"></i>Generate PDF
+                    </button>
+                    <button class="btn btn-success ms-2" onclick="exportReport()">
+                        <i class="fas fa-file-excel me-2"></i>Export Excel
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Laporan Tersimpan</h5>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Laporan Personel - Januari 2024</h6>
+                                <small>2 hari yang lalu</small>
+                            </div>
+                            <p class="mb-1">Laporan lengkap data personel aktif</p>
+                            <small>PDF • 2.3 MB</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Laporan Operasi - Desember 2023</h6>
+                                <small>1 minggu yang lalu</small>
+                            </div>
+                            <p class="mb-1">Ringkasan operasi bulan Desember</p>
+                            <small>Excel • 1.8 MB</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function generateReport() {
+            alert("Fitur generate laporan akan segera tersedia");
+        }
+        
+        function exportReport() {
+            alert("Fitur export laporan akan segera tersedia");
+
+function getDashboardContent() {
+    ob_start();
+    ?>
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2><i class="fas fa-chart-bar me-2"></i>Manajemen Laporan</h2>
+            <p class="text-muted">Kelola dan generate laporan sistem BAGOPS</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Generate Laporan</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="reportType" class="form-label">Tipe Laporan</label>
+                        <select class="form-select" id="reportType">
+                            <option value="personel">Laporan Personel</option>
+                            <option value="operations">Laporan Operasi</option>
+                            <option value="attendance">Laporan Kehadiran</option>
+                            <option value="performance">Laporan Kinerja</option>
+                        </select>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="startDate" class="form-label">Tanggal Mulai</label>
+                            <input type="date" class="form-control" id="startDate">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="endDate" class="form-label">Tanggal Akhir</label>
+                            <input type="date" class="form-control" id="endDate">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="generateReport()">
+                        <i class="fas fa-file-pdf me-2"></i>Generate PDF
+                    </button>
+                    <button class="btn btn-success ms-2" onclick="exportReport()">
+                        <i class="fas fa-file-excel me-2"></i>Export Excel
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Laporan Tersimpan</h5>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Laporan Personel - Januari 2024</h6>
+                                <small>2 hari yang lalu</small>
+                            </div>
+                            <p class="mb-1">Laporan lengkap data personel aktif</p>
+                            <small>PDF • 2.3 MB</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Laporan Operasi - Desember 2023</h6>
+                                <small>1 minggu yang lalu</small>
+                            </div>
+                            <p class="mb-1">Ringkasan operasi bulan Desember</p>
+                            <small>Excel • 1.8 MB</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function generateReport() {
+            alert("Fitur generate laporan akan segera tersedia");
+        }
+        
+        function exportReport() {
+            alert("Fitur export laporan akan segera tersedia");
+        }
+    </script>
+    <?php
+    return ob_get_clean();
+}
+
+function getDocumentsContent() {
+    ob_start();
+    ?>
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2><i class="fas fa-folder me-2"></i>Manajemen Dokumen</h2>
+            <p class="text-muted">Kelola arsip dan dokumen sistem BAGOPS</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5>Dokumen & File</h5>
+                        <button class="btn btn-primary btn-sm" onclick="uploadDocument()">
+                            <i class="fas fa-upload me-1"></i>Upload
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="documentsTable" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nama File</th>
+                                    <th>Tipe</th>
+                                    <th>Ukuran</th>
+                                    <th>Tanggal Upload</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="fas fa-file-pdf text-danger me-2"></i>Laporan_Bulanan.pdf</td>
+                                    <td>PDF</td>
+                                    <td>2.3 MB</td>
+                                    <td>2024-01-15</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="viewDocument(1)">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-success" onclick="downloadDocument(1)">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="deleteDocument(1)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-file-excel text-success me-2"></i>Data_Personel.xlsx</td>
+                                    <td>Excel</td>
+                                    <td>1.8 MB</td>
+                                    <td>2024-01-10</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="viewDocument(2)">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-success" onclick="downloadDocument(2)">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="deleteDocument(2)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Folder & Kategori</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <button class="btn btn-outline-primary btn-sm w-100 mb-2" onclick="createFolder()">
+                            <i class="fas fa-folder-plus me-1"></i>Buat Folder Baru
+                        </button>
+                        <button class="btn btn-outline-info btn-sm w-100" onclick="organizeDocuments()">
+                            <i class="fas fa-sort me-1"></i>Organisir Dokumen
+                        </button>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h6>Kategori Dokumen</h6>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item list-group-item-action py-2">
+                            <i class="fas fa-file-contract text-primary me-2"></i>Laporan Operasi
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-2">
+                            <i class="fas fa-users text-success me-2"></i>Data Personel
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-2">
+                            <i class="fas fa-chart-bar text-info me-2"></i>Statistik & Analitik
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-2">
+                            <i class="fas fa-file-alt text-warning me-2"></i>Dokumen Legal
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function uploadDocument() {
+            alert("Fitur upload dokumen akan segera tersedia");
+        }
+        
+        function viewDocument(id) {
+            alert("Fitur view dokumen akan segera tersedia (ID: " + id + ")");
+        }
+        
+        function downloadDocument(id) {
+            alert("Fitur download dokumen akan segera tersedia (ID: " + id + ")");
+        }
+        
+        function deleteDocument(id) {
+            if (confirm("Apakah Anda yakin ingin menghapus dokumen ini?")) {
+                alert("Fitur delete dokumen akan segera tersedia (ID: " + id + ")");
+            }
+        }
+        
+        function createFolder() {
+            alert("Fitur buat folder akan segera tersedia");
+        }
+        
+        function organizeDocuments() {
+            alert("Fitur organisir dokumen akan segera tersedia");
+        }
+    </script>
+    <?php
+    return ob_get_clean();
+}

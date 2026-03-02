@@ -1,0 +1,515 @@
+<?php
+session_start();
+require_once '../config/config.php';
+require_once '../config/database.php';
+require_once '../classes/Auth.php';
+
+// Check authentication and super admin role
+$auth = new Auth((new Database())->getConnection());
+if (!$auth->isLoggedIn() || !$auth->isSuperAdmin()) {
+    header('Location: ../login.php');
+    exit();
+}
+
+// Get system statistics
+function getSystemStats() {
+    $pdo = (new Database())->getConnection();
+    
+    $stats = [];
+    
+    // User statistics
+    $stmt = $pdo->query("SELECT COUNT(*) as total FROM users");
+    $stats['total_users'] = $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+    
+    $stmt = $pdo->query("SELECT COUNT(*) as registered FROM users WHERE password IS NOT NULL AND password != ''");
+    $stats['registered_users'] = $stmt->fetch(PDO::FETCH_ASSOC)['registered'];
+    
+    $stmt = $pdo->query("SELECT COUNT(*) as active FROM users WHERE is_active = 1");
+    $stats['active_users'] = $stmt->fetch(PDO::FETCH_ASSOC)['active'];
+    
+    // Database statistics (gunakan tabel yang ada)
+    $stmt = $pdo->query("SELECT COUNT(*) as total FROM events");
+    $stats['total_operations'] = $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+    
+    $stmt = $pdo->query("SELECT COUNT(*) as total FROM renops");
+    $stats['total_renops'] = $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+    
+    $stmt = $pdo->query("SELECT COUNT(*) as total FROM documents");
+    $stats['total_documents'] = $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+    
+    // System information
+    $stats['php_version'] = phpversion();
+    $stats['mysql_version'] = $pdo->query("SELECT VERSION() as version")->fetch(PDO::FETCH_ASSOC)['version'];
+    $stats['disk_usage'] = round(disk_total_space('.') / (1024 * 1024 * 1024), 2) . ' GB';
+    $stats['disk_free'] = round(disk_free_space('.') / (1024 * 1024 * 1024), 2) . ' GB';
+    
+    return $stats;
+}
+
+// Get recent activities
+function getRecentActivities() {
+    $pdo = (new Database())->getConnection();
+    
+    $activities = [];
+    
+    // Get recent logins (if audit trail exists)
+    try {
+        $stmt = $pdo->query("SELECT * FROM audit_trail ORDER BY created_at DESC LIMIT 10");
+        $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch(Exception $e) {
+        // Fallback to recent user registrations
+        $stmt = $pdo->query("SELECT id, nrp, name, created_at FROM users WHERE password IS NOT NULL ORDER BY created_at DESC LIMIT 10");
+        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $user) {
+            $activities[] = [
+                'action' => 'User Registration',
+                'module' => 'Authentication',
+                'details' => 'User ' . $user['name'] . ' (' . $user['nrp'] . ') registered',
+                'created_at' => $user['created_at']
+            ];
+        }
+    }
+    
+    return $activities;
+}
+
+$stats = getSystemStats();
+$activities = getRecentActivities();
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Admin Dashboard - BAGOPS</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .admin-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .admin-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .admin-content {
+            flex: 1;
+            display: flex;
+        }
+        .sidebar {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .admin-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .stat-card {
+            background: white;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .stat-icon.bg-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .stat-icon.bg-success {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+        
+        .stat-icon.bg-warning {
+            background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+        }
+        
+        .stat-icon.bg-danger {
+            background: linear-gradient(135deg, #dc3545 0%, #e83e8c 100%);
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar-menu li {
+            margin-bottom: 10px;
+        }
+        .sidebar-menu a {
+            color: #2c3e50;
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 10px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .admin-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e1e8ed;
+        }
+        .admin-header h3 {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .admin-header p {
+            color: #7f8c8d;
+            margin-bottom: 0;
+        }
+        .activity-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f3f4;
+        }
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        .activity-time {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+        .settings-form .form-group {
+            margin-bottom: 20px;
+        }
+        .settings-form label {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .settings-form .form-control {
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            padding: 12px 15px;
+        }
+        .btn-admin {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 25px;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-admin:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Admin Header -->
+        <div class="admin-header">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-user-shield fa-2x me-3" style="color: #667eea;"></i>
+                <div>
+                    <h3 class="mb-0">SUPER ADMIN</h3>
+                    <p class="mb-0 text-muted"><?= htmlspecialchars($_SESSION['full_name'] ?? 'Admin') ?></p>
+                </div>
+            </div>
+            <a href="../logout.php" class="btn btn-outline-danger btn-sm">
+                <i class="fas fa-sign-out-alt me-2"></i>Logout
+            </a>
+        </div>
+        
+        <div class="admin-content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="text-center mb-4">
+                    <h4 class="text-primary">Admin Panel</h4>
+                    <p class="text-muted small">System Management</p>
+                </div>
+                
+                <ul class="sidebar-menu">
+                    <li><a href="#dashboard" class="active"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a></li>
+                    <li><a href="#users"><i class="fas fa-users me-2"></i>User Management</a></li>
+                    <li><a href="#settings"><i class="fas fa-cogs me-2"></i>System Settings</a></li>
+                    <li><a href="#database"><i class="fas fa-database me-2"></i>Database</a></li>
+                    <li><a href="#logs"><i class="fas fa-file-alt me-2"></i>System Logs</a></li>
+                    <li><a href="#backup"><i class="fas fa-download me-2"></i>Backup & Restore</a></li>
+                    <li><a href="#maintenance"><i class="fas fa-tools me-2"></i>Maintenance</a></li>
+                    <li><a href="../dashboard.php"><i class="fas fa-arrow-left me-2"></i>Back to Dashboard</a></li>
+                </ul>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+            <!-- Dashboard Section -->
+            <div id="dashboard" class="admin-section">
+                <div class="admin-card">
+                    <h2><i class="fas fa-tachometer-alt me-2"></i>System Dashboard</h2>
+                    <p class="text-muted">Overview of BAGOPS System Status</p>
+                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="stat-card">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon bg-primary">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h3 class="mb-0"><?= $stats['total_users'] ?></h3>
+                                        <p class="text-muted mb-0">Total Users</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-card">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon bg-success">
+                                        <i class="fas fa-user-check"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h3 class="mb-0"><?= $stats['registered_users'] ?></h3>
+                                        <p class="text-muted mb-0">Registered Users</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-card">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon bg-warning">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h3 class="mb-0"><?= $stats['total_operations'] ?></h3>
+                                        <p class="text-muted mb-0">Operations</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-card">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon bg-danger">
+                                        <i class="fas fa-folder"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h3 class="mb-0"><?= $stats['total_documents'] ?></h3>
+                                        <p class="text-muted mb-0">Documents</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-card">
+                    <h3><i class="fas fa-server me-2"></i>System Information</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td><strong>PHP Version:</strong></td>
+                                    <td><?= $stats['php_version'] ?></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MySQL Version:</strong></td>
+                                    <td><?= $stats['mysql_version'] ?></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Disk Total:</strong></td>
+                                    <td><?= $stats['disk_usage'] ?></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Disk Free:</strong></td>
+                                    <td><?= $stats['disk_free'] ?></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td><strong>Active Users:</strong></td>
+                                    <td><?= $stats['active_users'] ?></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total RENOPS:</strong></td>
+                                    <td><?= $stats['total_renops'] ?></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>System Status:</strong></td>
+                                    <td><span class="badge bg-success">Online</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Last Backup:</strong></td>
+                                    <td>Never</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-card">
+                    <h3><i class="fas fa-history me-2"></i>Recent Activities</h3>
+                    <?php if (empty($activities)): ?>
+                        <p class="text-muted">No recent activities found.</p>
+                    <?php else: ?>
+                        <?php foreach ($activities as $activity): ?>
+                            <div class="activity-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <strong><?= htmlspecialchars($activity['action'] ?? 'Activity') ?></strong>
+                                        <div class="text-muted small"><?= htmlspecialchars($activity['details'] ?? 'No details') ?></div>
+                                    </div>
+                                    <div class="activity-time">
+                                        <?= date('M d, H:i', strtotime($activity['created_at'])) ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+            
+            <!-- Settings Section -->
+            <div id="settings" class="admin-section" style="display: none;">
+                <div class="admin-card">
+                    <h2><i class="fas fa-cogs me-2"></i>System Settings</h2>
+                    <p class="text-muted">Configure system parameters and application settings</p>
+                    
+                    <form class="settings-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="app_name">Application Name</label>
+                                    <input type="text" class="form-control" id="app_name" value="BAGOPS POLRES SAMOSIR">
+                                </div>
+                                <div class="form-group">
+                                    <label for="max_file_size">Max File Size (MB)</label>
+                                    <input type="number" class="form-control" id="max_file_size" value="2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="session_timeout">Session Timeout (minutes)</label>
+                                    <input type="number" class="form-control" id="session_timeout" value="120">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email_notifications">Email Notifications</label>
+                                    <select class="form-control" id="email_notifications">
+                                        <option value="enabled">Enabled</option>
+                                        <option value="disabled">Disabled</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="debug_mode">Debug Mode</label>
+                                    <select class="form-control" id="debug_mode">
+                                        <option value="false">Disabled</option>
+                                        <option value="true">Enabled</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="maintenance_mode">Maintenance Mode</label>
+                                    <select class="form-control" id="maintenance_mode">
+                                        <option value="false">Disabled</option>
+                                        <option value="true">Enabled</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="allowed_file_types">Allowed File Types</label>
+                            <input type="text" class="form-control" id="allowed_file_types" value="pdf,doc,docx,jpg,jpeg,png,txt">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-admin">
+                            <i class="fas fa-save me-2"></i>Save Settings
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <script>
+        // Sidebar navigation
+        $(document).ready(function() {
+            $('.sidebar-menu a').click(function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                $('.sidebar-menu a').removeClass('active');
+                
+                // Add active class to clicked link
+                $(this).addClass('active');
+                
+                // Hide all sections
+                $('.admin-section').hide();
+                
+                // Show target section
+                var target = $(this).attr('href');
+                $(target).show();
+            });
+            
+            // Settings form submission
+            $('.settings-form').submit(function(e) {
+                e.preventDefault();
+                
+                // Show success message
+                alert('Settings saved successfully!');
+            });
+            
+            // Auto-refresh dashboard every 30 seconds
+            setInterval(function() {
+                // Refresh stats
+                location.reload();
+            }, 30000);
+        });
+    </script>
+</body>
+</html>

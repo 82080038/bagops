@@ -1,0 +1,355 @@
+<?php
+
+// Enable error reporting for development
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+session_start();
+
+// Include configuration
+require_once 'config/config.php';
+require_once 'config/database.php';
+require_once 'classes/Auth.php';
+
+// Redirect to dashboard if already logged in
+$auth = new Auth((new Database())->getConnection());
+if ($auth->isLoggedIn()) {
+    header('Location: index.php');
+    exit();
+}
+
+$error = '';
+$success = '';
+
+// Handle login request
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = trim($_POST['username'] ?? '');
+    $password = $_POST['password'] ?? '';
+
+    if (empty($username) || empty($password)) {
+        $error = 'Username dan password harus diisi';
+    } else {
+        try {
+            if ($auth->login($username, $password)) {
+                header('Location: index.php');
+                exit();
+            } else {
+                $error = 'Username atau password salah';
+            }
+        } catch(Exception $e) {
+            $error = 'Terjadi kesalahan sistem: ' . $e->getMessage();
+            error_log('Login error: ' . $e->getMessage());
+        }
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dashboard App</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 15px;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .login-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .login-body {
+            padding: 2rem;
+        }
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        .btn-login {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Medium screens optimization */
+        @media (max-width: 1366px) and (min-width: 768px) {
+            .container {
+                max-width: 100%;
+            }
+            
+            .login-container {
+                max-width: 380px;
+            }
+        }
+        
+        /* Responsive improvements */
+        @media (max-width: 575.98px) {
+            .login-container {
+                margin: 1rem;
+                max-width: none;
+            }
+            
+            .login-header {
+                padding: 1.5rem;
+            }
+            
+            .login-body {
+                padding: 1.5rem;
+            }
+            
+            .login-header h3 {
+                font-size: 1.5rem;
+            }
+            
+            .login-header p {
+                font-size: 0.875rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .login-header {
+                padding: 1rem;
+            }
+            
+            .login-body {
+                padding: 1rem;
+            }
+            
+            .login-header h3 {
+                font-size: 1.25rem;
+            }
+            
+            .form-control {
+                font-size: 16px; /* Prevent zoom on iOS */
+            }
+        }
+        
+        .demo-accounts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .demo-account {
+            /* background: rgba(255, 255, 255, 0.25); */
+            /* border: 2px solid rgba(255, 255, 255, 0.4); */
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .demo-account.selected {
+            border-color: #28a745 !important;
+            background: rgba(40, 167, 69, 0.1) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3) !important;
+        }
+        
+        .demo-account.selected .demo-role {
+            color: #28a745 !important;
+        }
+        
+        .demo-role {
+            font-weight: 700;
+            /* color: white; */
+            margin-bottom: 8px;
+            font-size: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        
+        .demo-credentials {
+            /* color: white; */
+            font-size: 1rem;
+            line-height: 1.6;
+            /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); */
+        }
+        
+        .demo-credentials strong {
+            /* color: #fff; */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+        <div class="login-header">
+            <i class="fas fa-tachometer-alt fa-3x mb-3"></i>
+            <h3>Dashboard App</h3>
+            <p class="mb-0">Silakan login untuk melanjutkan</p>
+        </div>
+        <div class="login-body">
+            <?php if ($error): ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    <?php echo htmlspecialchars($error); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            <?php endif; ?>
+            
+            <?php if ($success): ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fas fa-check-circle me-2"></i>
+                    <?php echo htmlspecialchars($success); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            <?php endif; ?>
+
+            <form method="POST" action="">
+                <div class="mb-3">
+                    <label for="username" class="form-label">
+                        <i class="fas fa-user me-2"></i>Username atau Email
+                    </label>
+                    <input type="text" class="form-control" id="username" name="username" 
+                           value="<?php echo htmlspecialchars($_POST['username'] ?? ''); ?>" 
+                           placeholder="Masukkan username atau email" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password" class="form-label">
+                        <i class="fas fa-lock me-2"></i>Password
+                    </label>
+                    <input type="password" class="form-control" id="password" name="password" 
+                           placeholder="Masukkan password" required>
+                </div>
+                
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="remember">
+                    <label class="form-check-label" for="remember">
+                        Ingat saya
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-login w-100 mb-3">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+                
+                <div class="text-center mt-3">
+                    <p class="mb-0">Belum punya akun? <a href="register.php" class="text-white text-decoration-none fw-bold">Daftar di sini</a></p>
+                </div>
+            </form>
+
+            <!-- Demo Credentials for Development -->
+            <div class="mt-4">
+                <h6 class="text-center text-muted mb-3">
+                    <i class="fas fa-tools me-2"></i>Demo Credentials (Development Only)
+                </h6>
+
+                <div class="demo-accounts">
+                    <div class="demo-account" onclick="fillCredentials('super_admin', 'admin123', this)">
+                        <div class="demo-role">Super Admin</div>
+                        <div class="demo-credentials">
+                            <strong>Username:</strong> super_admin<br>
+                            <strong>Password:</strong> admin123
+                        </div>
+                    </div>
+
+                    <div class="demo-account" onclick="fillCredentials('admin', 'admin123', this)">
+                        <div class="demo-role">Admin</div>
+                        <div class="demo-credentials">
+                            <strong>Username:</strong> admin<br>
+                            <strong>Password:</strong> admin123
+                        </div>
+                    </div>
+
+                    <div class="demo-account" onclick="fillCredentials('kabag_ops', 'admin123', this)">
+                        <div class="demo-role">Kabag Ops</div>
+                        <div class="demo-credentials">
+                            <strong>Username:</strong> kabag_ops<br>
+                            <strong>Password:</strong> admin123
+                        </div>
+                    </div>
+
+                    <div class="demo-account" onclick="fillCredentials('kaur_ops', 'admin123', this)">
+                        <div class="demo-role">Kaur Ops</div>
+                        <div class="demo-credentials">
+                            <strong>Username:</strong> kaur_ops<br>
+                            <strong>Password:</strong> admin123
+                        </div>
+                    </div>
+
+                    <div class="demo-account" onclick="fillCredentials('user', 'user123', this)">
+                        <div class="demo-role">User</div>
+                        <div class="demo-credentials">
+                            <strong>Username:</strong> user<br>
+                            <strong>Password:</strong> user123
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning mt-3 py-2" style="font-size: 0.875rem;">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <strong>Development Only:</strong> Demo credentials akan dihapus pada production deployment.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script>
+        // Auto-hide alerts after 5 seconds
+        setTimeout(function() {
+            $('.alert').fadeOut('slow');
+        }, 5000);
+        
+        // Focus on username field
+        $('#username').focus();
+
+        // Function to fill demo credentials
+        function fillCredentials(username, password, element) {
+            // Fill the form fields
+            $('#username').val(username);
+            $('#password').val(password);
+            
+            // Add visual feedback - highlight selected account
+            $('.demo-account').removeClass('selected');
+            $(element).addClass('selected');
+            
+            // Focus on password field for convenience
+            $('#password').focus();
+            
+            // Optional: Add a success indicator
+            $(element).find('.demo-role').append(' <i class="fas fa-check text-success"></i>');
+            setTimeout(function() {
+                $(element).find('.fa-check').remove();
+            }, 2000);
+        }
+    </script>
+    </div>
+</body>
+</html>

@@ -1,4 +1,9 @@
 <?php
+
+// Enable error reporting for development
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 return [
     'db' => [
         'host' => '127.0.0.1',
@@ -12,6 +17,14 @@ return [
         'base_url' => '/bagops',
         'timezone' => 'Asia/Jakarta',
         'debug' => true, // Set true untuk mode pengembangan
+    ],
+    'session' => [
+        'name' => 'APP_SESSION',
+        'lifetime' => 7200, // 2 jam
+        'path' => '/',
+        'domain' => '',
+        'secure' => false,
+        'httponly' => true,
     ],
     'error_reporting' => E_ALL, // Laporkan semua jenis error
     'display_errors' => 1,      // Tampilkan error di layar

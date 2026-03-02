@@ -1,0 +1,73 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
+docs/
+README.md
+
+# Test files
+tests/
+test_results/
+*.test.php
+
+# Logs and temporary files
+storage/logs/
+*.log
+error_reporting_backup
+*.backup
+
+# Environment files (sensitive)
+.env.local
+.env.production
+
+# Cache and temporary
+.cache/
+*.tmp
+*.temp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node modules (if any)
+node_modules/
+
+# Composer files (rebuild in container)
+vendor/
+composer.lock
+
+# Backup files
+*.bak
+*.backup
+
+# Development specific
+*.cdns_backup
+*.corrupted
+*_fixed.php
+
+# Test results and reports
+test_results/
+*.json
+comprehensive_*.md
+implementation_*.md
+*_report.md
+
+# SQL backup files (handled separately)
+*.sql
+backup_*.sql
+
+# Scripts and tools (not needed in container)
+scripts/
+*.py
+
+# User uploaded files
+UU/
+storage/uploads/
