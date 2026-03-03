@@ -19,10 +19,10 @@ class Database {
     private $conn;
 
     public function __construct() {
-        $this->host = getEnvVar('DB_HOST', 'mysql');
+        $this->host = getEnvVar('DB_HOST', '127.0.0.1');
         $this->db_name = getEnvVar('DB_NAME', 'bagops_db');
         $this->username = getEnvVar('DB_USER', 'root');
-        $this->password = getEnvVar('DB_PASSWORD', 'rootpassword');
+        $this->password = getEnvVar('DB_PASSWORD', 'root');
     }
 
     public function getConnection() {
